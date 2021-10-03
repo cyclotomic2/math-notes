@@ -13,7 +13,6 @@
 \newtheorem*{proposition*}{Proposition}
 \newtheorem*{theorem*}{Theorem}
 
-\theoremstyle{lemma}
 \newtheorem*{lemma*}{Lemma}
 
 \theoremstyle{remark}
@@ -21,6 +20,12 @@
 
 \newcommand{\ideal}[1]{\mathfrak{#1}}
 \newcommand{\ilmod}{\mathop{}\mathrm{mod}\ }
+
+\newcommand{\page}[1]{page #1}
+
+\newcommand{\Page}[1]{\subsection*{Page #1}}
+\newcommand{\Ex}[1]{\subsubsection*{Exercise #1}}
+\newcommand{\Topic}[1]{\subsubsection*{#1}}
 
 % adjust for the spacing influence of \left and \right on normal-size pairs
 \let\originalleft\left
