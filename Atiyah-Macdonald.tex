@@ -1,21 +1,17 @@
 \documentclass{note}
 
-
-
 \begin{document}
 
 \section*{TODO:}
 
 \begin{itemize}
-\item Lemma 10.2 uses (2.10).
+  \item Lemma 10.2 uses (2.10).
 \end{itemize}
-
 
 \chapter{Rings and Ideals}
 
 \section*{Exercises}
 \setcounter{chapter}{9}
-
 
 \chapter{Completions}
 
@@ -23,72 +19,61 @@
 \Page{101 - 102}
 \Topic{Lemma 10.1, topology on $G/H$.}
 
-The topology on the quotient group $G/H$ of a topological abelian
-group $G$ is just the quotient topology. What is nontrivial and also
-needed in the lemma (statement iii)) is that the addition operation is
-compatible with this topology.
+The topology on the quotient group $G/H$ of a topological abelian group $G$ is
+just the quotient topology. What is nontrivial and also needed in the lemma
+(statement iii)) is that the addition operation is compatible with this
+topology.
 
 \begin{lemma*}
-  The addition map $G/H \times G/H \to G/H$ defined by
-  $(\bar{x},\bar{y}) \mapsto \bar{x}+\bar{y}$ is continuous under the
-  quotient topology.
+  The addition map $G/H \times G/H \to G/H$ defined by $(\bar{x},\bar{y}) \mapsto
+    \bar{x}+\bar{y}$ is continuous under the quotient topology.
 \end{lemma*}
 
 \begin{proof}
-  Let $\overline{W}$ be any open set of $G/H$ whose pull back $W$
-  under the natural morphism $\pi\colon G \to G/H$ is open. Let
-  $x,y \in G$ be any elements such that $x + y \in W$. By the
-  continuity of the addition map $\varphi\colon G \times G \to G$,
-  there exist open sets $U,V \subset G$ such that $x\in U$, $y\in V$
-  and $U\times V \subset \varphi^{-1}(W)$. Let
-  $\overline{U} = \{\bar{u} \mid u \in U\}$, then it is evident that
-  $\pi^{-1}\left(\overline{U}\right) = \{u+h \mid u \in U, h \in H\} =
-  \bigcup_{h\in H}(h+U)$, which is open. Define $\overline{V}$
-  similarly and we get for any
-  $(\bar{u},\bar{v}) \in \overline{U}\times\overline{V}$ where
-  $u \in U$ and $v \in V$, that $u + v \in W$, or
-  $\bar{u} + \bar{v} \in \overline{W}$. Therefore
-  $\overline{U} \times \overline{V}$ is an open neighborhood of
-  $(\bar{x},\bar{y})$ that is contained in the preimage of
-  $\overline{W}$ under the addition map.
+  Let $\overline{W}$ be any open set of $G/H$ whose pull back $W$ under the
+  natural morphism $\pi\colon G \to G/H$ is open. Let $x,y \in G$ be any elements
+  such that $x + y \in W$. By the continuity of the addition map $\varphi\colon G
+    \times G \to G$, there exist open sets $U,V \subset G$ such that $x\in U$,
+  $y\in V$ and $U\times V \subset \varphi^{-1}(W)$. Let $\overline{U} = \{\bar{u}
+    \mid u \in U\}$, then it is evident that $\pi^{-1}\left(\overline{U}\right) =
+    \{u+h \mid u \in U, h \in H\} = \bigcup_{h\in H}(h+U)$, which is open. Define
+  $\overline{V}$ similarly and we get for any $(\bar{u},\bar{v}) \in
+    \overline{U}\times\overline{V}$ where $u \in U$ and $v \in V$, that $u + v \in
+    W$, or $\bar{u} + \bar{v} \in \overline{W}$. Therefore $\overline{U} \times
+    \overline{V}$ is an open neighborhood of $(\bar{x},\bar{y})$ that is contained
+  in the preimage of $\overline{W}$ under the addition map.
 \end{proof}
 
 \begin{remark*}
   Note $H$ is only required to be a subgroup but not necessary closed.
 \end{remark*}
 
-A direct way of proving statement iii) without using the structural
-setup above is as follows.
+A direct way of proving statement iii) without using the structural setup above
+is as follows.
 
 \begin{proof}[Proof of lemma 10.1.~iii)] For any
   $\bar{x} \neq \bar{y} \in G/H$, we know that $x - y \notin H$. Let
-  the continuous map $\varphi\colon G\times G \to G$ be defined by
-  $(x,y) \mapsto x - y$. Then $(x,y) \in G\times G - \varphi^{-1}(H)$,
-  which is open. Therefore there exist open sets $U,V \subset G$ such
-  that $x\in U$, $y\in V$ and
+  the continuous map $\varphi\colon G\times G \to G$ be defined by $(x,y) \mapsto
+    x - y$. Then $(x,y) \in G\times G - \varphi^{-1}(H)$, which is open. Therefore
+  there exist open sets $U,V \subset G$ such that $x\in U$, $y\in V$ and
   $(U\times V) \cap \varphi^{-1}(H) = \varnothing$. $\overline{U}$ and
-  $\overline{V}$ as defined in the lemma above are open neighborhoods
-  of $\bar{x}$ and $\bar{y}$. We claim that
-  $\overline{U} \cap \overline{V} = \varnothing$. In fact, for any
-  $u\in U$ and $v\in V$, $\bar{u} = \bar{v}$ implies
-  $u - v \in H$, contradicting the fact that
-  $(U\times V) \cap \varphi^{-1}(H) = \varnothing$.  
+  $\overline{V}$ as defined in the lemma above are open neighborhoods of
+  $\bar{x}$ and $\bar{y}$. We claim that $\overline{U} \cap \overline{V} =
+    \varnothing$. In fact, for any $u\in U$ and $v\in V$, $\bar{u} = \bar{v}$
+  implies $u - v \in H$, contradicting the fact that $(U\times V) \cap
+    \varphi^{-1}(H) = \varnothing$.
 \end{proof}
 
 \section*{Graded Rings and Modules}
 \Page{107}
 \Topic{Lemma 10.8, $A^*$ and $M^*$.}
-Lemma 10.8 uses the following well-known result (proposition 6.5,
-\page{76}).
+Lemma 10.8 uses the following well-known result (proposition 6.5, \page{76}).
 \begin{proposition*}
-  Let $A$ be a Noetherian ring, $M$ a finitely generated
-  $A$-module. Then $M$ is a Noetherian module.
+  Let $A$ be a Noetherian ring, $M$ a finitely generated $A$-module. Then $M$ is
+  a Noetherian module.
 \end{proposition*}
-Note this is different from the Hilbert basis theorem (theorem 7.5,
-\page{81}):
+Note this is different from the Hilbert basis theorem (theorem 7.5, \page{81}):
 \begin{theorem*}
   If $A$ is Noetherian, then the polynomial ring $A[x]$ is Noetherian.
 \end{theorem*}
-
-
 \end{document}

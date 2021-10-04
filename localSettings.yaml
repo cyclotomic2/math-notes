@@ -148,7 +148,7 @@ defaultIndent: "\t"
 
 # remove trailing whitespace from all lines 
 removeTrailingWhitespace:
-    beforeProcessing: 0
+    beforeProcessing: 1
     afterProcessing: 1
 
 # name of code blocks that should have their body aligned at ampersand delimiters
@@ -484,7 +484,7 @@ dos2unixlinebreaks: 0
 #
 # you can specify settings on a per-name basis
 modifyLineBreaks:
-    preserveBlankLines: 1
+    preserveBlankLines: 0
     condenseMultipleBlankLinesInto: 1
     oneSentencePerLine:
         manipulateSentences: 0     
@@ -511,12 +511,12 @@ modifyLineBreaks:
             questionMark: 1
             other: 0
     textWrapOptions:
-        columns: 0
+        columns: 80
         huge: overflow    # forbid mid-word line breaks
         separator: ""
-        perCodeBlockBasis: 0
-        beforeFindingChildCodeBlocks: 0
-        all: 0
+        perCodeBlockBasis: 1
+        beforeFindingChildCodeBlocks: 1
+        all: 1
         alignAtAmpersandTakesPriority: 1
         environments: 
             quotation: 0
@@ -531,10 +531,9 @@ modifyLineBreaks:
         mainDocument: 0
     removeParagraphLineBreaks:
         all: 0
-        beforeTextWrap: 0
+        beforeTextWrap: 1
         alignAtAmpersandTakesPriority: 1
-        environments: 
-            quotation: 0
+        environments: 1
         ifElseFi: 0
         optionalArguments: 0
         mandatoryArguments: 0
@@ -542,7 +541,7 @@ modifyLineBreaks:
         specialBeginEnd: 0
         afterHeading: 0
         preamble: 0
-        filecontents: 0
+        filecontents: 1
         mainDocument: 0
         paragraphsStopAt:
             environments: 1
@@ -555,15 +554,15 @@ modifyLineBreaks:
             filecontents: 0
             comments: 0
     environments:
-        BeginStartsOnOwnLine: 0
-        BodyStartsOnOwnLine: 0
-        EndStartsOnOwnLine: 0
-        EndFinishesWithLineBreak: 0
+        BeginStartsOnOwnLine: 1
+        BodyStartsOnOwnLine: 1
+        EndStartsOnOwnLine: 1
+        EndFinishesWithLineBreak: 1
         equation*:
-            BeginStartsOnOwnLine: 0
-            BodyStartsOnOwnLine: 0
-            EndStartsOnOwnLine: 0
-            EndFinishesWithLineBreak: 0
+            BeginStartsOnOwnLine: 1
+            BodyStartsOnOwnLine: 1
+            EndStartsOnOwnLine: 1
+            EndFinishesWithLineBreak: 1
     ifElseFi:
         IfStartsOnOwnLine: 0
         BodyStartsOnOwnLine: 0
@@ -600,7 +599,7 @@ modifyLineBreaks:
         EqualsStartsOnOwnLine: 0
         EqualsFinishesWithLineBreak: 0
     items:
-        ItemStartsOnOwnLine: 0
+        ItemStartsOnOwnLine: 1
         ItemFinishesWithLineBreak: 0
     namedGroupingBracesBrackets:
         NameStartsOnOwnLine: 0
