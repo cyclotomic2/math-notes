@@ -10,6 +10,36 @@
 
 \chapter{Rings and Ideals}
 
+\section*{Nilradical and Jacobson Radical}
+\Page{5}
+\Topic{Minimal prime ideals of a ring}
+\textit{Proposition 1.8} shows that the nilradical of a ring is the
+intersection of all prime ideals of the ring. But the nilradical itself is not
+necessarily a prime ideal, as there may exist zero-divisors other than
+nilponent elements. One might wonder what the ``minimal'' prime ideals of a
+ring look like, and might think of the set of all zero-divisors as a candidate.
+Unfortunately, it might not even be an ideal, as shown in the following
+example.
+\begin{example*}
+  The set of zero-divisors of $\mathbb{Z}_6$, $D =
+    \left\{\overline{0},\overline{2},\overline{3}\right\}$, is not an ideal, as
+  $\overline{2}+\overline{3}=\overline{5} \notin D$. In fact the ideal generated
+  by $D$ is the entire ring.
+\end{example*}
+However, we can roughly describe the ``minimal'' prime ideals of a ring $A$.
+\begin{proposition*}
+  Let $D$ be the set of zero-divisors of $A$. Then any largest ideal contained in
+  $D$ (ordered by set inclusion) is prime.
+\end{proposition*}
+\begin{proof}
+  By Zorn lemma, such an ideal exists. Let $I$ be such an ideal. Let $x,y\notin
+    I$. Then the ideals $(x)+I$, $(y)+I$ are not contained in $D$. Hence there
+  exist $a,b\notin D$ such that $$a\in (x)+I, \quad b\in(y)+I.$$ It follows
+  $ab\in (xy) + I$. But we know $ab\notin D$, for if $abc=0$, then $bc=0$, then
+  $c=0$, thus $ab$ is not a zero-divisor. It then follows $xy\notin I$, because
+  otherwise $ab\in (xy) + I = I \subset D$.
+\end{proof}
+
 \section*{Exercises}
 \setcounter{chapter}{9}
 

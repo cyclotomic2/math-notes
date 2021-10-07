@@ -12,8 +12,8 @@
 \theoremstyle{plain}
 \newtheorem*{proposition*}{Proposition}
 \newtheorem*{theorem*}{Theorem}
-
 \newtheorem*{lemma*}{Lemma}
+\newtheorem*{example*}{Example}
 
 \theoremstyle{remark}
 \newtheorem*{remark*}{Remark}
