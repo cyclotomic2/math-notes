@@ -4,7 +4,7 @@
 \usepackage{xifthen}
 \usepackage{tikz-cd}
 
-\newcommand{\Affine}[1]{\mathbf{A}^{#1}}
+\newcommand{\Affine}[2][]{\mathbf{A}^{#2}\ifthenelse{\isempty{#1}}{}{_{#1}}}
 \newcommand{\Proj}[1]{\mathbf{P}^{#1}}
 \newcommand{\lring}[2][]{\mathcal{O}_{#2\ifthenelse{\isempty{#1}}{}{,#1}}}
 
@@ -32,6 +32,20 @@
 $Y$ is the zero set of the ideal $(x^2-y,x^3-z)$. One only needs to
 show that $A(Y)$ is isomorphic to a polynomial ring in one variable, from which
 the rest follows.
+
+\setcounter{exercise}{11}
+\Ex
+For one example, $f = x^2 + y^2 + 1$ is irreducible in $\reals\brackets{x, y}$
+(can be proved by representing factors of $f$ as polynomials in $x$ with
+coefficients in $\reals\brackets{y}$), but $Z(f)$ in $\Affine[\reals]{2}$ is
+$\emptyset$ and not considered to be irreducible by definition of irreducible
+sets.
+
+For another example, $f = x^2(x-1)^2 + y^2$ is irreducible in
+$\reals\brackets{x, y}$ (the unique factorization of $f$ in
+$\complexes\brackets{x, y}$ is $(x(x-1) + iy)(x(x-1) - iy)$, but none of the
+two factors is in $\reals\brackets{x, y}$), but $Z(f) = \set{(0, 0), (1, 0)}$
+is not irreducible.
 
 \section{Projective Varieties}
 \Page{13}
