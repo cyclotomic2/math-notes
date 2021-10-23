@@ -40,9 +40,14 @@
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 
-\newcommand{\brackets}[1]{\left[#1\right]}
+\newcommand{\listwithclosingbracket}[2]{
+    #2\@ifnextchar{\bgroup}{,\listwithclosingbracket{#1}}{\right#1}
+}
 
-\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\set}{\left\{\listwithclosingbracket{\}}}
+\newcommand{\setbuilder}[2]{\set{#1 \mid #2}}
+
+\newcommand{\polynomials}[1]{#1\left[\listwithclosingbracket{]}}
 
 \renewcommand{\emptyset}{\varnothing}
 

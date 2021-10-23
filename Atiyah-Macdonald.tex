@@ -16,7 +16,7 @@ Unfortunately, it might not even be an ideal, as shown in the following
 example.
 \begin{example*}
   The set of zero-divisors of $\mathbb{Z}_6$, $D =
-    \left\{\overline{0},\overline{2},\overline{3}\right\}$, is not an ideal, as
+    \set{\overline{0}}{\overline{2}}{\overline{3}}$, is not an ideal, as
   $\overline{2}+\overline{3}=\overline{5} \notin D$. In fact the ideal generated
   by $D$ is the entire ring.
 \end{example*}
@@ -63,14 +63,15 @@ topology.
   implying $x + y$ is in $\overline{W}$'s preimage $W$. By the continuity of the
   addition map $\varphi\colon G \times G \to G$, there exist open sets $U,V
     \subset G$ such that $x\in U$, $y\in V$ and $U\times V \subset
-    \varphi^{-1}(W)$. Consider $\overline{U} = \{\pi(u) \mid u \in U\}$. It is
-  evident that $\pi^{-1}\left(\overline{U}\right) = \{u+h \mid u \in U, h \in H\}
-    = \bigcup_{h\in H}(h+U)$ is open, so $\overline{U}$ is open in $G/H$. Define
-  $\overline{V}$ similarly and we get
+    \varphi^{-1}(W)$. Consider $\overline{U} = \setbuilder{\pi(u)}{u \in U}$. It is
+  evident that $\pi^{-1}\left(\overline{U}\right) = \setbuilder{u+h}{u \in U, h
+      \in H} =
+    \bigcup_{h\in H}(h+U)$ is open, so $\overline{U}$ is open in $G/H$.
+  Define $\overline{V}$ similarly and we get
   $\overline\varphi\left(\overline{U}\times\overline{V}\right) =
-    \left\{\pi(u)+\pi(v) \mid u\in U, v\in
-    V\right\} = \left\{\pi(u+v) \mid u\in U,
-    v\in V\right\} = \pi\left(\varphi\left(U\times V\right)\right) \subset \pi(W) =
+    \setbuilder{\pi(u)+\pi(v)}{u\in U, v\in V} = \setbuilder{\pi(u+v)}{u\in U, v\in
+      V} = \pi\left(\varphi\left(U\times V\right)\right)
+    \subset \pi(W) =
     \overline{W}$. Therefore $\overline{U} \times \overline{V}$ is an open
   neighborhood of $\left(\overline{x}, \overline{y}\right)$ contained in the
   preimage of $\overline{W}$ under the addition map.
@@ -106,6 +107,7 @@ Lemma 10.8 uses the following well-known result (proposition 6.5, \page{76}).
 \end{proposition*}
 Note this is different from the Hilbert basis theorem (theorem 7.5, \page{81}):
 \begin{theorem*}
-  If $A$ is Noetherian, then the polynomial ring $A[x]$ is Noetherian.
+  If $A$ is Noetherian, then the polynomial ring $\polynomials{A}{x}$ is
+  Noetherian.
 \end{theorem*}
 \end{document}
