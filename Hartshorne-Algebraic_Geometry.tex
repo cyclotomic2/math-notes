@@ -35,17 +35,17 @@ the rest follows.
 
 \setcounter{exercise}{11}
 \Ex
-For one example, $f = x^2 + y^2 + 1$ is irreducible in $\reals\brackets{x, y}$
-(can be proved by representing factors of $f$ as polynomials in $x$ with
-coefficients in $\reals\brackets{y}$), but $Z(f)$ in $\Affine[\reals]{2}$ is
-$\emptyset$ and not considered to be irreducible by definition of irreducible
-sets.
+For one example, $f = x^2 + y^2 + 1$ is irreducible in
+$\polynomials{\reals}{x}{y}$ (can be proved by representing factors of $f$ as
+polynomials in $x$ with coefficients in $\polynomials{\reals}{y}$), but $Z(f)$
+in $\Affine[\reals]{2}$ is $\emptyset$ and not considered to be irreducible by
+definition of irreducible sets.
 
 For another example, $f = x^2(x-1)^2 + y^2$ is irreducible in
-$\reals\brackets{x, y}$ (the unique factorization of $f$ in
-$\complexes\brackets{x, y}$ is $(x(x-1) + iy)(x(x-1) - iy)$, but none of the
-two factors is in $\reals\brackets{x, y}$), but $Z(f) = \set{(0, 0), (1, 0)}$
-is not irreducible.
+$\polynomials{\reals}{x}{y}$ (the unique factorization of $f$ in
+$\polynomials{\complexes}{x}{y}$ is $(x(x-1) + iy)(x(x-1) - iy)$, but none of
+the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
+    0)}{(1, 0)}$ is not irreducible.
 
 \section{Projective Varieties}
 \Page{13}
@@ -55,17 +55,16 @@ is not irreducible.
 \Ex
 \begin{enumerate}
   \item Since polynomial rings are integral, so is
-        $k[y_0,\dots,y_N]/\ideal{a}$, so $\ideal{a}$ is prime. (Need to show
-        it is homogeneous?)
-  \item $\rho_d(\Proj{n})\subset Z(\ideal{a})$ is obvious. In
-        fact for any $\rho_d(P)=(M_0(a),\dots,M_N(a))$, and any $f\in\ideal{a}$, we
-        have $f(\rho_d(P)) = f(M_0(a),\dots,M_N(a)) \xlongequal{\text{by definition of
-            }\theta}
-          \theta(f)(a) = 0.$\\ $Z(\ideal{a})\subset\rho_d(\Proj{n})$ is trivial.
-        Just need to construct $\rho_d^{-1}(P)$ from $P\in Z(\alpha)$.
-  \item One
-        direction is easy. To show $\rho_d^{-1}$ is continuous, one needs to look at
-        the open sets $U_i$.
+        $\polynomials{k}{y_0}{\dots}{y_N}/\ideal{a}$, so $\ideal{a}$ is prime. (Need
+        to show it is homogeneous?)
+  \item $\rho_d(\Proj{n})\subset Z(\ideal{a})$ is
+        obvious. In fact for any $\rho_d(P)=(M_0(a),\dots,M_N(a))$, and any
+        $f\in\ideal{a}$, we have $f(\rho_d(P)) = f(M_0(a),\dots,M_N(a))
+          \xlongequal{\text{by definition of }\theta} \theta(f)(a) = 0.$\\
+        $Z(\ideal{a})\subset\rho_d(\Proj{n})$ is trivial. Just need to construct
+        $\rho_d^{-1}(P)$ from $P\in Z(\alpha)$.
+  \item One direction is easy. To show
+        $\rho_d^{-1}$ is continuous, one needs to look at the open sets $U_i$.
 \end{enumerate}
 
 \section{Morphisms}
@@ -337,13 +336,14 @@ to extensions we get the desired result.
         isomorphic due to proposition 6.8. Since $Y$ is not isomorphic to $\Proj1$ the
         result is immediate.
   \item An open set in $\Affine1$ is
-        $\Affine1\setminus\{x_1,\dots,x_n\}$. It is isomorphic to the affine curve
+        $\Affine1\setminus\set{x_1}{\dots}{x_n}$. It is isomorphic to the affine curve
         given by $(x-x_1)\cdots(x-x_n)y=1$ in $\Affine2$.
   \item Show that $A(Y)$ is
-        isomorphic to the localization of $k[x]$ at the polynomials $x-x_i\colon$
+        isomorphic to the localization of $\polynomials{k}{x}$ at the polynomials
+        $x-x_i\colon$
         \begin{equation*}
-          \left\{ \frac{f(x)}{\prod_{i=1}^n(x-x_i)^{k_i}} \biggm\vert
-          f(x) \in k[x] \right\}.
+          \set{\frac{f(x)}{\prod_{i=1}^n(x-x_i)^{k_i}} \biggm\vert
+            f(x) \in \polynomials{k}{x}}.
         \end{equation*}
 \end{enumerate}
 
@@ -353,11 +353,12 @@ to extensions we get the desired result.
         $y = 0$ and $3x^2-1 = 0$, which contradicts $y^2 = x^3 - x$. Since
         $Y$ is nonsingular every localization of $A$ is integrally closed,
         so $A$ is integrally closed.
-  \item Only need to show that if $f(x) \in k[x]$
-        vanishes on $Y$, then $f(x)$ is the zero polynomial. For every $x\in k$ there
-        is some $P$ whose first coordinate is $x$, thus $f(x) = 0$ for every $x$ and we
-        are done. $A$ is in the integral closure of $k[x]$ since $y^2 + x^3 - x = 0$ in
-        $K$. Then using the fact that $A$ is integrally closed we get the result.
+  \item Only need to show that if $f(x) \in
+          \polynomials{k}{x}$ vanishes on $Y$, then $f(x)$ is the zero polynomial. For
+        every $x\in k$ there is some $P$ whose first coordinate is $x$, thus $f(x) = 0$
+        for every $x$ and we are done. $A$ is in the integral closure of
+        $\polynomials{k}{x}$ since $y^2 + x^3 - x = 0$ in $K$. Then using the fact that
+        $A$ is integrally closed we get the result.
   \item
 \end{enumerate}
 \end{document}
