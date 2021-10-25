@@ -55,16 +55,16 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
 \Ex
 \begin{enumerate}
   \item Since polynomial rings are integral, so is
-        $\polynomials{k}{y_0}{\dots}{y_N}/\ideal{a}$, so $\ideal{a}$ is prime. (Need
-        to show it is homogeneous?)
+        $\polynomials{k}{y_0}{\dots}{y_N}/\ideal{a}$, so $\ideal{a}$ is prime. (Need to
+        show it is homogeneous?)
   \item $\rho_d(\Proj{n})\subset Z(\ideal{a})$ is
         obvious. In fact for any $\rho_d(P)=(M_0(a),\dots,M_N(a))$, and any
         $f\in\ideal{a}$, we have $f(\rho_d(P)) = f(M_0(a),\dots,M_N(a))
           \xlongequal{\text{by definition of }\theta} \theta(f)(a) = 0.$\\
         $Z(\ideal{a})\subset\rho_d(\Proj{n})$ is trivial. Just need to construct
         $\rho_d^{-1}(P)$ from $P\in Z(\alpha)$.
-  \item One direction is easy. To show
-        $\rho_d^{-1}$ is continuous, one needs to look at the open sets $U_i$.
+  \item One direction is easy. To show $\rho_d^{-1}$ is continuous, one needs to look
+        at the open sets $U_i$.
 \end{enumerate}
 
 \section{Morphisms}
@@ -76,13 +76,13 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
 \begin{enumerate}
   \item
   \item
-  \item Any non-degenerate linear transformation
-        $\mathbf{x} \mapsfrom M\mathbf{x}$ induces an isomorphism between a
-        variety and its image. For any conic $Ax^2 + By^2 + Cz^2 + Dyz + Ezx + Fxy = 0$
-        in $\Proj{2}$, we show under a suitable transformation it becomes $xy = z^2$.
+  \item Any non-degenerate linear transformation $\mathbf{x} \mapsfrom M\mathbf{x}$
+        induces an isomorphism between a variety and its image. For any conic $Ax^2 +
+          By^2 + Cz^2 + Dyz + Ezx + Fxy = 0$ in $\Proj{2}$, we show under a suitable
+        transformation it becomes $xy = z^2$.
         \begin{itemize}
-          \item If at most one in $A$, $B$, $C$ is nonzero, say $C$,
-                dehomogenize with respect to $z$ we get
+          \item If at most one in $A$, $B$, $C$ is nonzero, say $C$, dehomogenize with respect
+                to $z$ we get
                 \begin{equation*}
                   Fxy + Ex + Dy + C = 0.
                 \end{equation*}
@@ -93,8 +93,8 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
                 That the constant term is not zero is a consequence of the fact that the
                 quadratic equation is irreducible. Now homogenize to $z$ and we get the desired
                 form.
-          \item If two or more in $A$, $B$, $C$ are nonzero, say $A$ and $B$.
-                Dehomogenize w.r.t.~$z$ to get
+          \item If two or more in $A$, $B$, $C$ are nonzero, say $A$ and $B$. Dehomogenize
+                w.r.t.~$z$ to get
                 \begin{equation*}
                   Ax^2 + Fxy + By^2 + Ex + Dy + C = 0.
                 \end{equation*}
@@ -136,8 +136,7 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
 \setcounter{exercise}{2}
 \Ex
 \begin{enumerate}
-  \item Need to varify: well-definedness, compatibility with ring
-        structures.
+  \item Need to varify: well-definedness, compatibility with ring structures.
   \item ``$\implies$'': Trivial.\\ ``$\impliedby$'': Only need to
         show $\varphi^{-1}$ is a morphism. For any open subset $U$ of $X$ and any
         regular function $f$ on $U$, need to show $f\circ\varphi^{-1}$ is regular on
@@ -147,15 +146,14 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
         $g\circ\varphi$ agree on some open set $V\subset U$. In other words,
         $f\circ\varphi^{-1} = g$ on $\varphi(V)$, proving $f\circ\varphi^{-1}$ is
         regular at $\varphi(P)$.
-  \item Suppose $\chevrons{V,g}\in\lring[Y]{\varphi(P)}$
-        and $0 = \varphi_P^*(g) = g\circ\varphi$. Then $g\circ\varphi$ vanishes in an
-        open neighborhood of $P$ contained in $\varphi^{-1}(V)$, which means it
-        vanishes in $\varphi^{-1}(V)\eqqcolon U$. Thus $g$ vanishes in $\varphi(U)$.
-        Now the closure of $\varphi(X)$ is contained in
-        $\closure{\varphi(U)}\union\cmpl{V}$. Since $\varphi(X)$ is dense in $Y$, we
-        have $\closure{\varphi(U)}\union\cmpl{V} = Y$. This is the case only if
-        $V\subset\closure{\varphi(U)}$, in which $g$ vanishes. Thus we conclude $g = 0$
-        in $\lring[Y]{\varphi(P)}$.
+  \item Suppose $\chevrons{V,g}\in\lring[Y]{\varphi(P)}$ and $0 = \varphi_P^*(g) =
+          g\circ\varphi$. Then $g\circ\varphi$ vanishes in an open neighborhood of $P$
+        contained in $\varphi^{-1}(V)$, which means it vanishes in
+        $\varphi^{-1}(V)\eqqcolon U$. Thus $g$ vanishes in $\varphi(U)$. Now the
+        closure of $\varphi(X)$ is contained in $\closure{\varphi(U)}\union\cmpl{V}$.
+        Since $\varphi(X)$ is dense in $Y$, we have $\closure{\varphi(U)}\union\cmpl{V}
+          = Y$. This is the case only if $V\subset\closure{\varphi(U)}$, in which $g$
+        vanishes. Thus we conclude $g = 0$ in $\lring[Y]{\varphi(P)}$.
 \end{enumerate}
 
 \setcounter{exercise}{4}
@@ -251,8 +249,9 @@ contradicting that $\varphi_U(U)$ is dense.
 \begin{itemize}
   \item If $p\ndivide d$ consider $x^d + y^d + z^d = 0$.
   \item If $p\divides d$ consider $x^{d-1}y + y^{d-1}z +
-          z^{d-1}x = 0$. The polynomial is irreducible since $x^{d-1}y + y^{d-1} + x$ is
-        (Eisenstein's criterion on integral domains). Further more it is nonsingular.
+          z^{d-1}x = 0$. The polynomial
+        is irreducible since $x^{d-1}y + y^{d-1} + x$ is (Eisenstein's criterion on
+        integral domains). Further more it is nonsingular.
 \end{itemize}
 
 \setcounter{exercise}{7}
@@ -335,12 +334,11 @@ to extensions we get the desired result.
         curve $X$ by corollary 6.10. Then $X$ and $\Proj1$ are birational, and hence
         isomorphic due to proposition 6.8. Since $Y$ is not isomorphic to $\Proj1$ the
         result is immediate.
-  \item An open set in $\Affine1$ is
-        $\Affine1\setminus\set{x_1}{\dots}{x_n}$. It is isomorphic to the affine curve
-        given by $(x-x_1)\cdots(x-x_n)y=1$ in $\Affine2$.
-  \item Show that $A(Y)$ is
-        isomorphic to the localization of $\polynomials{k}{x}$ at the polynomials
-        $x-x_i\colon$
+  \item An open set in $\Affine1$ is $\Affine1\setminus\set{x_1}{\dots}{x_n}$. It is
+        isomorphic to the affine curve given by $(x-x_1)\cdots(x-x_n)y=1$ in
+        $\Affine2$.
+  \item Show that $A(Y)$ is isomorphic to the localization of $\polynomials{k}{x}$ at
+        the polynomials $x-x_i\colon$
         \begin{equation*}
           \set{\frac{f(x)}{\prod_{i=1}^n(x-x_i)^{k_i}} \biggm\vert
             f(x) \in \polynomials{k}{x}}.
@@ -349,16 +347,14 @@ to extensions we get the desired result.
 
 \Ex
 \begin{enumerate}
-  \item If $Y$ were to be singular at some point, then it must be that
-        $y = 0$ and $3x^2-1 = 0$, which contradicts $y^2 = x^3 - x$. Since
-        $Y$ is nonsingular every localization of $A$ is integrally closed,
-        so $A$ is integrally closed.
-  \item Only need to show that if $f(x) \in
-          \polynomials{k}{x}$ vanishes on $Y$, then $f(x)$ is the zero polynomial. For
-        every $x\in k$ there is some $P$ whose first coordinate is $x$, thus $f(x) = 0$
-        for every $x$ and we are done. $A$ is in the integral closure of
-        $\polynomials{k}{x}$ since $y^2 + x^3 - x = 0$ in $K$. Then using the fact that
-        $A$ is integrally closed we get the result.
+  \item If $Y$ were to be singular at some point, then it must be that $y = 0$ and
+        $3x^2-1 = 0$, which contradicts $y^2 = x^3 - x$. Since $Y$ is nonsingular every
+        localization of $A$ is integrally closed, so $A$ is integrally closed.
+  \item Only need to show that if $f(x) \in \polynomials{k}{x}$ vanishes on $Y$, then
+        $f(x)$ is the zero polynomial. For every $x\in k$ there is some $P$ whose first
+        coordinate is $x$, thus $f(x) = 0$ for every $x$ and we are done. $A$ is in the
+        integral closure of $\polynomials{k}{x}$ since $y^2 + x^3 - x = 0$ in $K$. Then
+        using the fact that $A$ is integrally closed we get the result.
   \item
 \end{enumerate}
 \end{document}
