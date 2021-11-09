@@ -24,6 +24,29 @@
 \chapter{Varieties}
 
 \section{Affine Varieties}
+
+\Page{3}
+\Topic{Example 1.1.4.}
+The converse statement is also true, so we have
+\begin{proposition*}
+  Let $Y$ be a subset of $X$. $Y$ is irreducible if and only if its closure
+  $\closure{Y}$ is irreducible.
+\end{proposition*}
+\begin{proof}
+  Assume $Y$ is irreducible, we show $\closure{Y}$ is also irreducible. Assume
+  $\closure{Y} \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$
+  and $\closure{Y} \nsubseteq Y_1$. Then $Y \subseteq Y_1 \cup Y_2$ and $Y
+    \nsubseteq Y_1$ (otherwise $\closure{Y} \subseteq Y_1$), which together with
+  $Y$ being irreducible implies $Y \subseteq Y_2$, thus $\closure{Y} \subseteq
+    Y_2$.
+
+  Conversely, let $\closure{Y}$ be irreducible, we show $Y$ is also irreducible.
+  Assume $Y \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$ and
+  $Y \nsubseteq Y_1$. Then $\closure{Y} \subseteq Y_1 \cup Y_2$ (because $Y_1
+    \cup Y_2$ is closed) and obviously $\closure{Y} \nsubseteq Y_1$, so
+  $\closure{Y} \subseteq Y_2$, implying $Y \subseteq Y_2$.
+\end{proof}
+
 \Page{7}
 \Topic{Exercises}
 
