@@ -47,6 +47,28 @@ The converse statement is also true, so we have
   $\closure{Y} \subseteq Y_2$, implying $Y \subseteq Y_2$.
 \end{proof}
 
+\Page{4}
+\Topic{Corollary 1.4.}
+We have a more general result about whether any subset of $\Affine{n}$ is
+irreducible.
+\begin{proposition*}
+  A subset $Y$ of $\Affine{n}$ is irreducible if and only if $I(Y)$ is a prime
+  ideal.
+\end{proposition*}
+\begin{proof}
+  Assume $Y$ is irreducible. $\closure{Y}$ is also irreducible according to the
+  proposition above. By Proposition 1.2.(e) in the book, one has $Z(I(Y)) =
+    \closure{Y}$ is irreducible. Now if we show $I(Y)$ is radical, it then follows
+  from Corollary 1.4 that under the inclusion-reversing correspondence, $I(Y)$ is
+  prime. Recall that $I(Y) = \setbuilder{f \in
+      \polynomials{k}{x_1}{\dots}{x_n}}{f(P) = 0\text{ for all }P \in Y}$. Now if
+  $f^r \in I(Y)$, then for all $P \in Y$, $f^r(P) = 0$, thus $f(P) = 0$.
+
+  Conversely, suppose $I(Y)$ is prime. Using Proposition 1.2.(e) again, we have
+  $\closure{Y} = Z(I(Y))$. It then follows from Corollary 1.4 that $\closure{Y}$
+  is irreducible, and so is $Y$ by the proposition above.
+\end{proof}
+
 \Page{7}
 \Topic{Exercises}
 
