@@ -24,6 +24,51 @@
 \chapter{Varieties}
 
 \section{Affine Varieties}
+
+\Page{3}
+\Topic{Example 1.1.4.}
+The converse statement is also true, so we have
+\begin{proposition*}
+  Let $Y$ be a subset of $X$. $Y$ is irreducible if and only if its closure
+  $\closure{Y}$ is irreducible.
+\end{proposition*}
+\begin{proof}
+  Assume $Y$ is irreducible, we show $\closure{Y}$ is also irreducible. Assume
+  $\closure{Y} \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$
+  and $\closure{Y} \nsubseteq Y_1$. Then $Y \subseteq Y_1 \cup Y_2$ and $Y
+    \nsubseteq Y_1$ (otherwise $\closure{Y} \subseteq Y_1$), which together with
+  $Y$ being irreducible implies $Y \subseteq Y_2$, thus $\closure{Y} \subseteq
+    Y_2$.
+
+  Conversely, let $\closure{Y}$ be irreducible, we show $Y$ is also irreducible.
+  Assume $Y \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$ and
+  $Y \nsubseteq Y_1$. Then $\closure{Y} \subseteq Y_1 \cup Y_2$ (because $Y_1
+    \cup Y_2$ is closed) and obviously $\closure{Y} \nsubseteq Y_1$, so
+  $\closure{Y} \subseteq Y_2$, implying $Y \subseteq Y_2$.
+\end{proof}
+
+\Page{4}
+\Topic{Corollary 1.4.}
+We have a more general result about whether any subset of $\Affine{n}$ is
+irreducible.
+\begin{proposition*}
+  A subset $Y$ of $\Affine{n}$ is irreducible if and only if $I(Y)$ is a prime
+  ideal.
+\end{proposition*}
+\begin{proof}
+  Assume $Y$ is irreducible. $\closure{Y}$ is also irreducible according to the
+  proposition above. By Proposition 1.2.(e) in the book, one has $Z(I(Y)) =
+    \closure{Y}$ is irreducible. Now if we show $I(Y)$ is radical, it then follows
+  from Corollary 1.4 that under the inclusion-reversing correspondence, $I(Y)$ is
+  prime. Recall that $I(Y) = \setbuilder{f \in
+      \polynomials{k}{x_1}{\dots}{x_n}}{f(P) = 0\text{ for all }P \in Y}$. Now if
+  $f^r \in I(Y)$, then for all $P \in Y$, $f^r(P) = 0$, thus $f(P) = 0$.
+
+  Conversely, suppose $I(Y)$ is prime. Using Proposition 1.2.(e) again, we have
+  $\closure{Y} = Z(I(Y))$. It then follows from Corollary 1.4 that $\closure{Y}$
+  is irreducible, and so is $Y$ by the proposition above.
+\end{proof}
+
 \Page{7}
 \Topic{Exercises}
 
