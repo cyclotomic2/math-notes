@@ -1,0 +1,158 @@
+\documentclass{note}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{fontspec}
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+    {\LARGE\sffamily}
+    {\chaptertitlename\space\thechapter}
+    {1em}
+    {\fontspec{Arial}\selectfont\bfseries\itshape}
+\titleformat{\section}[block]
+    {\Large\bfseries\filcenter}
+    {\thesection}
+    {1em}
+    {\fontspec{Times New Roman}\selectfont\MakeUppercase}
+
+\numberwithin{equation}{chapter}
+\makeatletter
+\def\tagform@#1{\maketag@@@{[\ignorespaces#1\unskip\@@italiccorr]}}
+\makeatother
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\mdfdefinestyle{leftbar}{
+    innerleftmargin=2em,
+    innerrightmargin=2em,
+    innertopmargin=1em,
+    innerbottommargin=1em,
+    linewidth=3pt,
+    leftline=true,
+    topline=false,
+    rightline=false,
+    bottomline=false,
+    linecolor=gray,
+    backgroundcolor=gray!6,
+}
+\newenvironment*{quotebar}{\begin{mdframed}[style=leftbar]}{\end{mdframed}}
+
+\newcommand{\piprod}[2]{
+    \frac{1\cdot2\cdot\cdots\cdot #2}{\prn{#1+1}\prn{#1+2}\cdots\prn{#1+#2}}
+    \prn{#2+1}^{#1}
+}
+
+
+\begin{document}
+
+\chapter{Riemann's Paper}
+
+\setcounter{section}{2}
+\section{The Factorial Function}
+
+\Page{8}
+
+\begin{quotebar}
+    On the other hand, it is not difficult to show [use formula (4) below] that the limit
+    (3) exists for all values of $s$, real or complex, provided only that the denominator
+    is not zero, that is, provided only that $s$ is not a negative integer.
+\end{quotebar}
+
+Rewrite the right-hand side of (4) as
+\begin{equation}
+    \prod_{n=1}^N \prn{1+\frac{s}{n}}^{-1} \prn{1+\frac{1}{n}}^{s} = \exp{ \sum_{n=1}^N
+        \left[s\log\prn{1+\frac{1}{n}} - \log\prn{1+\frac{s}{n}} \right]}.
+    \label{eq:rewrite-Pi-prod-form}
+\end{equation}
+Note the definition of $\log\prn{1+\frac{1}{n}}$ and $\log\prn{1+\frac{s}{n}}$ is
+unambiguous when $n$ is sufficiently large and $s$ is fixed. According to Ahlfors
+    [Theorem 8, p125], we can rewrite $\log(1+z)$ as
+\begin{equation*}
+    \log(1+z) = \log(1+0) + \frac{1}{1+0}z + f(z)z^2 = z + f(z)z^2
+\end{equation*}
+where $f$ is analytic in the domain of $\log(1+z)$ (chosen to be the complex plain
+excluding real values $s \leq -1$). Thus
+\begin{align}
+    \abs{s\log\prn{1+\frac{1}{n}} - \log\prn{1+\frac{s}{n}}}
+     & = \abs{ s\left[ \frac{1}{n} + f\prn{\frac{1}{n}}\prn{\frac{1}{n}}^2 \right] -
+    \left[ \frac{s}{n} + f\prn{\frac{s}{n}}\prn{\frac{s}{n}}^2 \right] } \nonumber   \\
+     & = \abs{ s f\prn{\frac{1}{n}} - s^2 f\prn{\frac{s}{n}} } \frac{1}{n^2}
+    \label{eq:Pi-prod-summand-taylor}                                                \\
+     & = O\prn{\frac{1}{n^2}} \quad \text{as } n \rightarrow \infty, \nonumber
+\end{align}
+which concludes that the sum on the right-hand side of \eqref{eq:rewrite-Pi-prod-form}
+is absolute convergent.
+
+\begin{quotebar}
+    \begin{equation*}
+        \Pi(s) = 2^s \Pi \prn{\frac{s}{2}} \Pi \prn{\frac{s - 1}{2}} \pi^{-1/2}
+    \end{equation*}
+\end{quotebar}
+
+We will use the following fact.
+\begin{lemma*}
+    If both $\lim\limits_{n\rightarrow\infty} a_n$ and $\lim\limits_{n\rightarrow\infty}
+        b_n$ exist, then $\lim\limits_{n\rightarrow\infty} a_n b_n$ exists and
+    \begin{equation*}
+        \lim_{n\rightarrow\infty} a_n b_n = \lim_{n\rightarrow\infty} a_n
+        \lim_{n\rightarrow\infty} b_n.
+    \end{equation*}
+\end{lemma*}
+\begin{proof}
+    In fact, assume $\lim\limits_{n\rightarrow\infty} a_n = a$ and
+    $\lim\limits_{n\rightarrow\infty} b_n = b$, then
+    \begin{equation*}
+        a_n b_n - ab = a_n b_n - a_n b + a_n b - ab = a_n(b_n - b) + b(a_n - a),
+    \end{equation*}
+    which approaches $0$ as $n \rightarrow \infty$.
+\end{proof}
+Now by equation (3) in the book,
+\begin{align*}
+    \Pi\prn{\frac{s}{2}}\Pi\prn{\frac{s-1}{2}}
+     & = \lim_{N\rightarrow\infty} \left[ \piprod{\frac{s}{2}}{N} \right.             \\
+     & \hspace{5em} \cdot \left. \piprod{\frac{s-1}{2}}{N} \right]                    \\
+     & = \lim_{N\rightarrow\infty} \frac{\prn{1\cdot2\cdot\cdots\cdot N}^2}
+    {\frac{1}{2^{2N}}\prn{s+1}\prn{s+2}\cdots\prn{s+2N}}\prn{N+1}^{s-\frac12}         \\
+     & = \lim_{N\rightarrow\infty} \frac{2\cdot4\cdot\cdots\cdot 2N}{\prn{s+1}
+        \prn{s+2}\cdots\prn{s+2N}} \cdot \frac{1\cdot2\cdot\cdots\cdot N}
+    {\frac{1}{2^{N}}}\prn{N+1}^{s-\frac12}                                            \\
+     & = \lim_{N\rightarrow\infty} \left[ \piprod{s}{2N} \right.                      \\
+     & \hspace{5em} \left. \cdot \frac{1\cdot2\cdot\cdots\cdot N}{\frac{1}{2^{N}}
+            1\cdot3\cdot\cdots\cdot (2N-1)} \cdot \frac{\prn{N+1}^{s-\frac12}}
+    {\prn{2N+1}^s} \right]                                                            \\
+     & = \lim_{N\rightarrow\infty} \left[ \piprod{s}{2N} \right.                      \\
+     & \hspace{5em} \left. \cdot \piprod{-\frac12}{N} \cdot \frac{\prn{N+1}^{s}}
+    {\prn{2N+1}^s} \right]                                                            \\
+     & = \lim_{N\rightarrow\infty} \piprod{s}{2N}                                     \\
+     & \hspace{5em} \cdot \lim_{N\rightarrow\infty} \piprod{-\frac12}{N}              \\
+     & \hspace{5em} \cdot \lim_{N\rightarrow\infty}\frac{\prn{N+1}^{s}}{\prn{2N+1}^s} \\
+     & = \Pi\prn{s} \Pi\prn{-\frac12} \prn{\frac12}^s = \Pi\prn{s} \pi^{\frac12}
+    2^{-s},
+\end{align*}
+which implies
+\begin{equation*}
+    \Pi\prn{s} = 2^{s} \Pi\prn{\frac{s}{2}} \Pi\prn{\frac{s-1}{2}} \pi^{-\frac12}.
+\end{equation*}
+
+\begin{quotebar}
+    Using it one can prove that $\Pi(s)$ is an analytic function of the complex variable
+    s which has simple poles at $s = -1, -2, -3, \dots$.
+\end{quotebar}
+
+We showed above that $\Pi(s)$ is well-defined excluding $s = -1, -2, -3, \dots$. Now we
+show $\Pi(s)$ is analytic using equation \eqref{eq:Pi-prod-summand-taylor}. According to
+Ahlfors [Theorem 1, p176], it suffices to show that \eqref{eq:Pi-prod-summand-taylor}
+converges uniformly on compact subsets of the domain of $\Pi(s)$, which is obvious by
+setting $n$ large enough and observing that $s$ is bounded on any compact subset (so that
+$s/n$ is close to $0$ and the function $s f\prn{1/n} - s^2 f\prn{s/n}$ is bounded).
+
+To show that $\Pi(s)$ has simple poles at $s = -1, -2, -3, \dots$, it suffices to
+multiply the product form of $\Pi(s)$ in \eqref{eq:rewrite-Pi-prod-form} by $(s+n)$ and
+repeat the above argument for $\Pi(s)$ to show $(s+n)\Pi(s)$ is analytic around $s = -n$,
+for $n = 1, 2, 3, \dots$.
+
+\end{document}

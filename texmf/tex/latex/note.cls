@@ -7,7 +7,7 @@
 \RequirePackage{mathtools}
 \RequirePackage{extarrows}
 \RequirePackage{IEEEtrantools}
-\RequirePackage{hyperref}
+\RequirePackage[hidelinks]{hyperref}
 
 \theoremstyle{plain}
 \newtheorem*{proposition*}{Proposition}
@@ -44,8 +44,10 @@
     #2\@ifnextchar{\bgroup}{,\listwithclosingbracket{#1}}{\right#1}
 }
 
+\newcommand{\prn}[1]{\left(#1\right)}
 \newcommand{\set}{\left\{\listwithclosingbracket{\}}}
 \newcommand{\setbuilder}[2]{\set{#1 \mid #2}}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 
 \newcommand{\polynomials}[1]{#1\left[\listwithclosingbracket{]}}
 
