@@ -1,0 +1,60 @@
+\documentclass{note}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{fmtcount}
+
+\renewcommand{\thechapter}{\NUMBERstring{chapter}}
+\titleformat{\chapter}[display]
+    {\fontspec{Times New Roman}}
+    {\thechapter}
+    {1pt}
+    {\hrule\vspace{6pt}\Large\fontspec{Times New Roman}\MakeUppercase}
+\titleformat{\section}[block]
+    {\Large\bfseries}
+    {\thesection}
+    {1em}
+    {\fontspec{Times New Roman}\selectfont}
+
+\numberwithin{equation}{chapter}
+\makeatletter
+\def\tagform@#1{\maketag@@@{[\ignorespaces#1\unskip\@@italiccorr]}}
+\makeatother
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\mdfdefinestyle{leftbar}{
+    innerleftmargin=2em,
+    innerrightmargin=2em,
+    innertopmargin=1em,
+    innerbottommargin=1em,
+    linewidth=3pt,
+    leftline=true,
+    topline=false,
+    rightline=false,
+    bottomline=false,
+    linecolor=gray,
+    backgroundcolor=gray!6,
+}
+\newenvironment*{quotebar}{\begin{mdframed}[style=leftbar]}{\end{mdframed}}
+
+\newcommand{\piprod}[2]{
+    \frac{1\cdot2\cdot\cdots\cdot #2}{\prn{#1+1}\prn{#1+2}\cdots\prn{#1+#2}}
+    \prn{#2+1}^{#1}
+}
+
+
+\begin{document}
+
+\chapter{Introduction}
+
+\section*{Problem}
+
+\Page{9}
+
+\end{document}
