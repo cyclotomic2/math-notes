@@ -4,6 +4,14 @@
 \usepackage{xifthen}
 \usepackage{tikz-cd}
 
+\newcounter{exercise}[section]
+\newcommand\Ex{
+    \if@noskipsec \leavevmode \fi
+    \par
+    \refstepcounter{exercise}
+    \textbf{\thesection.\arabic{exercise}.}
+}
+
 \newcommand{\Affine}[2][]{\mathbf{A}^{#2}\ifthenelse{\isempty{#1}}{}{_{#1}}}
 \newcommand{\Proj}[1]{\mathbf{P}^{#1}}
 \newcommand{\lring}[2][]{\mathcal{O}_{#2\ifthenelse{\isempty{#1}}{}{,#1}}}

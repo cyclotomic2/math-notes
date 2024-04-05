@@ -23,16 +23,8 @@
 
 \newcommand{\page}[1]{page #1}
 
-\newcommand{\Page}[1]{\subsection*{Page #1}}
+\newcommand{\Page}[1]{\par\noindent{\bfseries Page #1}\par}
 \newcommand{\Topic}[1]{\subsubsection*{#1}}
-
-\newcounter{exercise}[section]
-\newcommand\Ex{
-    \if@noskipsec \leavevmode \fi
-    \par
-    \refstepcounter{exercise}
-    \textbf{\thesection.\arabic{exercise}.}
-}
 
 % adjust for the spacing influence of \left and \right on normal-size pairs
 \let\originalleft\left

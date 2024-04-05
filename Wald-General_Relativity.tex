@@ -8,10 +8,10 @@
 \usepackage{titlesec}
 \usepackage{fmtcount}
 
-\renewcommand{\thechapter}{\NUMBERstring{chapter}}
+
 \titleformat{\chapter}[display]
     {\fontspec{Times New Roman}}
-    {\thechapter}
+    {\NUMBERstring{chapter}}
     {1pt}
     {\hrule\vspace{6pt}\Large\fontspec{Times New Roman}\MakeUppercase}
 \titleformat{\section}[block]
@@ -24,6 +24,14 @@
 \makeatletter
 \def\tagform@#1{\maketag@@@{[\ignorespaces#1\unskip\@@italiccorr]}}
 \makeatother
+
+\newcounter{exercise}[chapter]
+\newcommand\Ex{
+    \if@noskipsec \leavevmode \fi
+    \par
+    \refstepcounter{exercise}
+    \noindent{\bfseries\arabic{exercise}.}
+}
 
 \renewcommand{\theenumi}{\alph{enumi}}
 
@@ -43,11 +51,6 @@
 }
 \newenvironment*{quotebar}{\begin{mdframed}[style=leftbar]}{\end{mdframed}}
 
-\newcommand{\piprod}[2]{
-    \frac{1\cdot2\cdot\cdots\cdot #2}{\prn{#1+1}\prn{#1+2}\cdots\prn{#1+#2}}
-    \prn{#2+1}^{#1}
-}
-
 
 \begin{document}
 
@@ -56,5 +59,7 @@
 \section*{Problem}
 
 \Page{9}
+
+\Ex \textit{Car and garage paradox.}
 
 \end{document}
