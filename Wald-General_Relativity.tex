@@ -1,7 +1,6 @@
 \documentclass{note}
 
 \usepackage{geometry}
-\usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{mdframed}
 \usepackage{fontspec}
@@ -60,6 +59,40 @@
 
 \Page{9}
 
-\Ex \textit{Car and garage paradox.}
+\Ex \textit{Car and garage paradox.} We set up global inertial coordinates
+$t, x, y, z$ for the doorman and $t', x', y', z'$ for the driver. Assume that
+the car travels in the $x$ and $x'$ directions in the two systems, that the
+garage door is located at $x = y = z = 0$ in the doorman's coordinates and the
+back end of the car is located at $x' = y' = z' = 0$ in the driver's
+coordinates, and that the back end of the car enters the garage at time
+$t = t' = 0$. Also assume that the car and the garage have the same length L.
+
+We note down the Lorentz transform:
+\begin{align}
+    t' & = (t - vx/c^2)/(1-v^2/c^2)^{1/2}, \label{Lorentz-1} \\
+    x' & = (x - vt)/(1 - v^2/c^2)^{1/2}. \label{Lorentz-2}
+\end{align}
+
+At $t = 0$, we assume the doorman sees the front end of the car at $x = x_1$.
+Because $x'_1 = L$, from \eqref{Lorentz-2} we get $$L = (x_1 - v\cdot 0)/(1 -
+    v^2/c^2)^{1/2}$$ or $$x_1 = (1 - v^2/c^2)^{1/2}L < L.$$ So the doorman was
+correct that the car fitted into the garage when they slammed the door.
+
+Now assume the driver sees the back wall of the garage at $x' = x'_2$ when the
+door is slammed at $t' = 0$. We plug the values $t'_2 = 0, x_2 = L$ into
+\eqref{Lorentz-1} and \eqref{Lorentz-2} to get
+\begin{align*}
+    0    & = (t_2 - vL/c^2)/(1-v^2/c^2)^{1/2}, \\
+    x'_2 & = (L - vt_2)/(1 - v^2/c^2)^{1/2},
+\end{align*}
+from which we solve
+\begin{align*}
+    t_2  & = vL/c^2,                   \\
+    x'_2 & = (1 - v^2/c^2)^{1/2}L < L.
+\end{align*}
+So the driver is also correct.
+
+If we want to analyze the case that the car decelerates and does not crash into
+the back wall, we would have to introduce non-inertial computation.
 
 \end{document}
