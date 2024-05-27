@@ -3,7 +3,6 @@
 \usepackage{geometry}
 \usepackage{amsmath}
 \usepackage{xcolor}
-\usepackage{mdframed}
 \usepackage{fontspec}
 \usepackage{titlesec}
 
@@ -24,22 +23,6 @@
 \makeatother
 
 \renewcommand{\theenumi}{\alph{enumi}}
-
-\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
-\mdfdefinestyle{leftbar}{
-    innerleftmargin=2em,
-    innerrightmargin=2em,
-    innertopmargin=1em,
-    innerbottommargin=1em,
-    linewidth=3pt,
-    leftline=true,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    linecolor=gray,
-    backgroundcolor=gray!6,
-}
-\newenvironment*{quotebar}{\begin{mdframed}[style=leftbar]}{\end{mdframed}}
 
 \newcommand{\piprod}[2]{
     \frac{1\cdot2\cdot\cdots\cdot #2}{\prn{#1+1}\prn{#1+2}\cdots\prn{#1+#2}}

@@ -5,6 +5,7 @@
 
 \RequirePackage{amsmath,amssymb,amsthm}
 \RequirePackage{mathtools}
+\RequirePackage{mdframed}
 \RequirePackage{extarrows}
 \RequirePackage{IEEEtrantools}
 \RequirePackage[hidelinks]{hyperref}
@@ -25,6 +26,22 @@
 
 \newcommand{\Page}[1]{\par\noindent{\bfseries Page #1}\par}
 \newcommand{\Topic}[1]{\subsubsection*{#1}}
+
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\mdfdefinestyle{leftbar}{
+    innerleftmargin=2em,
+    innerrightmargin=2em,
+    innertopmargin=1em,
+    innerbottommargin=1em,
+    linewidth=3pt,
+    leftline=true,
+    topline=false,
+    rightline=false,
+    bottomline=false,
+    linecolor=gray,
+    backgroundcolor=gray!6,
+}
+\newenvironment*{quotebar}{\begin{mdframed}[style=leftbar]}{\end{mdframed}}
 
 % adjust for the spacing influence of \left and \right on normal-size pairs
 \let\originalleft\left

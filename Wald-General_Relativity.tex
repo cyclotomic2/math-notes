@@ -2,7 +2,6 @@
 
 \usepackage{geometry}
 \usepackage{xcolor}
-\usepackage{mdframed}
 \usepackage{fontspec}
 \usepackage{titlesec}
 \usepackage{fmtcount}
@@ -13,11 +12,13 @@
     {\NUMBERstring{chapter}}
     {1pt}
     {\hrule\vspace{6pt}\Large\fontspec{Times New Roman}\MakeUppercase}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
 \titleformat{\section}[block]
     {\Large\bfseries}
     {\thesection}
     {1em}
     {\fontspec{Times New Roman}\selectfont}
+
 
 \numberwithin{equation}{chapter}
 \makeatletter
@@ -33,22 +34,6 @@
 }
 
 \renewcommand{\theenumi}{\alph{enumi}}
-
-\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
-\mdfdefinestyle{leftbar}{
-    innerleftmargin=2em,
-    innerrightmargin=2em,
-    innertopmargin=1em,
-    innerbottommargin=1em,
-    linewidth=3pt,
-    leftline=true,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    linecolor=gray,
-    backgroundcolor=gray!6,
-}
-\newenvironment*{quotebar}{\begin{mdframed}[style=leftbar]}{\end{mdframed}}
 
 
 \begin{document}
@@ -93,6 +78,31 @@ from which we solve
 So the driver is also correct.
 
 If we want to analyze the case that the car decelerates and does not crash into
-the back wall, we would have to introduce non-inertial computation.
+the back wall, we would have to introduce non-inertial coordinates.
+
+\chapter{Manifolds and Tensor Fields}
+
+\setcounter{section}{2}
+\section{Tensors; the Metric Tensor}
+
+\Page{20}
+
+\begin{quotebar}
+    For example, a tensor $T$ of type $(1,1)$ is a multilinear map from $V^*
+        \times V \to R$. Hence, if we fix $v \in V$, $T(\cdot,v)$ is an element
+    of $V^{**}$, which we identify with an element of $V$. Thus, given a vector
+    in $V$, $T$ produces another vector in $V$ in a linear fashion. In other
+    words, we can view a tensor of type $(1,1)$ as a linear map from $V$ into
+    $V$, and vice versa.
+\end{quotebar}
+
+The above quote associates a tensor to a linear map. We want to define the
+reverse association and show it is the inverse of the forward association.
+Actually, given any linear map $L\colon V \to V$, the map $(v^*, v) \mapsto
+    v^*(L(v))$ defines a tensor of type $(1,1)$. Now assume $L$ is the linear map
+associated with tensor $T$. For fixed $v \in V$, by the quote $T(\cdot,v)$ as
+an element of $V^{**}$ is identified with $L(v)$, meaning for any $v^* \in
+    V^*$, $T(v^*,v) = v^*(L(v))$. This shows the reverse association is indeed the
+inverse of the forward one.
 
 \end{document}
