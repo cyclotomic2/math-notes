@@ -1,5 +1,6 @@
 \documentclass{note}
 
+\usepackage{mathrsfs}
 \usepackage{geometry}
 \usepackage{xcolor}
 \usepackage{fontspec}
@@ -34,6 +35,10 @@
 }
 
 \renewcommand{\theenumi}{\alph{enumi}}
+
+\newcommand{\vat}[2]{\left.#1\right\rvert_{#2}}
+\newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdvf}[2]{\frac{\partial}{\partial #1}\prn{#2}}
 
 
 \begin{document}
@@ -84,6 +89,31 @@ the back wall, we would have to introduce non-inertial coordinates.
 
 \setcounter{section}{2}
 \section{Tensors; the Metric Tensor}
+
+\Page{17}
+
+\begin{quotebar}
+    Had we chosen a different chart, $\mathtt{\psi}'$, we would have obtained a
+    different coordinate basis $\{X'_\nu\}$. We can, of course, express $X_\mu$
+    in terms of the new basis $\{X'_\nu\}$. Using the chain rule of advanced calculus,
+    we have
+    \begin{equation*}
+        X_\mu = \sum_{\nu=1}^n \vat{\pdv{x'^\nu}{x^\mu}}{\psi(p)} X'_\nu,
+    \end{equation*}
+    where $x'^\nu$ denotes the $\nu$th component of the map $\psi'\circ\psi^{-1}$.
+\end{quotebar}
+
+\begin{proof}
+    Let $f \in \mathscr{F}$, $X_\mu$ acting on $f$ gives rise to
+    \begin{align*}
+        X_\mu(f) & = \vat{\pdvf{x^\mu}{f\circ\psi^{-1}}}{\psi(p)}                          \\
+                 & = \vat{\pdvf{x^\mu}{f\circ\psi'^{-1}\circ\psi'\circ\psi^{-1}}}{\psi(p)} \\
+                 & = \sum_{\nu=1}^n \vat{\pdvf{x'^\nu}{f\circ\psi'^{-1}}}{\psi'(p)}
+        \vat{\pdv{\prn{\psi'\circ\psi^{-1}}^\nu}{x^\mu}}{\psi(p)}                          \\
+                 & = \sum_{\nu=1}^n \vat{\pdv{x'^\nu}{x^\mu}}{\psi(p)}
+        X'_\nu(f).
+    \end{align*}
+\end{proof}
 
 \Page{20}
 
