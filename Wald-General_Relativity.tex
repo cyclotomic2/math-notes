@@ -134,4 +134,28 @@ an element of $V^{**}$ is identified with $L(v)$, meaning for any $v^* \in
     V^*$, $T(v^*,v) = v^*(L(v))$. This shows the reverse association is indeed the
 inverse of the forward one.
 
+\setcounter{section}{3}
+\section{The Abstract Index Notation}
+
+\Page{25}
+
+\begin{quotebar}
+    Since a metric $g$ is a tensor of type $(0,2)$, it is denoted $g_{ab}$. If we
+    apply the metric to a vector, $v^a$, we get the dual vector $g_{ab}v^b$.
+\end{quotebar}
+
+Here to make sense of $g_{ab}v^b$, we view $v$ as an element of $V_p^{**}$,
+thus a tensor of type $(1,0)$ and $g_{ab}v^b$ as a contraction of the outer
+product of $g$ and $v$. We want to show that the dual vector obtained by
+applying $g$ to $v$, i.e., $u \mapsto g(u,v)$, is just $g_{ab}v^b$.
+\begin{proof}
+    Let $\set{w_\sigma}$ be a basis of $V_p$ and $\set{w^{\sigma^*}}$ its dual
+    baiss. For any $u \in V_p$, $g_{ab}v^b$ evaluated at $u$ by definition is
+    \begin{equation*}
+        g_{ab}v^b(u) = \sum_{\sigma=1}^n g(u, w_\sigma)v\prn{w^{\sigma^*}}
+        = \sum_{\sigma=1}^n g(u, w_\sigma)w^{\sigma^*}(v)
+        = g\prn{u, \sum_{\sigma=1}^n w^{\sigma^*}(v) w_\sigma} = g(u,v).
+    \end{equation*}
+\end{proof}
+
 \end{document}
