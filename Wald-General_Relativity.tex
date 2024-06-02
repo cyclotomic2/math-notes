@@ -110,7 +110,7 @@ the back wall, we would have to introduce non-inertial coordinates.
                  & = \vat{\pdvf{x^\mu}{f\circ\psi'^{-1}\circ\psi'\circ\psi^{-1}}}{\psi(p)} \\
                  & = \sum_{\nu=1}^n \vat{\pdvf{x'^\nu}{f\circ\psi'^{-1}}}{\psi'(p)}
         \vat{\pdv{\prn{\psi'\circ\psi^{-1}}^\nu}{x^\mu}}{\psi(p)}                          \\
-                 & = \sum_{\nu=1}^n \vat{\pdv{x'^\nu}{x^\mu}}{\psi(p)}
+                 & = \sum_{\nu=1}^n \vat{\pdv{x'^\nu}{x^\mu}}{\psi(p)} \qedhere
         X'_\nu(f).
     \end{align*}
 \end{proof}
@@ -151,11 +151,51 @@ $v$, i.e., $u \mapsto g(u,v)$, is just $g_{ab}v^b$.
 \begin{proof}
     Let $\set{w_\sigma}$ be a basis of $V_p$ and $\set{w^{\sigma^*}}$ its dual
     baiss. For any $u \in V_p$, $g_{ab}v^b$ evaluated at $u$ by definition is
-    \begin{equation*}
-        g_{ab}v^b(u) = \sum_{\sigma=1}^n g(u, w_\sigma)v\prn{w^{\sigma^*}}
-        = \sum_{\sigma=1}^n g(u, w_\sigma)w^{\sigma^*}(v)
-        = g\prn{u, \sum_{\sigma=1}^n w^{\sigma^*}(v) w_\sigma} = g(u,v).
-    \end{equation*}
+    \begin{equation}
+        g_{ab}v^b(u) = \sum_{\sigma=1}^n g(u, w_\sigma)v\prn{w^{\sigma^*}} =
+        \sum_{\sigma=1}^n g(u, w_\sigma)w^{\sigma^*}(v) = g\prn{u, \sum_{\sigma=1}^n
+            w^{\sigma^*}(v) w_\sigma} = g(u,v). \label{eq:contraction-technique} \qedhere
+    \end{equation}
 \end{proof}
+
+\begin{quotebar}
+    The inverse of $g_{ab}$ is a tensor of type $(2,0)$ and could be denoted as
+    $\prn{g^{-1}}^{ab}$. It is convenient, however, to drop the inverse sign and
+    denote it simply as $g^{ab}$... by definition, $g^{ab}g_{bc} = {\delta^a}_c$,
+    where ${\delta^a}_c$ (viewed as a map from $V_p$ into $V_p$) is the identity
+    map.
+\end{quotebar}
+
+Let $L\colon V\to V^*$ denote the linear map induced by $g$, i.e., $g(u, v) =
+    L(v)(u)$ for any $u, v \in V_p$. By definition, for any $u^*, v^* \in V_p^*$,
+$g^{-1}(u^*, v^*) = L^{-1}(v^*)(u^*) = u^*\prn{L^{-1}(v^*)}$. Let
+$\set{w_\sigma}$ be a basis of $V_p$ and $\set{w^{\sigma^*}}$ its dual basis.
+Then for any $u^* \in V_p^*$, $v \in V_p$, we have
+\begin{align}
+    g^{ab}g_{bc}(u^*, v)
+     & = \sum_{\sigma=1}^n g^{-1}\prn{u^*, w^{\sigma^*}} g\prn{w_\sigma, v} \notag     \\
+     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{w^{\sigma^*}}} L(v)\prn{w_\sigma} \notag \\
+     & = \sum_{\sigma=1}^n u^*\prn{L(v)\prn{w_\sigma}L^{-1}\prn{w^{\sigma^*}}} \notag  \\
+     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{L(v)\prn{w_\sigma}w^{\sigma^*}}} \notag  \\
+     & = u^*\prn{L^{-1}\prn{\sum_{\sigma=1}^n L(v)\prn{w_\sigma}w^{\sigma^*}}}.
+    \label{eq:prove-metric-inverse}
+\end{align}
+Using the same technique used in \eqref{eq:contraction-technique}, one has for
+all $x \in V_p$,
+\begin{equation*}
+    \sum_{\sigma=1}^n L(v)\prn{w_\sigma}w^{\sigma^*}(x)
+    = \sum_{\sigma=1}^n L(v)\prn{w^{\sigma^*}(x) w_\sigma}
+    = L(v)\prn{\sum_{\sigma=1}^n w^{\sigma^*}(x) w_\sigma}
+    = L(v)(x),
+\end{equation*}
+thus the equality between the following two dual vectors,
+\begin{equation*}
+    \sum_{\sigma=1}^n L(v)\prn{w_\sigma}w^{\sigma^*} = L(v).
+\end{equation*}
+Plugging this into \eqref{eq:prove-metric-inverse}, we get
+\begin{equation*}
+    g^{ab}g_{bc}(u^*, v) = u^*\prn{L^{-1}(L(v))} = u^*(v) =
+    {\delta^a}_c\prn{u^*,v}.
+\end{equation*}
 
 \end{document}
