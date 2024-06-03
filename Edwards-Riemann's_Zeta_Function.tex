@@ -52,14 +52,14 @@ Rewrite the right-hand side of (4) as
         \left[s\log\prn{1+\frac{1}{n}} - \log\prn{1+\frac{s}{n}} \right]}.
     \label{eq:rewrite-Pi-prod-form}
 \end{equation}
-Note the definition of $\log\prn{1+\frac{1}{n}}$ and $\log\prn{1+\frac{s}{n}}$ is
-unambiguous when $n$ is sufficiently large and $s$ is fixed. According to Ahlfors
-    [Theorem 8, p125], we can rewrite $\log(1+z)$ as
+Note the definition of $\log\prn{1+\frac{1}{n}}$ and $\log\prn{1+\frac{s}{n}}$
+is unambiguous when $n$ is sufficiently large and $s$ is fixed. According to
+Ahlfors [Theorem 8, p125], we can rewrite $\log(1+z)$ as
 \begin{equation*}
     \log(1+z) = \log(1+0) + \frac{1}{1+0}z + f(z)z^2 = z + f(z)z^2
 \end{equation*}
-where $f$ is analytic in the domain of $\log(1+z)$ (chosen to be the complex plain
-excluding real values $s \leq -1$). Thus
+where $f$ is analytic in the domain of $\log(1+z)$ (chosen to be the complex
+plain excluding real values $s \leq -1$). Thus
 \begin{align}
     \abs{s\log\prn{1+\frac{1}{n}} - \log\prn{1+\frac{s}{n}}}
      & = \abs{ s\left[ \frac{1}{n} + f\prn{\frac{1}{n}}\prn{\frac{1}{n}}^2 \right] -
@@ -68,8 +68,8 @@ excluding real values $s \leq -1$). Thus
     \label{eq:Pi-prod-summand-taylor}                                                \\
      & = O\prn{\frac{1}{n^2}} \quad \text{as } n \rightarrow \infty, \nonumber
 \end{align}
-which concludes that the sum on the right-hand side of \eqref{eq:rewrite-Pi-prod-form}
-is absolute convergent.
+which concludes that the sum on the right-hand side of
+\eqref{eq:rewrite-Pi-prod-form} is absolute convergent.
 
 \begin{quotebar}
     \begin{equation*}

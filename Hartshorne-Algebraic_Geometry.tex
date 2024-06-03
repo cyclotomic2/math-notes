@@ -166,8 +166,7 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
                     x \\ y
                   \end{bmatrix}
                 \end{equation*}
-                the curve is brought to $(2AB + F\sqrt{AB})x^2 + (2AB - F\sqrt{AB})y^2 + E'x
-                  +
+                the curve is brought to $(2AB + F\sqrt{AB})x^2 + (2AB - F\sqrt{AB})y^2 + E'x +
                   D'y + C = 0$. Since $A,B\ne0$, divide by $\sqrt{AB}$ to get $(2\sqrt{AB} +
                   F)x^2 + (2\sqrt{AB} - F)y^2 + E'x + D'y + C' = 0$. The two quadratic
                 coefficients cannot be both 0, so the equation can be converted into either
@@ -235,9 +234,7 @@ contradicting that $\varphi_U(U)$ is dense.
 \setcounter{exercise}{3}
 \Ex
 \begin{enumerate}
-  \item By exercise 3.1(c).
-  \item
-  \item
+  \item By exercise 3.1(c). \item \item
 \end{enumerate}
 
 \section{Nonsingular Varieties}
@@ -269,28 +266,22 @@ contradicting that $\varphi_U(U)$ is dense.
     \xrightarrow{\sim} \mathcal{O}/\ideal{m}$.
 
   To show the two vector spaces are isomorphic we consider the linear map
-  $\varphi\colon \ideal{a} \to
-    \ideal{m}/\ideal{m}^2$ defined also by the natural
+  $\varphi\colon \ideal{a} \to \ideal{m}/\ideal{m}^2$ defined also by the natural
   morphism $x\mapsto\frac{\bar{x}}{1}+\ideal{m}^2$. We first show $\varphi$ is
   onto. Any element in $\ideal{m}/\ideal{m}^2$ has a representative
   $\frac{\bar{x}}{\bar{y}}$, where $x \in \ideal{a}$, $y \in
     A\setminus\ideal{a}$. Suppose $yz \equiv 1 \ilmod \ideal{a}$, then
-  $\bar{y}\bar{z} \equiv 1 \ilmod
-    \ideal{m}$, or $\frac{1}{\bar{y}}-\bar{z} \in
+  $\bar{y}\bar{z} \equiv 1 \ilmod \ideal{m}$, or $\frac{1}{\bar{y}}-\bar{z} \in
     \ideal{m}$. Therefore $\bar{x}\left(\frac{1}{\bar{y}}-\bar{z}\right) \in
-    \ideal{m}^2$ which means $\frac{\bar{x}}{\bar{y}} \equiv \bar{x}\bar{z}
-    \ilmod
-    \ideal{m}^2$, and we get $\varphi(xz) =
-    \bar{x}\bar{z}+\ideal{m}^2 =
+    \ideal{m}^2$ which means $\frac{\bar{x}}{\bar{y}} \equiv \bar{x}\bar{z} \ilmod
+    \ideal{m}^2$, and we get $\varphi(xz) = \bar{x}\bar{z}+\ideal{m}^2 =
     \frac{\bar{x}}{\bar{y}}+\ideal{m}^2$. We then show that the kernel of $\varphi$
   is $\ideal{a}^2+\ideal{b}$. For $x \in \ideal{a}$, $\varphi(x) = 0$ if and only
-  if $\bar{x} = x+\ideal{b} \in
-    \ideal{m}^2 = (\ideal{a}^2)$, or $x+\ideal{b} =
+  if $\bar{x} = x+\ideal{b} \in \ideal{m}^2 = (\ideal{a}^2)$, or $x+\ideal{b} =
     \frac{h+\ideal{b}}{g+\ideal{b}}$ for some $h\in\ideal{a}^2$ and $g\in
     A\setminus\ideal{a}$. We then get $xg - h \in \ideal{b}$. There exists some $f$
   such that $fg-1\in \ideal{a}$, therefore $x = x(1-fg+fg) = x(1-fg) + xfg =
-    x(1-fg) + x(fg - h) + xh \in \ideal{a}^2 +
-    \ideal{b} + \ideal{a}^3 =
+    x(1-fg) + x(fg - h) + xh \in \ideal{a}^2 + \ideal{b} + \ideal{a}^3 =
     \ideal{a}^2+\ideal{b}$.
 \end{proof}
 
@@ -301,8 +292,7 @@ contradicting that $\varphi_U(U)$ is dense.
 \Ex
 \begin{itemize}
   \item If $p\ndivide d$ consider $x^d + y^d + z^d = 0$.
-  \item If $p\divides d$ consider $x^{d-1}y + y^{d-1}z +
-          z^{d-1}x = 0$. The polynomial
+  \item If $p\divides d$ consider $x^{d-1}y + y^{d-1}z + z^{d-1}x = 0$. The polynomial
         is irreducible since $x^{d-1}y + y^{d-1} + x$ is (Eisenstein's criterion on
         integral domains). Further more it is nonsingular.
 \end{itemize}
@@ -407,7 +397,6 @@ to extensions we get the desired result.
         $f(x)$ is the zero polynomial. For every $x\in k$ there is some $P$ whose first
         coordinate is $x$, thus $f(x) = 0$ for every $x$ and we are done. $A$ is in the
         integral closure of $\polynomials{k}{x}$ since $y^2 + x^3 - x = 0$ in $K$. Then
-        using the fact that $A$ is integrally closed we get the result.
-  \item
+        using the fact that $A$ is integrally closed we get the result. \item
 \end{enumerate}
 \end{document}
