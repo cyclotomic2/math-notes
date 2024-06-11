@@ -150,7 +150,7 @@ $g$ and $v$. We want to show that the dual vector obtained by applying $g$ to
 $v$, i.e., $u \mapsto g(u,v)$, is just $g_{ab}v^b$.
 \begin{proof}
     Let $\set{w_\sigma}$ be a basis of $V_p$ and $\set{w^{\sigma^*}}$ its dual
-    baiss. For any $u \in V_p$, $g_{ab}v^b$ evaluated at $u$ by definition is
+    basis. For any $u \in V_p$, $g_{ab}v^b$ evaluated at $u$ by definition is
     \begin{equation}
         g_{ab}v^b(u) = \sum_{\sigma=1}^n g(u, w_\sigma)v\prn{w^{\sigma^*}} =
         \sum_{\sigma=1}^n g(u, w_\sigma)w^{\sigma^*}(v) = g\prn{u, \sum_{\sigma=1}^n
@@ -197,5 +197,49 @@ Plugging this into \eqref{eq:prove-metric-inverse}, we get
     g^{ab}g_{bc}(u^*, v) = u^*\prn{L^{-1}(L(v))} = u^*(v) =
     {\delta^a}_c\prn{u^*,v}.
 \end{equation*}
+
+\begin{quotebar}
+    In general, raised or lowered indices on any tensor denote application of the
+    metric or inverse metric to that slot. Thus, for example, if $T^{abc}{}_{de}$
+    is a tensor of type $(3,2)$, then $T^a{}_b{}^{cde}$ denotes the tensor
+    $g_{bf}g^{dh}g^{ej}T^{afc}{}_{hj}$. This notation is self-consistent since the
+    tensor resulting from the successive raising and lowering of a given index is
+    identical to the original tensor.
+\end{quotebar}
+
+TODO
+
+\begin{quotebar}
+    Furthurmore, the notation is also self-consistent when applied to the metric
+    itself, since $g^{ab} = g^{ac}g^{bd}g_{cd}$, i.e., $g_{ab}$ is the tensor
+    $g_{ab}$ when it indices raised.
+\end{quotebar}
+
+TODO
+
+\begin{quotebar}
+    Similar notational rules apply to any pair of covariant or contravariant
+    indices of tensors of high type.
+\end{quotebar}
+
+Actually it can be induced that for a tensor $T_{a_1\cdots a_l}$ of type $(0,
+    l)$, the new tensor in index notation $T_{a_{\pi_1}\cdots a_{\pi_l}}$ acts on
+the vectors $\prn{{v^1}^a, \dots, {v^l}^a}$ as
+\begin{equation*}
+    T_{a_{\pi_1}\cdots a_{\pi_l}} \prn{{v^1}^a, \dots, {v^l}^a} = T_{a_1\cdots a_l}
+    \prn{{v^{\pi^{-1}(1)}}^a, \dots, {v^{\pi^{-1}(l)}}^a}.
+\end{equation*}
+We show an example of why this is true. Take, the tensor $T_{abc}$ for example,
+and consider the index notation $T_{bca}$. $T_{bca}$ can be obtained from
+$T_{abc}$ by first interchanging indices $a$ and $b$ to get $T_{bac}$, then
+indices $a$ and $c$ to get $T_{bca}$. Thus $T_{bca}$ acting on vectors
+$\prn{u^a, v^a, w^a}$ is
+\begin{equation*}
+    T_{bca} \prn{u^a, v^a, w^a} = T_{bac} \prn{u^a, w^a, v^a} = T_{abc} \prn{w^a,
+        u^a, v^a}.
+\end{equation*}
+We see we have applied on $\prn{u^a, v^a, w^a}$ the permutation that takes
+$bca$ into $abc$, which is the inverse of the permutation that takes $abc$ into
+$bca$.
 
 \end{document}
