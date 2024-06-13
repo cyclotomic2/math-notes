@@ -207,7 +207,7 @@ Plugging this into \eqref{eq:prove-metric-inverse}, we get
     identical to the original tensor.
 \end{quotebar}
 
-TODO
+[TODO]
 
 \begin{quotebar}
     Furthurmore, the notation is also self-consistent when applied to the metric
@@ -215,11 +215,11 @@ TODO
     $g_{ab}$ when it indices raised.
 \end{quotebar}
 
-TODO
+[TODO]
 
 \begin{quotebar}
     Similar notational rules apply to any pair of covariant or contravariant
-    indices of tensors of high type.
+    indices of tensors of higher type.
 \end{quotebar}
 
 Actually it can be induced that for a tensor $T_{a_1\cdots a_l}$ of type $(0,
@@ -241,5 +241,53 @@ $\prn{u^a, v^a, w^a}$ is
 We see we have applied on $\prn{u^a, v^a, w^a}$ the permutation that takes
 $bca$ into $abc$, which is the inverse of the permutation that takes $abc$ into
 $bca$.
+
+\appendix
+
+\titleformat{\chapter}[display]
+{\fontspec{Times New Roman}}
+{APPENDIX \Alph{chapter}}
+{1pt}
+{\hrule\vspace{6pt}\Large\fontspec{Times New Roman}\MakeUppercase}
+
+\setcounter{chapter}{1}
+
+\chapter{Differential Forms, Integration, and Frobenius's Theorem}
+
+\section{Differential Forms}
+
+\Page{428}
+
+\begin{quotebar}
+    We denote the vector space of $p$-forms at a point $x$ by $\Lambda_x^p$ and the
+    collection of $p$-form fields by $\Lambda^p$. Note that $\Lambda_x^p = \set{0}$
+    if $p > n$ and $\dim \Lambda_x^p = n!/p!(n-p)!$ for $0 \leq p \leq n$.
+\end{quotebar}
+
+By multilinearity of tensors and antisymmetry of differential forms, the value
+of a $p$-form $\omega$ acting on $p$ vectors can be written as a linear
+combination of $\omega\prn{v_{\mu_1},\dots,v_{\mu_p}}$, $0 \leq \mu_1 < \cdots
+    < \mu_p \leq n$, where $\set{v_1,\dots,v_p}$ is a basis of $V_x$. When $p > n$,
+such $\mu_1, \dots, \mu_p$ don't exist and $w = 0$. When $0 \leq p \leq n$,
+there are $n!/p!(n-p)!$ unique combinations of $\mu_1, \dots, \mu_p$, and it's
+not hard to go from here to show that $\setbuilder{{v^{\mu_1}}^* \wedge \cdots
+        \wedge {v^{\mu_p}}^*}{0 \leq \mu_1 < \cdots < \mu_p \leq n}$ form a basis of
+$\Lambda_x^p$.
+
+\begin{quotebar}
+    However, we can totally antisymmetrize this tensor, thus producing a map
+    $\wedge\colon \Lambda_x^p\times\Lambda_x^q \to \Lambda_x^{p+q}$ via
+    \begin{equation*}
+        \prn{\omega\wedge\mu}_{a_1\cdots a_pb_1\cdots b_q} = \frac{(p+q)!}{p!q!}
+        \omega_{\left[a_1\cdots a_p\right.}\mu_{\left.b_1\cdots b_q\right]}.
+    \end{equation*}
+\end{quotebar}
+
+Side note: the notation of the totally antisymmetric part looks weird; why
+don't we denote it by something like $\prn{\omega\mu}_{\left[a_1\cdots a_p
+        b_1\cdots b_q\right]}$?
+
+Theory: the constant $(p+q)!/p!q!$ is to make sure the exterior product
+$\wedge$ is associative. [TODO]
 
 \end{document}
