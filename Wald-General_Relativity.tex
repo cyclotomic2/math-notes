@@ -87,8 +87,9 @@ the back wall, we would have to introduce non-inertial coordinates.
 
 \chapter{Manifolds and Tensor Fields}
 
-\setcounter{section}{2}
-\section{Tensors; the Metric Tensor}
+\setcounter{section}{1}
+
+\section{Vectors}
 
 \Page{17}
 
@@ -115,6 +116,8 @@ the back wall, we would have to introduce non-inertial coordinates.
     \end{align*}
 \end{proof}
 
+\section{Tensors; the Metric Tensor}
+
 \Page{20}
 
 \begin{quotebar}
@@ -127,11 +130,11 @@ the back wall, we would have to introduce non-inertial coordinates.
 
 The above quote associates a tensor to a linear map. We want to define the
 reverse association and show it is the inverse of the forward association.
-Actually, given any linear map $L\colon V \to V$, the map $(v^*, v) \mapsto
-    v^*(L(v))$ defines a tensor of type $(1,1)$. Now assume $L$ is the linear map
+Actually, given any linear map $L\colon V \to V$, the map $(w^*, v) \mapsto
+    w^*(L(v))$ defines a tensor of type $(1,1)$. Now assume $L$ is the linear map
 associated with tensor $T$. For fixed $v \in V$, by the quote $T(\cdot,v)$ as
-an element of $V^{**}$ is identified with $L(v)$, meaning for any $v^* \in
-    V^*$, $T(v^*,v) = v^*(L(v))$. This shows the reverse association is indeed the
+an element of $V^{**}$ is identified with $L(v)$, meaning for any $w^* \in
+    V^*$, $T(w^*,v) = w^*(L(v))$. This shows the reverse association is indeed the
 inverse of the forward one.
 
 \setcounter{section}{3}
@@ -149,12 +152,12 @@ tensor of type $(1,0)$ and $g_{ab}v^b$ as a contraction of the outer product of
 $g$ and $v$. We want to show that the dual vector obtained by applying $g$ to
 $v$, i.e., $u \mapsto g(u,v)$, is just $g_{ab}v^b$.
 \begin{proof}
-    Let $\set{w_\sigma}$ be a basis of $V_p$ and $\set{w^{\sigma^*}}$ its dual
+    Let $\set{w_\sigma}$ be a basis of $V_p$ and $\set{{w^\sigma}^*}$ its dual
     basis. For any $u \in V_p$, $g_{ab}v^b$ evaluated at $u$ by definition is
     \begin{equation}
-        g_{ab}v^b(u) = \sum_{\sigma=1}^n g(u, w_\sigma)v\prn{w^{\sigma^*}} =
-        \sum_{\sigma=1}^n g(u, w_\sigma)w^{\sigma^*}(v) = g\prn{u, \sum_{\sigma=1}^n
-            w^{\sigma^*}(v) w_\sigma} = g(u,v). \label{eq:contraction-technique} \qedhere
+        g_{ab}v^b(u) = \sum_{\sigma=1}^n g(u, w_\sigma)v\prn{{w^\sigma}^*} =
+        \sum_{\sigma=1}^n g(u, w_\sigma){w^\sigma}^*(v) = g\prn{u, \sum_{\sigma=1}^n
+        {w^\sigma}^*(v) w_\sigma} = g(u,v). \label{eq:contraction-technique} \qedhere
     \end{equation}
 \end{proof}
 
@@ -169,27 +172,27 @@ $v$, i.e., $u \mapsto g(u,v)$, is just $g_{ab}v^b$.
 Let $L\colon V\to V^*$ denote the linear map induced by $g$, i.e., $g(u, v) =
     L(v)(u)$ for any $u, v \in V_p$. By definition, for any $u^*, v^* \in V_p^*$,
 $g^{-1}(u^*, v^*) = L^{-1}(v^*)(u^*) = u^*\prn{L^{-1}(v^*)}$. Let
-$\set{w_\sigma}$ be a basis of $V_p$ and $\set{w^{\sigma^*}}$ its dual basis.
+$\set{w_\sigma}$ be a basis of $V_p$ and $\set{{w^\sigma}^*}$ its dual basis.
 Then for any $u^* \in V_p^*$, $v \in V_p$, we have
 \begin{align}
     g^{ab}g_{bc}(u^*, v)
-     & = \sum_{\sigma=1}^n g^{-1}\prn{u^*, w^{\sigma^*}} g\prn{w_\sigma, v} \notag     \\
-     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{w^{\sigma^*}}} L(v)\prn{w_\sigma} \notag \\
-     & = \sum_{\sigma=1}^n u^*\prn{L(v)\prn{w_\sigma}L^{-1}\prn{w^{\sigma^*}}} \notag  \\
-     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{L(v)\prn{w_\sigma}w^{\sigma^*}}} \notag  \\
-     & = u^*\prn{L^{-1}\prn{\sum_{\sigma=1}^n L(v)\prn{w_\sigma}w^{\sigma^*}}}.
+     & = \sum_{\sigma=1}^n g^{-1}\prn{u^*, {w^\sigma}^*} g\prn{w_\sigma, v} \notag     \\
+     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{{w^\sigma}^*}} L(v)\prn{w_\sigma} \notag \\
+     & = \sum_{\sigma=1}^n u^*\prn{L(v)\prn{w_\sigma}L^{-1}\prn{{w^\sigma}^*}} \notag  \\
+     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{L(v)\prn{w_\sigma}{w^\sigma}^*}} \notag  \\
+     & = u^*\prn{L^{-1}\prn{\sum_{\sigma=1}^n L(v)\prn{w_\sigma}{w^\sigma}^*}}.
     \label{eq:prove-metric-inverse}
 \end{align}
 Using the same technique used in \eqref{eq:contraction-technique}, one has for
 all $x \in V_p$,
 \begin{equation*}
-    \sum_{\sigma=1}^n L(v)\prn{w_\sigma}w^{\sigma^*}(x) = \sum_{\sigma=1}^n
-    L(v)\prn{w^{\sigma^*}(x) w_\sigma} = L(v)\prn{\sum_{\sigma=1}^n w^{\sigma^*}(x)
-        w_\sigma} = L(v)(x),
+    \sum_{\sigma=1}^n L(v)\prn{w_\sigma}{w^\sigma}^*(x) = \sum_{\sigma=1}^n
+    L(v)\prn{{w^\sigma}^*(x) w_\sigma} = L(v)\prn{\sum_{\sigma=1}^n {w^\sigma}^*(x)
+    w_\sigma} = L(v)(x),
 \end{equation*}
 thus the equality between the following two dual vectors,
 \begin{equation*}
-    \sum_{\sigma=1}^n L(v)\prn{w_\sigma}w^{\sigma^*} = L(v).
+    \sum_{\sigma=1}^n L(v)\prn{w_\sigma}{w^\sigma}^* = L(v).
 \end{equation*}
 Plugging this into \eqref{eq:prove-metric-inverse}, we get
 \begin{equation*}

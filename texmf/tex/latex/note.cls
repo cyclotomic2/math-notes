@@ -10,6 +10,8 @@
 \RequirePackage{IEEEtrantools}
 \RequirePackage[hidelinks]{hyperref}
 
+\allowdisplaybreaks
+
 \theoremstyle{plain}
 \newtheorem*{proposition*}{Proposition}
 \newtheorem*{theorem*}{Theorem}
