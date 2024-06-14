@@ -147,18 +147,22 @@ inverse of the forward one.
     apply the metric to a vector, $v^a$, we get the dual vector $g_{ab}v^b$.
 \end{quotebar}
 
-To make sense of $g_{ab}v^b$, we view $v$ as an element of $V_p^{**}$, thus a
-tensor of type $(1,0)$ and $g_{ab}v^b$ as a contraction of the outer product of
-$g$ and $v$. We want to show that the dual vector obtained by applying $g$ to
-$v$, i.e., $u \mapsto g(u,v)$, is just $g_{ab}v^b$.
+To make sense of $g_{ab}v^b$, we view $v^a$ as an element of $V_p^{**}$, thus a
+tensor of type $(1,0)$ and $g_{ab}v^b$ as a contraction of the outer product
+between $g_{ab}$ and $v^b$. We want to show that $g_{ab}v^b$ is just the dual
+vector obtained by applying $g_{ab}$ to $v^a$, i.e., $g_{ab}(\cdot,v^a)$.
 \begin{proof}
     Let $\set{w_\sigma}$ be a basis of $V_p$ and $\set{{w^\sigma}^*}$ its dual
-    basis. For any $u \in V_p$, $g_{ab}v^b$ evaluated at $u$ by definition is
-    \begin{equation}
-        g_{ab}v^b(u) = \sum_{\sigma=1}^n g(u, w_\sigma)v\prn{{w^\sigma}^*} =
-        \sum_{\sigma=1}^n g(u, w_\sigma){w^\sigma}^*(v) = g\prn{u, \sum_{\sigma=1}^n
-        {w^\sigma}^*(v) w_\sigma} = g(u,v). \label{eq:contraction-technique} \qedhere
-    \end{equation}
+    basis. For any $u^a\in V_p$, $g_{ab}v^b$ evaluated at $u^a$ by the definition
+    of contraction is
+    \begin{align}
+        g_{ab}v^b(u^a)
+         & = \sum_{\sigma=1}^n g_{ab}(u^a, w_\sigma)v^a\prn{{w^\sigma}^*} =
+        \sum_{\sigma=1}^n g_{ab}(u^a, w_\sigma){w^\sigma}^*(v^a)
+        = g_{ab}\prn{u^a, \sum_{\sigma=1}^n {w^\sigma}^*(v^a) w_\sigma}
+        \label{eq:contraction-technique}                                    \\
+         & = g_{ab}(u^a,v^a). \notag \qedhere
+    \end{align}
 \end{proof}
 
 \begin{quotebar}
