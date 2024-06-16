@@ -204,10 +204,10 @@ Plugging this into \eqref{eq:prove-metric-inverse}, we get
     {\delta^a}_c\prn{u^*,v}.
 \end{equation*}
 
-{\bfseries In fact, we might be able to prove the general result:}
+{\bfseries In fact, we might be able to prove the following general result.}
 \begin{lemma*}
     Let ${T^{a_1\cdots a_k}}_{b_1\cdots b_l}$ be a tensor of type $(k,l)$ and $v^a$
-    a vector. Then ${T^{a_1\cdots a_k}}_{b_1\cdots b_l}v^{b_i}$ behaves like
+    be a vector. Then ${T^{a_1\cdots a_k}}_{b_1\cdots b_l}v^{b_i}$ behaves like
     plugging $v^a$ into the $b_i$-th slot of ${T^{a_1\cdots a_k}}_{b_1\cdots b_l}$.
     The same holds true for a dual vector $\omega_a$ and ${T^{a_1\cdots
                         a_k}}_{b_1\cdots b_l}\omega_{a_j}$.
@@ -261,6 +261,57 @@ We see we have applied on $\prn{u^a, v^a, w^a}$ the permutation that takes
 $bca$ into $abc$, which is the inverse of the permutation that takes $abc$ into
 $bca$.
 
+\section*{Problems}
+
+\Page{27}
+
+\setcounter{exercise}{2}
+
+\Ex a) Linearity should be straightforward. To prove the Leibnitz property, let
+$f, g\in \mathscr{F}$. We have
+\begin{align*}
+    [v,w](fg)
+     & = v(w(fg)) - w(v(fg))                             \\
+     & = v(fw(g) + gw(f)) - w(fv(g) + gv(f))             \\
+     & = v(fw(g)) + v(gw(f)) - w(fv(g)) - w(gv(f))       \\
+     & = fv(w(g)) + v(f)w(g) + gv(w(f)) + w(f)v(g)       \\
+     & \quad - fw(v(g)) - w(f)v(g) - gw(v(f)) - v(f)w(g) \\
+     & = fv(w(g)) + gv(w(f)) - fw(v(g)) - gw(v(f))       \\
+     & = f(v(w(g)) - w(v(g))) + g(v(w(f)) - w(v(f)))     \\
+     & = f[v,w](g) + g[v,w](f).
+\end{align*}
+
+b) Let $f \in \mathscr{F}$, then
+\begin{align*}
+    [[X,Y],Z](f)
+     & = [X,Y](Z(f)) - Z([X,Y](f))                          \\
+     & = X(Y(Z(f))) - Y(X(Z(f))) - Z(X(Y(f)) - Y(X(f)))     \\
+     & = X(Y(Z(f))) - Z(X(Y(f))) + Z(Y(X(f))) - Y(X(Z(f))).
+\end{align*}
+Similarly,
+\begin{align*}
+    [[Y,Z],X](f) & = Y(Z(X(f))) - X(Y(Z(f))) + X(Z(Y(f))) - Z(Y(X(f))), \\
+    [[Z,X],Y](f) & = Z(X(Y(f))) - Y(Z(X(f))) + Y(X(Z(f))) - X(Z(Y(f))).
+\end{align*}
+And it is easily seen that $[[X,Y],Z](f) + [[Y,Z],X](f) + [[Z,X],Y](f) = 0$.
+
+c)
+\begin{align*}
+    [[Y_\alpha,Y_\beta], Y_\gamma]
+     & = \left[ \sum_\mu {C^\mu}_{\alpha\beta} Y_\mu, Y_\gamma \right]
+    = \sum_\mu {C^\mu}_{\alpha\beta} [Y_\mu, Y_\gamma]
+    = \sum_\mu {C^\mu}_{\alpha\beta} \sum_\nu {C^\nu}_{\mu\gamma} Y_\nu          \\
+     & = \sum_\nu \prn{\sum_\mu {C^\nu}_{\mu\gamma} {C^\mu}_{\alpha\beta}} Y_\nu
+\end{align*}
+Thus by applying Jacobi identity to $Y_\alpha, Y_\beta, Y_\gamma$ we get
+\begin{equation*}
+    \sum_\mu \prn{ {C^\nu}_{\mu\gamma} {C^\mu}_{\alpha\beta} + {C^\nu}_{\mu\alpha}
+    {C^\mu}_{\beta\gamma} + {C^\nu}_{\mu\beta} {C^\mu}_{\gamma\alpha} } = 0, \
+    \forall \nu.
+\end{equation*}
+Refer to \cite{lee2009manifolds}, page 206, equation (5.1) ii) to see that this
+is correct.
+
 \appendix
 
 \titleformat{\chapter}[display] {\fontspec{Times New Roman}} {APPENDIX
@@ -306,5 +357,9 @@ don't we denote it by something like $\prn{\omega\mu}_{\left[a_1\cdots a_p
 
 Theory: the constant $(p+q)!/p!q!$ is to make sure the exterior product
 $\wedge$ is associative. [TODO]
+
+\bibliographystyle{plain}
+
+\bibliography{Wald-General_Relativity}
 
 \end{document}
