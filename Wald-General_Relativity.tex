@@ -309,8 +309,114 @@ Thus by applying Jacobi identity to $Y_\alpha, Y_\beta, Y_\gamma$ we get
     {C^\mu}_{\beta\gamma} + {C^\nu}_{\mu\beta} {C^\mu}_{\gamma\alpha} } = 0, \
     \forall \nu.
 \end{equation*}
-Refer to \cite{lee2009manifolds}, page 206, equation (5.1) ii) to see that this
-is correct.
+See \cite{lee2009manifolds}, page 206, equation (5.1) ii) that this is correct.
+
+\Ex a) By equation (2.2.7) on page 16, the coefficients $[v,w]^\mu$ are the
+values of $[v,w]$ applied to the function $x^\mu\circ\psi$,
+\begin{align*}
+    [v,w]^\mu
+     & = [v,w]\prn{x^\mu\circ\psi}
+    = v\prn{w(x^\mu\circ\psi)} - w\prn{v(x^\mu\circ\psi)} \\
+     & = v\prn{w^\mu} - w\prn{v^\mu}
+    = \sum_{\nu=1}^n \prn{ v^\nu \pdv{w^\mu}{x^\nu} -
+        w^\nu\pdv{v^\mu}{x^v} }.
+\end{align*}
+
+b) Applying ${Y^\gamma}^*$ to both sides of
+\begin{equation*}
+    [Y_\alpha, Y_\beta] = \sum_\mu {C^\mu}_{\alpha\beta} Y_\mu,
+\end{equation*}
+we get
+\begin{equation*}
+    {Y^\gamma}^*([Y_\alpha, Y_\beta]) =
+    {Y^\gamma}^*\prn{\sum_\mu {C^\mu}_{\alpha\beta} Y_\mu} = {C^\gamma}_{\alpha\beta}.
+\end{equation*}
+Multiplying both sides by $({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu$ we get
+\begin{equation}
+    {Y^\gamma}^*([Y_\alpha, Y_\beta]) ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu =
+    {C^\gamma}_{\alpha\beta} ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu.
+    \label{chap2problem4b}
+\end{equation}
+One would be tempted to sum both sides over $\alpha,\beta$ and compute the
+left-hand side as
+\begin{align*}
+    \sum_{\alpha,\beta} {Y^\gamma}^*([Y_\alpha, Y_\beta])
+    ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
+     & = \sum_{\alpha,\beta} {Y^\gamma}^*\prn{\left[({Y^\alpha}^*)_\mu
+    Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]}                             \\
+     & = {Y^\gamma}^*\prn{\sum_{\alpha,\beta} \left[({Y^\alpha}^*)_\mu
+    Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]}                             \\
+     & = {Y^\gamma}^*\prn{\sum_\alpha\sum_\beta \left[({Y^\alpha}^*)_\mu
+    Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]}                             \\
+     & = {Y^\gamma}^*\prn{\sum_\alpha \left[({Y^\alpha}^*)_\mu
+    Y_\alpha, \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\right]}                  \\
+     & = {Y^\gamma}^*\prn{\left[\sum_\alpha ({Y^\alpha}^*)_\mu
+    Y_\alpha, \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\right]}                  \\
+     & = {Y^\gamma}^*\prn{\left[\sum_\alpha {Y^\alpha}^*\prn{\pdv{}{x^\mu}}
+    Y_\alpha, \sum_\beta {Y^\beta}^*\prn{\pdv{}{x^\nu}} Y_\beta\right]}     \\
+     & = {Y^\gamma}^*\prn{\left[\pdv{}{x^\mu}, \pdv{}{x^\nu}\right]}
+    = {Y^\gamma}^*(0) = 0.                                                  \\
+\end{align*}
+However the first equality is incorrect as $({Y^\alpha}^*)_\mu$ and
+$({Y^\beta}^*)_\nu$ are not constants and do not commute with the commutator
+operation. But we can fix this by observing that
+\begin{align*}
+    \left[({Y^\alpha}^*)_\mu Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right](f)
+     & = ({Y^\alpha}^*)_\mu Y_\alpha\prn{({Y^\beta}^*)_\nu Y_\beta(f)} -
+    ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\alpha}^*)_\mu Y_\alpha(f)\Big)    \\
+    \text{(by Leibnitz rule) }
+     & =
+    ({Y^\alpha}^*)_\mu ({Y^\beta}^*)_\nu Y_\alpha\Big(Y_\beta(f)\Big)
+    + ({Y^\alpha}^*)_\mu Y_\beta(f) Y_\alpha\prn{({Y^\beta}^*)_\nu}      \\
+     & \quad
+    - ({Y^\beta}^*)_\nu ({Y^\alpha}^*)_\mu Y_\beta\Big(Y_\alpha(f)\Big)
+    - ({Y^\beta}^*)_\nu Y_\alpha(f) Y_\beta\Big(({Y^\alpha}^*)_\mu\Big)  \\
+     & =
+    ({Y^\alpha}^*)_\mu ({Y^\beta}^*)_\nu [Y_\alpha, Y_\beta](f)
+    + ({Y^\alpha}^*)_\mu Y_\alpha\prn{({Y^\beta}^*)_\nu} Y_\beta(f)      \\
+     & \quad
+    - ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\alpha}^*)_\mu\Big) Y_\alpha(f). \\
+\end{align*}
+Thus
+\begin{align*}
+    \left[({Y^\alpha}^*)_\mu Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]
+     & = ({Y^\alpha}^*)_\mu ({Y^\beta}^*)_\nu [Y_\alpha, Y_\beta]
+    + ({Y^\alpha}^*)_\mu Y_\alpha\prn{({Y^\beta}^*)_\nu} Y_\beta      \\
+     & \quad
+    - ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\alpha}^*)_\mu\Big) Y_\alpha. \\
+\end{align*}
+Now applying ${Y^\gamma}^*$ to both sides and summing over $\alpha, \beta$, and
+utilizing the linearity of vectors, we get
+\begin{equation*}
+    0 = \sum_{\alpha,\beta}
+    {Y^\gamma}^*([Y_\alpha, Y_\beta]) ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
+    + \sum_\alpha ({Y^\alpha}^*)_\mu Y_\alpha\Big(({Y^\gamma}^*)_\nu\Big)
+    - \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\gamma}^*)_\mu\Big),
+\end{equation*}
+i.e.,
+\begin{align*}
+    \sum_{\alpha,\beta}
+    {Y^\gamma}^*([Y_\alpha, Y_\beta]) ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
+     & = \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\gamma}^*)_\mu\Big)
+    - \sum_\alpha ({Y^\alpha}^*)_\mu Y_\alpha\Big(({Y^\gamma}^*)_\nu\Big)   \\
+     & = \sum_\beta {Y^\beta}^*\prn{\pdv{}{x^\nu}}Y_\beta
+    \Big(({Y^\gamma}^*)_\mu\Big)
+    - \sum_\alpha {Y^\alpha}^*\prn{\pdv{}{x^\mu}}Y_\alpha
+    \Big(({Y^\gamma}^*)_\nu\Big)                                            \\
+     & = \prn{\sum_\beta {Y^\beta}^*\prn{\pdv{}{x^\nu}}Y_\beta}
+    \Big(({Y^\gamma}^*)_\mu\Big)                                            \\
+     & \quad - \prn{\sum_\alpha {Y^\alpha}^*\prn{\pdv{}{x^\mu}}Y_\alpha}
+    \Big(({Y^\gamma}^*)_\nu\Big)                                            \\
+     & = \pdv{}{x^\nu}\Big(({Y^\gamma}^*)_\mu\Big)
+    - \pdv{}{x^\mu}\Big(({Y^\gamma}^*)_\nu\Big)                             \\
+     & = \pdv{({Y^\gamma}^*)_\mu}{x^\nu} - \pdv{({Y^\gamma}^*)_\nu}{x^\mu}.
+\end{align*}
+This together with \eqref{chap2problem4b} proves that
+\begin{equation*}
+    \pdv{({Y^\gamma}^*)_\mu}{x^\nu} - \pdv{({Y^\gamma}^*)_\nu}{x^\mu} =
+    \sum_{\alpha,\beta} {C^\gamma}_{\alpha\beta}
+    ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
+\end{equation*}
 
 \appendix
 
