@@ -37,6 +37,7 @@
 \renewcommand{\theenumi}{\alph{enumi}}
 
 \newcommand{\vat}[2]{\left.#1\right\rvert_{#2}}
+\newcommand{\dv}[2]{\frac{d #1}{d #2}}
 \newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pdvf}[2]{\frac{\partial}{\partial #1}\prn{#2}}
 
@@ -358,8 +359,8 @@ left-hand side as
     = {Y^\gamma}^*(0) = 0.                                                  \\
 \end{align*}
 However the first equality is incorrect as $({Y^\alpha}^*)_\mu$ and
-$({Y^\beta}^*)_\nu$ are not constants and do not commute with the commutator
-operation. But we can fix this by observing that
+$({Y^\beta}^*)_\nu$ are not constants and do not commute with the commutator of
+vector fields. But we can fix this by observing that
 \begin{align*}
     \left[({Y^\alpha}^*)_\mu Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right](f)
      & = ({Y^\alpha}^*)_\mu Y_\alpha\prn{({Y^\beta}^*)_\nu Y_\beta(f)} -
@@ -415,8 +416,41 @@ This together with \eqref{chap2problem4b} proves that
 \begin{equation*}
     \pdv{({Y^\gamma}^*)_\mu}{x^\nu} - \pdv{({Y^\gamma}^*)_\nu}{x^\mu} =
     \sum_{\alpha,\beta} {C^\gamma}_{\alpha\beta}
-    ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
+    ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu.
 \end{equation*}
+
+\Ex \textbf{Failed attempt.} For any $p\in M$, we define a map $\phi$ from an
+open ball $B$ of $\reals^n$ centered at $0$ to $M$ as follows. First of all let
+$\phi(0) = p$. For any $x = \prn{x^1, \dots, x^n}\in B$, let $C\colon [0, 1]
+    \to B$ be a smooth curve such that $C(0) = 0$ and $C(1) = x$. We require that
+$\phi$ satisfies the equation
+\begin{equation*}
+    \dv{(\phi\circ C)}{t}(s) = \sum_\mu \dv{C^\mu}{t}(s) \vat{Y_\mu}{\phi\circ
+        C(s)}, \quad \text{for all } s \in [0,1].
+\end{equation*}
+If we pick a coordinate system in a neighborhood of $p$, the problem of solving
+the equation reduces to solving the system,
+\begin{equation*}
+    \dv{(\phi\circ C)^\nu}{t}(s) = \sum_\mu \dv{C^\mu}{t}(s)
+    {Y_\mu}^\nu\prn{\phi\circ C(s)}, \quad \text{for } \nu = 1, \cdots, n.
+\end{equation*}
+\textit{At this point I found it hard to proceed so I looked at hints. Below we
+    start from scratch using hints.}
+
+\textbf{2nd attempt.} Essentially we are trying to solve for the equations
+\begin{equation*}
+    \pdv{f^\nu}{y^\mu} = {Y_\mu}^\nu, \quad \mu = 1, \cdots, n,
+\end{equation*}
+for functions $f^\nu, \nu = 1, \cdots, n$ on an open ball of $\reals^n$ and
+${Y_\mu}^\nu$ are the components of $Y_\mu$ in a coordinate basis.
+
+\textbf{3rd attempt.} Instead of constructing the map whose partial derivatives
+directly lead to ${Y_\mu}$ (as in 2nd attempt), we try to construct the inverse
+map first. Observe that the equations
+\begin{equation*}
+    \pdv{f^\nu}{x^\mu} = ({Y^\nu}^*)_\mu, \quad \mu = 1, \cdots, n,
+\end{equation*}
+for functions $f^\nu, \nu = 1, \cdots, n$ have solutions due to 4(b).
 
 \appendix
 
