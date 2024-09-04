@@ -419,38 +419,38 @@ This together with \eqref{chap2problem4b} proves that
     ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu.
 \end{equation*}
 
-\Ex \textbf{Failed attempt.} For any $p\in M$, we define a map $\phi$ from an
-open ball $B$ of $\reals^n$ centered at $0$ to $M$ as follows. First of all let
-$\phi(0) = p$. For any $x = \prn{x^1, \dots, x^n}\in B$, let $C\colon [0, 1]
-    \to B$ be a smooth curve such that $C(0) = 0$ and $C(1) = x$. We require that
-$\phi$ satisfies the equation
-\begin{equation*}
-    \dv{(\phi\circ C)}{t}(s) = \sum_\mu \dv{C^\mu}{t}(s) \vat{Y_\mu}{\phi\circ
-        C(s)}, \quad \text{for all } s \in [0,1].
-\end{equation*}
-If we pick a coordinate system in a neighborhood of $p$, the problem of solving
-the equation reduces to solving the system,
-\begin{equation*}
-    \dv{(\phi\circ C)^\nu}{t}(s) = \sum_\mu \dv{C^\mu}{t}(s)
-    {Y_\mu}^\nu\prn{\phi\circ C(s)}, \quad \text{for } \nu = 1, \cdots, n.
-\end{equation*}
-\textit{At this point I found it hard to proceed so I looked at hints. Below we
-    start from scratch using hints.}
-
-\textbf{2nd attempt.} Essentially we are trying to solve for the equations
-\begin{equation*}
-    \pdv{f^\nu}{y^\mu} = {Y_\mu}^\nu, \quad \mu = 1, \cdots, n,
-\end{equation*}
-for functions $f^\nu, \nu = 1, \cdots, n$ on an open ball of $\reals^n$ and
-${Y_\mu}^\nu$ are the components of $Y_\mu$ in a coordinate basis.
-
-\textbf{3rd attempt.} Instead of constructing the map whose partial derivatives
-directly lead to ${Y_\mu}$ (as in 2nd attempt), we try to construct the inverse
-map first. Observe that the equations
+\Ex Observe that the equations
 \begin{equation*}
     \pdv{f^\nu}{x^\mu} = ({Y^\nu}^*)_\mu, \quad \mu = 1, \cdots, n,
 \end{equation*}
-for functions $f^\nu, \nu = 1, \cdots, n$ have solutions due to 4(b).
+for functions $f^\nu, \nu = 1, \cdots, n$ have solutions in an open ball $B$ in
+$\reals^n$ that contains $\psi(p)$ (assuming $\psi$ is the chart in discussion)
+due to 4(b). By the inverse function theorem, there exists an open neighborhood
+$U$ of $\psi(p)$ in $B$ in which the map $M\colon x \mapsto
+    \prn{f^1(x),\dots,f^n(x)}$ is invertible. We prove that the coordinate system
+on $\psi^{-1}(U)$ that's defined by $p \mapsto M\circ\psi(p)$ satisfies the
+requirements of the problem. In fact, by the inverse function theorem, the
+Jacobian matrix of $M^{-1}$ at $y=M(x)$ is invertible to the Jacobian matrix of
+$M$ at $x$, i.e.,
+\begin{equation}
+    \label{chap2problem5} \prn{\pdv{x^\nu}{y^\mu}}_{\nu,\mu} =
+    {\prn{({Y^\nu}^*)_\mu}_{\nu,\mu}}^{-1}.
+\end{equation}
+However, because ${Y^\nu}^*(Y_\mu) = \delta_{\mu\nu}$ for any $\mu$ and $\nu$,
+we get that $\sum_\lambda({Y^\nu}^*)_\lambda(Y_\mu)^\lambda=\delta_{\mu\nu}$,
+i.e., the inverse of the matrix $\prn{({Y^\nu}^*)_\mu}_{\nu,\mu}$ is just
+$\prn{\prn{Y_\mu}^\nu}_{\nu,\mu}$. Combining this with \eqref{chap2problem5} we
+get
+\begin{equation*}
+    \pdv{x^\nu}{y^\mu} = \prn{Y_\mu}^\nu, \quad \text{for all } \mu,\nu.
+\end{equation*}
+Plugging this into the vector transformation law (equation (2.2.9) on page 17)
+we get
+\begin{equation*}
+    \pdv{}{y^\mu} = \sum_{\nu=1}^n \pdv{x^\nu}{y^\mu} X_\nu = \sum_{\nu=1}^n
+    \prn{Y_\mu}^\nu X_\nu = Y_\mu,
+\end{equation*}
+as desired.
 
 \appendix
 
