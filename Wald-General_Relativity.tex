@@ -40,6 +40,7 @@
 \newcommand{\dv}[2]{\frac{d #1}{d #2}}
 \newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pdvf}[2]{\frac{\partial}{\partial #1}\prn{#2}}
+\newcommand{\dif}{\operatorname{d}\!}
 
 
 \begin{document}
@@ -428,7 +429,7 @@ $\reals^n$ that contains $\psi(p)$ (assuming $\psi$ is the chart in discussion)
 due to 4(b). By the inverse function theorem, there exists an open neighborhood
 $U$ of $\psi(p)$ in $B$ in which the map $M\colon x \mapsto
     \prn{f^1(x),\dots,f^n(x)}$ is invertible. We prove that the coordinate system
-on $\psi^{-1}(U)$ that's defined by $p \mapsto M\circ\psi(p)$ satisfies the
+in $\psi^{-1}(U)$ defined by $p \mapsto M\circ\psi(p)$ satisfies the
 requirements of the problem. In fact, by the inverse function theorem, the
 Jacobian matrix of $M^{-1}$ at $y=M(x)$ is invertible to the Jacobian matrix of
 $M$ at $x$, i.e.,
@@ -436,9 +437,11 @@ $M$ at $x$, i.e.,
     \label{chap2problem5} \prn{\pdv{x^\nu}{y^\mu}}_{\nu,\mu} =
     {\prn{({Y^\nu}^*)_\mu}_{\nu,\mu}}^{-1}.
 \end{equation}
-However, because ${Y^\nu}^*(Y_\mu) = \delta_{\mu\nu}$ for any $\mu$ and $\nu$,
-we get that $\sum_\lambda({Y^\nu}^*)_\lambda(Y_\mu)^\lambda=\delta_{\mu\nu}$,
-i.e., the inverse of the matrix $\prn{({Y^\nu}^*)_\mu}_{\nu,\mu}$ is just
+By the definition of a dual basis, ${Y^\nu}^*(Y_\mu) = \delta_{\mu\nu}$ where
+$\delta_{\mu\nu}$ is the identity. On the other hand, ${Y^\nu}^*(Y_\mu) =
+    \sum_{\lambda=1}^n({Y^\nu}^*)_\lambda(Y_\mu)^\lambda$. So we get
+$\sum_{\lambda=1}^n({Y^\nu}^*)_\lambda(Y_\mu)^\lambda = \delta_{\mu\nu}$, i.e.,
+the inverse of the matrix $\prn{({Y^\nu}^*)_\mu}_{\nu,\mu}$ is just
 $\prn{\prn{Y_\mu}^\nu}_{\nu,\mu}$. Combining this with \eqref{chap2problem5} we
 get
 \begin{equation*}
@@ -451,6 +454,115 @@ we get
     \prn{Y_\mu}^\nu X_\nu = Y_\mu,
 \end{equation*}
 as desired.
+
+\Ex c) Let $\set{w_\sigma}$ be another basis of $V$ and $\set{{w^\sigma}^*}$
+its dual basis. Then $T$ contracted by $\set{w_\sigma}$ is
+\begin{align*}
+    CT
+     & = \sum_\sigma T\prn{\dots, {w^\sigma}^*, \dots\colon \dots,
+    w_\sigma, \dots}                                                       \\
+     & = \sum_\sigma T\prn{\dots, \sum_{\alpha} {w^\sigma}^*(v_\alpha)
+        {v^\alpha}^*, \dots\colon \dots, \sum_{\beta} {v^\beta}^*(w_\sigma)
+    v_\beta, \dots}                                                        \\
+     & = \sum_{\alpha} \sum_{\beta} \sum_\sigma {w^\sigma}^*(v_\alpha)
+    {v^\beta}^*(w_\sigma) T\prn{\dots, {v^\alpha}^*, \dots\colon \dots,
+    v_\beta, \dots}                                                        \\
+     & = \sum_{\alpha} \sum_{\beta} \sum_\sigma {v^\beta}^*
+    \prn{{w^\sigma}^*(v_\alpha)w_\sigma} T\prn{\dots, {v^\alpha}^*,
+    \dots\colon \dots, v_\beta, \dots}                                     \\
+     & = \sum_{\alpha} \sum_{\beta} {v^\beta}^*
+    \prn{\sum_\sigma {w^\sigma}^*(v_\alpha)w_\sigma} T\prn{\dots, {v^\alpha}^*,
+    \dots\colon \dots, v_\beta, \dots}                                     \\
+     & = \sum_{\alpha} \sum_{\beta} {v^\beta}^*\prn{v_\alpha} T\prn{\dots,
+    {v^\alpha}^*, \dots\colon \dots, v_\beta, \dots}                       \\
+     & = \sum_{\alpha} \sum_{\beta} \delta_{\alpha\beta} T\prn{\dots,
+    {v^\alpha}^*, \dots\colon \dots, v_\beta, \dots}                       \\
+     & = \sum_{\alpha} T\prn{\dots, {v^\alpha}^*, \dots\colon \dots,
+        v_\alpha, \dots}.
+\end{align*}
+
+\Ex a) It is evident that
+\begin{align*}
+    x & = r\sin\theta\cos\phi, \\
+    y & = r\sin\theta\sin\phi, \\
+    z & = r\cos\theta.
+\end{align*}
+According to page 22 equation (2.3.7), the dual basis $\dif x$, $\dif y$, $\dif
+    z$ can be expressed as
+\begin{align*}
+    \dif x & = \sin\theta\cos\phi\dif r + r\cos\theta\cos\phi\dif\theta
+    - r\sin\theta\sin\phi\dif\phi                                       \\
+    \dif y & = \sin\theta\sin\phi\dif r + r\cos\theta\sin\phi\dif\theta
+    + r\sin\theta\cos\phi\dif\phi                                       \\
+    \dif z & = \cos\theta\dif r - r\sin\theta\dif\theta.
+\end{align*}
+Thus
+\begin{align*}
+    \dif s^2
+     & = \dif x^2 + \dif y^2 + \dif z^2                                  \\
+     & = (\sin\theta\cos\phi\dif r + r\cos\theta\cos\phi\dif\theta
+    - r\sin\theta\sin\phi\dif\phi)^2                                     \\
+     & \quad + (\sin\theta\sin\phi\dif r + r\cos\theta\sin\phi\dif\theta
+    + r\sin\theta\cos\phi\dif\phi)^2                                     \\
+     & \quad + (\cos\theta\dif r - r\sin\theta\dif\theta)^2              \\
+     & = \big[\sin^2\theta\cos^2\phi\dif r^2
+        + r^2\cos^2\theta\cos^2\phi\dif\theta^2
+    + r^2\sin^2\theta\sin^2\phi\dif\phi^2                                \\
+     & \qquad + r\sin\theta\cos\theta\cos^2\phi(\dif r\otimes\dif\theta
+        + \dif\theta\otimes\dif r) - r\sin^2\theta\sin\phi\cos\phi
+    (\dif r\otimes\dif\phi + \dif\phi\otimes\dif r)                      \\
+     & \qquad - r^2\sin\theta\cos\theta\sin\phi\cos\phi(\dif\theta
+    \otimes \dif\phi + \dif\phi\otimes\dif\theta) \big]                  \\
+     & + \big[\sin^2\theta\sin^2\phi\dif r^2
+        + r^2\cos^2\theta\sin^2\phi\dif\theta^2
+    + r^2\sin^2\theta\cos^2\phi\dif\phi^2                                \\
+     & \qquad + r\sin\theta\cos\theta\sin^2\phi(\dif r\otimes\dif\theta
+        + \dif\theta\otimes\dif r) + r\sin^2\theta\sin\phi\cos\phi
+    (\dif r\otimes\dif\phi + \dif\phi\otimes\dif r)                      \\
+     & \qquad - r^2\sin\theta\cos\theta\sin\phi\cos\phi(\dif\theta
+    \otimes \dif\phi + \dif\phi\otimes\dif\theta) \big]                  \\
+     & + \big[ \cos^2\theta\dif r^2 + r^2\sin^2\theta\dif\theta^2
+        - r\cos\theta\sin\theta(\dif r\otimes\dif\theta +
+    \dif\theta\otimes\dif r) \big]                                       \\
+     & = \dif r^2 + r^2\dif\theta^2 + r^2\sin^2\theta\dif\phi^2.
+\end{align*}
+
+\chapter{Curvature}
+
+\setcounter{section}{1}
+
+\section{Curvature}
+
+\Page{39}
+
+\begin{quotebar}
+    3. For the derivative operator $\nabla_a$ naturally associated with the
+    metric, $\nabla_ag_{bc}=0$, we have
+    \begin{equation*}
+        R_{abcd} = - R_{abdc}.
+    \end{equation*}
+\end{quotebar}
+Here we give a different proof from the one given in the book. First we note by
+definition that $R_{abcd} = g_{de}R_{abc}{}^e$. For an arbitrary vector field
+$v^a$, we apply this tensor to $v^a$ and use the definition of the Riemann
+curvature tensor (3.2.3) to get that
+\begin{align}
+    g_{de}R_{abc}{}^ev^d
+     & = R_{abc}{}^eg_{de}v^d = \nabla_a\nabla_bg_{dc}v^d
+    - \nabla_b\nabla_ag_{dc}v^d \nonumber                                \\
+     & = g_{dc}\nabla_a\nabla_bv^d - g_{dc}\nabla_b\nabla_av^d
+    \label{(3.2.15)-proof-label-1}                                       \\
+     & = g_{dc}\prn{\nabla_a\nabla_bv^d - \nabla_b\nabla_av^d} \nonumber \\
+     & = -g_{dc}R_{abe}{}^dv^e \label{(3.2.15)-proof-label-2}            \\
+     & = -g_{ec}R_{abd}{}^ev^d \label{(3.2.15)-proof-label-3}            \\
+     & = -R_{abdc}v^d \nonumber
+\end{align}
+where in \eqref{(3.2.15)-proof-label-1} we used the Leibnitz rule of derivative
+operators and the fact that $\nabla_ag_{bc}=0$, in
+\eqref{(3.2.15)-proof-label-2} we used the property (3.2.11), and in
+\eqref{(3.2.15)-proof-label-3} we applied an index substitution $d
+    \leftrightarrow e$. Thus $R_{abcd}v^d = - R_{abdc}v^d$ for all $v^d$, which
+proves the property.
 
 \appendix
 
