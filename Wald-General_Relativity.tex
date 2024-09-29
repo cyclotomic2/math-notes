@@ -232,7 +232,7 @@ Plugging this into \eqref{eq:prove-metric-inverse}, we get
 
 \begin{quotebar}
     Furthurmore, the notation is also self-consistent when applied to the metric
-    itself, since $g^{ab} = g^{ac}g^{bd}g_{cd}$, i.e., $g_{ab}$ is the tensor
+    itself, since $g^{ab} = g^{ac}g^{bd}g_{cd}$, i.e., $g^{ab}$ is the tensor
     $g_{ab}$ when it indices raised.
 \end{quotebar}
 
@@ -634,6 +634,48 @@ Thus the metric written in rotating coordinates is $\diff s^2 =
     \eqref{(3.2.15)-proof-label-3} we applied an index rotation $d \leftrightarrow
         e$. Thus $R_{abcd}v^d = - R_{abdc}v^d$ for all $v^d$, which proves the
     property.
+\end{proof}
+
+\Page{40}
+
+\begin{quotebar}
+    By equation (3.2.20), $R_{ab}$ satisfies the symmetry property
+    \begin{equation*}
+        R_{ac} = R_{ca}.
+    \end{equation*}
+\end{quotebar}
+\begin{proof}
+    As $R_{abc}{}^d = g^{de}R_{abce}$, we obtain $R_{ac} = R_{abc}{}^b =
+        g^{be}R_{abce} \xlongequal{\text{index substitution }e\text{ for }d}
+        g^{bd}R_{abcd} \xlongequal{\text{by (3.2.20)}} g^{bd}R_{cdab}
+        \xlongequal{\text{symmetry of }g^{ab}} g^{db}R_{cdab} = R_{ca}$.
+\end{proof}
+
+\begin{quotebar}
+    \begin{equation*}
+        \nabla_aR_{bcd}{}^a + \nabla_bR_{cd} - \nabla_cR_{bd} = 0.
+    \end{equation*}
+    Raising the index $d$ with the metric and contracting over $b$ and $d$, we
+    obtain
+    \begin{equation*}
+        \nabla_aR_c{}^a + \nabla_bR_c{}^b - \nabla_cR = 0
+    \end{equation*}
+\end{quotebar}
+The second and third terms are easy to derive. We show how the first term comes
+about.
+\begin{proof}
+    For $R_{bcd}{}^a$, raising the index $d$ with the metric and contracting over
+    $b$ and $d$ gives the tensor
+    \begin{align*}
+        g^{be}R_{bce}{}^a
+         & = g^{be}g^{ad}R_{bced}                         \\
+         & \xlongequal{\text{by antisymmetry property 3}}
+        -g^{ad}g^{be}R_{bcde}                             \\
+         & = -g^{ad}R_{bcd}{}^b                           \\
+         & \xlongequal{\text{by antisymmetry property 1}}
+        g^{ad}R_{cbd}{}^b = g^{ad}R_{cd}                  \\
+         & = R_c{}^a.
+    \end{align*}
 \end{proof}
 
 \appendix
