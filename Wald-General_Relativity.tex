@@ -40,7 +40,7 @@
 \newcommand{\dv}[2]{\frac{d #1}{d #2}}
 \newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\pdvf}[2]{\frac{\partial}{\partial #1}\prn{#2}}
-\newcommand{\dif}{\operatorname{d}\!}
+\newcommand{\diff}{\operatorname{d}\!}
 
 
 \begin{document}
@@ -481,51 +481,121 @@ its dual basis. Then $T$ contracted by $\set{w_\sigma}$ is
         v_\alpha, \dots}.
 \end{align*}
 
+\setcounter{exercise}{7}
+
 \Ex a) It is evident that
 \begin{align*}
     x & = r\sin\theta\cos\phi, \\
     y & = r\sin\theta\sin\phi, \\
     z & = r\cos\theta.
 \end{align*}
-According to page 22 equation (2.3.7), the dual basis $\dif x$, $\dif y$, $\dif
-    z$ can be expressed as
+According to page 22 equation (2.3.7), the dual basis $\diff x$, $\diff y$,
+$\diff z$ can be expressed as
 \begin{align*}
-    \dif x & = \sin\theta\cos\phi\dif r + r\cos\theta\cos\phi\dif\theta
-    - r\sin\theta\sin\phi\dif\phi                                       \\
-    \dif y & = \sin\theta\sin\phi\dif r + r\cos\theta\sin\phi\dif\theta
-    + r\sin\theta\cos\phi\dif\phi                                       \\
-    \dif z & = \cos\theta\dif r - r\sin\theta\dif\theta.
+    \diff x & = \sin\theta\cos\phi\diff r + r\cos\theta\cos\phi\diff\theta
+    - r\sin\theta\sin\phi\diff\phi                                         \\
+    \diff y & = \sin\theta\sin\phi\diff r + r\cos\theta\sin\phi\diff\theta
+    + r\sin\theta\cos\phi\diff\phi                                         \\
+    \diff z & = \cos\theta\diff r - r\sin\theta\diff\theta.
 \end{align*}
 Thus
 \begin{align*}
-    \dif s^2
-     & = \dif x^2 + \dif y^2 + \dif z^2                                  \\
-     & = (\sin\theta\cos\phi\dif r + r\cos\theta\cos\phi\dif\theta
-    - r\sin\theta\sin\phi\dif\phi)^2                                     \\
-     & \quad + (\sin\theta\sin\phi\dif r + r\cos\theta\sin\phi\dif\theta
-    + r\sin\theta\cos\phi\dif\phi)^2                                     \\
-     & \quad + (\cos\theta\dif r - r\sin\theta\dif\theta)^2              \\
-     & = \big[\sin^2\theta\cos^2\phi\dif r^2
-        + r^2\cos^2\theta\cos^2\phi\dif\theta^2
-    + r^2\sin^2\theta\sin^2\phi\dif\phi^2                                \\
-     & \qquad + r\sin\theta\cos\theta\cos^2\phi(\dif r\otimes\dif\theta
-        + \dif\theta\otimes\dif r) - r\sin^2\theta\sin\phi\cos\phi
-    (\dif r\otimes\dif\phi + \dif\phi\otimes\dif r)                      \\
-     & \qquad - r^2\sin\theta\cos\theta\sin\phi\cos\phi(\dif\theta
-    \otimes \dif\phi + \dif\phi\otimes\dif\theta) \big]                  \\
-     & + \big[\sin^2\theta\sin^2\phi\dif r^2
-        + r^2\cos^2\theta\sin^2\phi\dif\theta^2
-    + r^2\sin^2\theta\cos^2\phi\dif\phi^2                                \\
-     & \qquad + r\sin\theta\cos\theta\sin^2\phi(\dif r\otimes\dif\theta
-        + \dif\theta\otimes\dif r) + r\sin^2\theta\sin\phi\cos\phi
-    (\dif r\otimes\dif\phi + \dif\phi\otimes\dif r)                      \\
-     & \qquad - r^2\sin\theta\cos\theta\sin\phi\cos\phi(\dif\theta
-    \otimes \dif\phi + \dif\phi\otimes\dif\theta) \big]                  \\
-     & + \big[ \cos^2\theta\dif r^2 + r^2\sin^2\theta\dif\theta^2
-        - r\cos\theta\sin\theta(\dif r\otimes\dif\theta +
-    \dif\theta\otimes\dif r) \big]                                       \\
-     & = \dif r^2 + r^2\dif\theta^2 + r^2\sin^2\theta\dif\phi^2.
+    \diff s^2
+     & = \diff x^2 + \diff y^2 + \diff z^2                                 \\
+     & = (\sin\theta\cos\phi\diff r + r\cos\theta\cos\phi\diff\theta
+    - r\sin\theta\sin\phi\diff\phi)^2                                      \\
+     & \quad + (\sin\theta\sin\phi\diff r + r\cos\theta\sin\phi\diff\theta
+    + r\sin\theta\cos\phi\diff\phi)^2                                      \\
+     & \quad + (\cos\theta\diff r - r\sin\theta\diff\theta)^2              \\
+     & = \big[\sin^2\theta\cos^2\phi\diff r^2
+        + r^2\cos^2\theta\cos^2\phi\diff\theta^2
+    + r^2\sin^2\theta\sin^2\phi\diff\phi^2                                 \\
+     & \qquad + r\sin\theta\cos\theta\cos^2\phi(\diff r\otimes\diff\theta
+        + \diff\theta\otimes\diff r) - r\sin^2\theta\sin\phi\cos\phi
+    (\diff r\otimes\diff\phi + \diff\phi\otimes\diff r)                    \\
+     & \qquad - r^2\sin\theta\cos\theta\sin\phi\cos\phi(\diff\theta
+    \otimes \diff\phi + \diff\phi\otimes\diff\theta) \big]                 \\
+     & + \big[\sin^2\theta\sin^2\phi\diff r^2
+        + r^2\cos^2\theta\sin^2\phi\diff\theta^2
+    + r^2\sin^2\theta\cos^2\phi\diff\phi^2                                 \\
+     & \qquad + r\sin\theta\cos\theta\sin^2\phi(\diff r\otimes\diff\theta
+        + \diff\theta\otimes\diff r) + r\sin^2\theta\sin\phi\cos\phi
+    (\diff r\otimes\diff\phi + \diff\phi\otimes\diff r)                    \\
+     & \qquad - r^2\sin\theta\cos\theta\sin\phi\cos\phi(\diff\theta
+    \otimes \diff\phi + \diff\phi\otimes\diff\theta) \big]                 \\
+     & + \big[ \cos^2\theta\diff r^2 + r^2\sin^2\theta\diff\theta^2
+        - r\cos\theta\sin\theta(\diff r\otimes\diff\theta +
+    \diff\theta\otimes\diff r) \big]                                       \\
+     & = \diff r^2 + r^2\diff\theta^2 + r^2\sin^2\theta\diff\phi^2.
 \end{align*}
+
+b) We compute them in a different way from a). We first compute the components,
+$g^{\mu\nu}$, of the inverse metric in the Euclidean coordinates $t, x, y, z$.
+It is not hard to see that the inverse of the diagonal matrix
+$\operatorname{diag}(-1, 1, 1, 1)$ is, coincidentally, itself. Thus we get
+\begin{equation}
+    g^{ab} = - \pdv{}{t}\otimes\pdv{}{t} + \pdv{}{x}\otimes\pdv{}{x} +
+    \pdv{}{y}\otimes\pdv{}{y} + \pdv{}{z}\otimes\pdv{}{z}. \label{chap2problem8b}
+\end{equation}
+Now by definition of the rotating coordinates and vector transformation law
+(2.2.9), we get
+\begin{align*}
+    \pdv{}{t}
+     & = \pdv{t'}{t}\pdv{}{t'} + \pdv{x'}{t}\pdv{}{x'} + \pdv{y'}{t}\pdv{}{y'} \\
+     & = \pdv{}{t'} + \omega r\sin(\phi-\omega t)\pdv{}{x'}
+    - \omega r\cos(\phi-\omega t)\pdv{}{y'},                                   \\
+     & = \pdv{}{t'} + \omega y'\pdv{}{x'} - \omega x'\pdv{}{y'},               \\
+    \pdv{}{x}
+     & = \pdv{x'}{x}\pdv{}{x'} + \pdv{y'}{x}\pdv{}{y'}                         \\
+     & = \left[\frac{x}{r}\cos(\phi-\omega t) + \frac{y}{r}\sin(\phi-\omega t)
+        \right]\pdv{}{x'} + \left[\frac{x}{r}\sin(\phi-\omega t) -
+    \frac{y}{r}\cos(\phi-\omega t)\right]\pdv{}{y'}                            \\
+     & = \cos\omega t\pdv{}{x'} - \sin\omega t\pdv{}{y'},                      \\
+    \pdv{}{y}
+     & = \pdv{x'}{y}\pdv{}{x'} + \pdv{y'}{y}\pdv{}{y'}                         \\
+     & = \left[\frac{y}{r}\cos(\phi-\omega t) - \frac{x}{r}\sin(\phi-\omega t)
+        \right]\pdv{}{x'} + \left[\frac{y}{r}\sin(\phi-\omega t) +
+    \frac{x}{r}\cos(\phi-\omega t)\right]\pdv{}{y'}                            \\
+     & = \sin\omega t\pdv{}{x'} + \cos\omega t\pdv{}{y'},                      \\
+    \pdv{}{z}
+     & = \pdv{z'}{z}\pdv{}{z'}                                                 \\
+     & = \pdv{}{z'},
+\end{align*}
+where we set $r = \prn{x^2+y^2}^{\frac12}$. Plugging the above coordinate
+transformation into \eqref{chap2problem8b} we obtain
+\begin{align*}
+    g^{ab} =
+     & - \pdv{}{t'}\otimes\pdv{}{t'} + \prn{1-\omega^2y'^2}\pdv{}{x'}
+    \otimes\pdv{}{x'} + \prn{1-\omega^2x'^2}\pdv{}{y'}\otimes\pdv{}{y'} +
+    \pdv{}{z'}\otimes\pdv{}{z'}                                        \\
+     & - \omega y'\prn{\pdv{}{t'}\otimes\pdv{}{x'} + \pdv{}{x'}\otimes
+        \pdv{}{t'}} + \omega x'\prn{\pdv{}{t'}\otimes\pdv{}{y'} +
+    \pdv{}{y'}\otimes\pdv{}{t'}}                                       \\
+     & + \omega^2x'y'\prn{\pdv{}{x'}\otimes\pdv{}{y'} +
+        \pdv{}{y'}\otimes\pdv{}{x'}},
+\end{align*}
+whose components written into a matrix are the following
+\begin{equation*}
+    \begin{bmatrix}
+        -1         & -\omega y'     & \omega x'          \\
+        -\omega y' & 1-\omega^2y'^2 & \omega^2x'y'       \\
+        \omega x'  & \omega^2x'y'   & 1-\omega^2x'^2     \\
+                   &                &                & 1
+    \end{bmatrix}.
+\end{equation*}
+The inverse of the above matrix can be computed as
+\begin{equation*}
+    \begin{bmatrix}
+        \omega^2\prn{x'^2+y'^2}-1 & -\omega y' & \omega x'     \\
+        -\omega y'                & 1          & 0             \\
+        \omega x'                 & 0          & 1             \\
+                                  &            &           & 1
+    \end{bmatrix}.
+\end{equation*}
+Thus the metric written in rotating coordinates is $\diff s^2 =
+    \prn{\omega^2\prn{x'^2+y'^2}-1}\diff t'^2 + \diff x'^2 + \diff y'^2 + \diff
+    z'^2 - \omega y'(\diff t'\diff x' + \diff x'\diff t') + \omega x' (\diff
+    t'\diff y' + \diff y'\diff t')$.
 
 \chapter{Curvature}
 
@@ -542,27 +612,29 @@ Thus
         R_{abcd} = - R_{abdc}.
     \end{equation*}
 \end{quotebar}
-Here we give a different proof from the one given in the book. First we note by
-definition that $R_{abcd} = g_{de}R_{abc}{}^e$. For an arbitrary vector field
-$v^a$, we apply this tensor to $v^a$ and use the definition of the Riemann
-curvature tensor (3.2.3) to get that
-\begin{align}
-    g_{de}R_{abc}{}^ev^d
-     & = R_{abc}{}^eg_{de}v^d = \nabla_a\nabla_bg_{dc}v^d
-    - \nabla_b\nabla_ag_{dc}v^d \nonumber                                \\
-     & = g_{dc}\nabla_a\nabla_bv^d - g_{dc}\nabla_b\nabla_av^d
-    \label{(3.2.15)-proof-label-1}                                       \\
-     & = g_{dc}\prn{\nabla_a\nabla_bv^d - \nabla_b\nabla_av^d} \nonumber \\
-     & = -g_{dc}R_{abe}{}^dv^e \label{(3.2.15)-proof-label-2}            \\
-     & = -g_{ec}R_{abd}{}^ev^d \label{(3.2.15)-proof-label-3}            \\
-     & = -R_{abdc}v^d \nonumber
-\end{align}
-where in \eqref{(3.2.15)-proof-label-1} we used the Leibnitz rule of derivative
-operators and the fact that $\nabla_ag_{bc}=0$, in
-\eqref{(3.2.15)-proof-label-2} we used the property (3.2.11), and in
-\eqref{(3.2.15)-proof-label-3} we applied an index substitution $d
-    \leftrightarrow e$. Thus $R_{abcd}v^d = - R_{abdc}v^d$ for all $v^d$, which
-proves the property.
+\begin{proof}
+    Here we give a different proof from the one given in the book. First we note
+    that by definition $R_{abcd} = g_{de}R_{abc}{}^e$. For an arbitrary vector
+    field $v^a$, we apply this tensor to $v^a$ and use the definition of the
+    Riemann curvature tensor (3.2.3) to get that
+    \begin{align}
+        g_{de}R_{abc}{}^ev^d
+         & = R_{abc}{}^eg_{de}v^d = \nabla_a\nabla_bg_{dc}v^d
+        - \nabla_b\nabla_ag_{dc}v^d \nonumber                                \\
+         & = g_{dc}\nabla_a\nabla_bv^d - g_{dc}\nabla_b\nabla_av^d
+        \label{(3.2.15)-proof-label-1}                                       \\
+         & = g_{dc}\prn{\nabla_a\nabla_bv^d - \nabla_b\nabla_av^d} \nonumber \\
+         & = -g_{dc}R_{abe}{}^dv^e \label{(3.2.15)-proof-label-2}            \\
+         & = -g_{ec}R_{abd}{}^ev^d \label{(3.2.15)-proof-label-3}            \\
+         & = -R_{abdc}v^d \nonumber
+    \end{align}
+    where in \eqref{(3.2.15)-proof-label-1} we used the Leibnitz rule of derivative
+    operators and the fact that $\nabla_ag_{bc}=0$, in
+    \eqref{(3.2.15)-proof-label-2} we used the property (3.2.11), and in
+    \eqref{(3.2.15)-proof-label-3} we applied an index rotation $d \leftrightarrow
+        e$. Thus $R_{abcd}v^d = - R_{abdc}v^d$ for all $v^d$, which proves the
+    property.
+\end{proof}
 
 \appendix
 
@@ -602,10 +674,6 @@ $\Lambda_x^p$.
         \omega_{\left[a_1\cdots a_p\right.}\mu_{\left.b_1\cdots b_q\right]}.
     \end{equation*}
 \end{quotebar}
-
-Side note: the notation of the totally antisymmetric part looks weird; why
-don't we denote it by something like $\prn{\omega\mu}_{\left[a_1\cdots a_p
-        b_1\cdots b_q\right]}$?
 
 Theory: the constant $(p+q)!/p!q!$ is to make sure the exterior product
 $\wedge$ is associative. [TODO]
