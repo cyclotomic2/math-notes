@@ -109,11 +109,12 @@ the back wall, we would have to introduce non-inertial coordinates.
 \begin{proof}
     Let $f \in \mathscr{F}$, $X_\mu$ acting on $f$ gives rise to
     \begin{align*}
-        X_\mu(f) & = \vat{\pdvf{x^\mu}{f\circ\psi^{-1}}}{\psi(p)}                          \\
-                 & = \vat{\pdvf{x^\mu}{f\circ\psi'^{-1}\circ\psi'\circ\psi^{-1}}}{\psi(p)} \\
-                 & = \sum_{\nu=1}^n \vat{\pdvf{x'^\nu}{f\circ\psi'^{-1}}}{\psi'(p)}
-        \vat{\pdv{\prn{\psi'\circ\psi^{-1}}^\nu}{x^\mu}}{\psi(p)}                          \\
-                 & = \sum_{\nu=1}^n \vat{\pdv{x'^\nu}{x^\mu}}{\psi(p)} \qedhere
+        X_\mu(f)
+         & = \vat{\pdvf{x^\mu}{f\circ\psi^{-1}}}{\psi(p)}                          \\
+         & = \vat{\pdvf{x^\mu}{f\circ\psi'^{-1}\circ\psi'\circ\psi^{-1}}}{\psi(p)} \\
+         & = \sum_{\nu=1}^n \vat{\pdvf{x'^\nu}{f\circ\psi'^{-1}}}{\psi'(p)}
+        \vat{\pdv{\prn{\psi'\circ\psi^{-1}}^\nu}{x^\mu}}{\psi(p)}                  \\
+         & = \sum_{\nu=1}^n \vat{\pdv{x'^\nu}{x^\mu}}{\psi(p)} \qedhere
         X'_\nu(f).
     \end{align*}
 \end{proof}
@@ -182,10 +183,10 @@ $\set{w_\sigma}$ be a basis of $V_p$ and $\set{{w^\sigma}^*}$ its dual basis.
 Then for any $u^* \in V_p^*$, $v \in V_p$, we have
 \begin{align}
     g^{ab}g_{bc}(u^*, v)
-     & = \sum_{\sigma=1}^n g^{-1}\prn{u^*, {w^\sigma}^*} g\prn{w_\sigma, v} \notag     \\
-     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{{w^\sigma}^*}} L(v)\prn{w_\sigma} \notag \\
-     & = \sum_{\sigma=1}^n u^*\prn{L(v)\prn{w_\sigma}L^{-1}\prn{{w^\sigma}^*}} \notag  \\
-     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{L(v)\prn{w_\sigma}{w^\sigma}^*}} \notag  \\
+     & = \sum_{\sigma=1}^n g^{-1}\prn{u^*, {w^\sigma}^*} g(w_\sigma, v) \notag     \\
+     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{{w^\sigma}^*}} L(v)(w_\sigma) \notag \\
+     & = \sum_{\sigma=1}^n u^*\prn{L(v)\prn{w_\sigma}L^{-1}({w^\sigma}^*)} \notag  \\
+     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{L(v)(w_\sigma){w^\sigma}^*}} \notag  \\
      & = u^*\prn{L^{-1}\prn{\sum_{\sigma=1}^n L(v)\prn{w_\sigma}{w^\sigma}^*}}.
     \label{eq:prove-metric-inverse}
 \end{align}
@@ -612,6 +613,7 @@ Thus the metric written in rotating coordinates is $\diff s^2 =
         R_{abcd} = - R_{abdc}.
     \end{equation*}
 \end{quotebar}
+
 \begin{proof}
     Here we give a different proof from the one given in the book. First we note
     that by definition $R_{abcd} = g_{de}R_{abc}{}^e$. For an arbitrary vector
@@ -644,6 +646,7 @@ Thus the metric written in rotating coordinates is $\diff s^2 =
         R_{ac} = R_{ca}.
     \end{equation*}
 \end{quotebar}
+
 \begin{proof}
     As $R_{abc}{}^d = g^{de}R_{abce}$, we obtain $R_{ac} = R_{abc}{}^b =
         g^{be}R_{abce} \xlongequal{\text{index substitution }e\text{ for }d}
@@ -661,6 +664,7 @@ Thus the metric written in rotating coordinates is $\diff s^2 =
         \nabla_aR_c{}^a + \nabla_bR_c{}^b - \nabla_cR = 0
     \end{equation*}
 \end{quotebar}
+
 The second and third terms are easy to derive. We show how the first term comes
 about.
 \begin{proof}
@@ -677,6 +681,114 @@ about.
          & = R_c{}^a.
     \end{align*}
 \end{proof}
+
+\section{Geodesics}
+
+\Page{42}
+
+\begin{quotebar}
+    These coordinates have the property that all geodesics through $p$ get mapped
+    into straight lines through the origin of $\reals^n$. From equation (3.3.5) it
+    follows that in this coordinate system the Christoffel symbol components
+    $\Gamma^\mu{}_{\sigma\nu}$ vanish at $p$.
+\end{quotebar}
+
+We don't provide a complete proof but lay out the key steps. The first step is
+to demonstrate that for all tangent vectors $T^a\in V_p$ and small scalar $t$,
+the point at unit affine parameter along the geodesic through $p$ with tangent
+$tT^a$, i.e., $\exp(tT^a)$ where $\exp$ is the exponential map, is just the
+point in $M$ at affine parameter $t$ along the geodesic through $p$ with
+tangent $T^a$. This shows that the curve $C\colon t\mapsto\exp(tT^a)$ is a
+geodesic. Since we identify $V_p$ with $\reals^n$, we can assume that the
+components of $T^a$ in the chosen coordinate system are
+$\set{T^\mu}_{\mu=1}^n$. Thus the curve $C$ gets mapped into the curve in
+$\reals^n$ with components $x^\mu(t) = tT^\mu$. Plugging this into equation
+(3.3.5) we get
+\begin{equation*}
+    0 + \sum_{\sigma,\nu} \Gamma^\mu{}_{\sigma\nu}T^\sigma T^\nu = 0.
+\end{equation*}
+Because the above applies to all tangent vectors $T^a$, we get that
+$\Gamma^\mu{}_{\sigma\nu} = 0$ at $p$.
+
+This result doesn't apply to other points than $p$ in the range of the
+exponential map in $M$, because geodesics through other points do not
+necessarily get mapped into straight lines in $\reals^n$.
+
+\begin{quotebar}
+    ... in situations where one is given a hypersurface $S$, i.e., an $(n -
+        1)$-dimensional embedded submanifold of the $n$-dimensional manifold $M$ (see
+    appendix B). At each point $p \in S$, the tangent space $\tilde{V}_p$ of the
+    manifold $S$ can be naturally viewed as an $(n - 1)$-dimensional subspace of
+    the tangent space $V_p$ of $M$. Thus, there will be a vector $n^a \in V_p$,
+    unique up to scaling, which is orthogonal (with respect to the metric $g_{ab}$)
+    to all vectors in $\tilde{V}_p$. This vector, $n^a$, is said to be normal to
+    $S$. In the case of a Riemannian metric, $n^a$ cannot lie in $\tilde{V}_p$; in
+    the case of a metric of indefinite signature, $n^a$ could be a null vector,
+    $g_{ab}n^a n^b = 0$, in which case it does lie in $\tilde{V}_p$ and $S$ is said
+    to be a null hypersurface at point $p$.
+\end{quotebar}
+
+There are a few things we want to prove here. To proceed, we use matrix
+notation for the metric and the vectors. We assume that the vectors
+$\set{y_i}_{i=1}^{n-1}$ of size $n\times 1$ are a basis of $\tilde{V}_p$, the
+$n\times n$ matrix $G$ is the component matrix of the metric $g_{ab}$, and the
+vector $v$ of size $n\times 1$ is the component representation of $n^a$.
+
+First of all, we want to show why the norm vector $n^a$ is unique up to
+scaling. We observe that requiring $n^a$ to be orthogonal to all vectors in
+$\tilde{V}_p$ is just requiring
+\begin{equation}
+    \begin{bmatrix}
+        y_1^\top \\
+        \vdots   \\
+        y_{n-1}^\top
+    \end{bmatrix}
+    Gv = 0. \label{norm-vector-being-in-hypersurface}
+\end{equation}
+However, because $y_1, \dots, y_{n-1}$ are linearly independent, the equation
+has a unique solution for $Gv$ up to scaling. Because $G$ is non-singular, $v$
+is unique up to scaling.
+
+Secondly, why does $n^a$ being a null vector, $g_{ab}n^a n^b = 0$, imply that
+$n^a$ lies in $\tilde{V}_p$? This is because $v^\top Gv = 0$, which together
+with \eqref{norm-vector-being-in-hypersurface} implies that
+\begin{equation*}
+    \begin{bmatrix}
+        y_1^\top     \\
+        \vdots       \\
+        y_{n-1}^\top \\
+        v^\top
+    \end{bmatrix}
+    Gv = 0.
+\end{equation*}
+Because $Gv$ is a nonzero vector, the $n$ vectors $y_1, \dots, y_{n-1}, v$ must
+be linearly dependent. This with the fact that $y_1, \dots, y_{n-1}$ are
+linearly independent implies that $v$ is a linear combination of $y_1, \dots,
+    y_{n-1}$.
+
+Thirdly, we would like to find the condition for which $n^a$ lies in the
+hypersurface $\tilde{V}_p$. Obviously, this happens if and only if the equation
+for the vector $\alpha$ of size $(n-1)\times1$
+\begin{equation*}
+    \begin{bmatrix}
+        y_1^\top \\
+        \vdots   \\
+        y_{n-1}^\top
+    \end{bmatrix}
+    G
+    \begin{bmatrix}
+        y_1 & \cdots & y_{n-1}
+    \end{bmatrix}\alpha = 0
+\end{equation*}
+has a nonzero solution, i.e., the square matrix $\begin{bmatrix}
+        y_1^\top \\
+        \vdots   \\
+        y_{n-1}^\top
+    \end{bmatrix}
+    G
+    \begin{bmatrix}
+        y_1 & \cdots & y_{n-1}
+    \end{bmatrix}$ is singular.
 
 \appendix
 
