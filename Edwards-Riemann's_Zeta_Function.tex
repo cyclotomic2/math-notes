@@ -141,4 +141,27 @@ to multiply the product form of $\Pi(s)$ in \eqref{eq:rewrite-Pi-prod-form} by
 $(s+n)$ and repeat the same argument to show $(s+n)\Pi(s)$ is analytic around
 $s = -n$, for $n = 1, 2, 3, \dots$.
 
+\setcounter{section}{15}
+\section{The Remaining Terms}
+
+\Page{32}
+
+\begin{quotebar}
+    Note first that the series
+    \[
+        \frac{d}{ds} \left[ \frac{\log \Pi(s/2)}{s} \right] = -\sum_{n=1}^\infty
+        \frac{d}{ds} \left\{ \frac{\log[1 + (s/2n)]}{s} \right\}
+    \]
+    converges uniformly in any disk $|s| \leq K$. [For large $n$ the series expansion
+            $\log(1 + x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \cdots$ can be used, and the
+            summand on the right contains only terms in $n^{-2}, n^{-3}, \ldots.$]
+\end{quotebar}
+
+Here the summand on the right doesn't refer to the above equation
+in quote, but to the second equation at the top of the page
+\[
+    \log \Pi\left(\frac{s}{2}\right) = \sum_{n=1}^\infty \left[ -\log\left(1 +
+    \frac{s}{2n}\right) + \frac{s}{2} \log\left(1 + \frac{1}{n}\right) \right].
+\]
+
 \end{document}
