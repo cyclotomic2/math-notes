@@ -711,8 +711,8 @@ Because the above applies to all tangent vectors $T^a$, we get that
 $\Gamma^\mu{}_{\sigma\nu} = 0$ at $p$.
 
 This result doesn't apply to other points than $p$ in the range of the
-exponential map in $M$, because geodesics through other points do not
-necessarily get mapped into straight lines in $\reals^n$.
+exponential map, because geodesics through other points do not necessarily get
+mapped into straight lines in $\reals^n$.
 
 \begin{quotebar}
     ... in situations where one is given a hypersurface $S$, i.e., an $(n -
@@ -789,6 +789,23 @@ has a nonzero solution, i.e., the square matrix $\begin{bmatrix}
     \begin{bmatrix}
         y_1 & \cdots & y_{n-1}
     \end{bmatrix}$ is singular.
+
+\Page{45}
+
+\begin{quotebar}
+    Equation (3.3.12) will hold for arbitrary $ \delta x^\beta$ if and only if
+    \begin{equation*}
+        - \sum_{\alpha} g_{\alpha\beta} \frac{d^2 x^\alpha}{dt^2}
+        - \sum_{\alpha, \lambda} \frac{\partial g_{\alpha\beta}}{\partial x^\lambda} \frac{dx^\lambda}{dt} \frac{dx^\alpha}{dt}
+        + \frac{1}{2} \sum_{\alpha, \lambda} \frac{\partial g_{\alpha\lambda}}{\partial x^\beta} \frac{dx^\alpha}{dt} \frac{dx^\lambda}{dt} = 0.
+    \end{equation*}
+    Using our formula for $\Gamma^\sigma_{\alpha\lambda}$, equation (3.1.30), we
+    see that equation (3.3.13) is just the geodesic equation (3.3.5).
+\end{quotebar}
+
+Here we need to contract the left-hand side by $g^{\sigma\beta}$, and because
+$g^{\sigma\beta}g_{\alpha\beta} = \delta^\sigma{}_\alpha$, we eliminate all but
+one term in the first sum, making it close to (3.3.5).
 
 \appendix
 
