@@ -28,6 +28,7 @@
     \frac{1\cdot2\cdot\cdots\cdot #2}{\prn{#1+1}\prn{#1+2}\cdots\prn{#1+#2}}
     \prn{#2+1}^{#1}
 }
+\newcommand{\re}{\operatorname{Re}}
 
 
 \begin{document}
@@ -121,8 +122,7 @@ bounded).
 
 To show that $\Pi(s)$ has simple poles at $s = -1, -2, -3, \dots$, it suffices
 to multiply the product form of $\Pi(s)$ in \eqref{eq:rewrite-Pi-prod-form} by
-$(s+n)$ and repeat the same argument to show $(s+n)\Pi(s)$ is analytic around
-$s = -n$, for $n = 1, 2, 3, \dots$.
+$(s+n)$ and repeat the same argument.
 
 \setcounter{section}{15}
 \section{The Remaining Terms}
@@ -149,5 +149,57 @@ but to the second equation at the top of the page
         \right],
 \]
 and Ahlfors [Theorem 1, p176] is used.
+
+\Page{33}
+
+\begin{quotebar}
+    Integration by parts puts this in the form
+    \begin{align*}
+        = & \frac{1}{2\pi i} \frac{x^a}{2n \log x} \cdot \frac{1}{2n \log x}
+        \left( \left.\left\{ \frac{d}{dv} \left[ \frac{\log(1 + v + b)}{v + b}
+        \right] x^{2nv} \right\}\right|_{v = -ic}^{v = ic} \right.           \\
+          & \left. - \int_{-ic}^{ic} \frac{d^2}{dv^2} \left[
+            \frac{\log(1 + v + b)}{v + b} \right] x^{2nv} dv \right).
+    \end{align*}
+    Now $b$ is a real number $0 \leq b \leq a$, the function
+    \begin{equation*}
+        \frac{d}{dv} \left[ \frac{\log(1 + v + b)}{v + b} \right] = \frac{1}{(v + b)(v
+            + b + 1)} - \frac{\log(1 + v + b)}{(v + b)^2}
+    \end{equation*}
+    is bounded on the imaginary axis, and its derivative is absolutely integrable
+    over $(-i\infty,$ $i\infty)$, from which it follows that the modulus of the
+    $n$th term of the series on the right side of $(2)$ is at most a constant times
+    $n^{-2}$ for all $T$.
+\end{quotebar}
+
+Actually, it doesn't suffice that the function is bounded on the imaginary
+axis, because $b = a/2n$ is not a constant and changes for each term in the
+sum. But luckily we can show a better result. Let $z = v + b$. We note $z$ is
+in the strip $0 \leq \re z \le a$. The function above is then
+\begin{equation*}
+    f(z) = \frac{1}{z(z + 1)} - \frac{\log(1 + z)}{z^2}.
+\end{equation*}
+$f(z)$ is analytic on the strip $0 \leq \re z \le a$ except for a singularity
+at $z = 0$. However, this singularity is removable because
+\begin{align*}
+    \lim_{z \to 0} zf(z)
+     & = \lim_{z \to 0} \left\{ \frac{1}{z + 1} - \frac{\log(1 + z)}{z}
+    \right\} = 1 - \lim_{z \to 0} \frac{\log(1 + z)}{z}                 \\
+     & = 1 - \left\{\log(1+z)\right\}'|_{z = 0} = 1 - 1 = 0,
+\end{align*}
+where we have used Ahlfors (p.~124, Theorem 7). Thus we have shown that $f(z)$
+is analytic on the entire strip. On the other hand, it is not hard to see that
+$f(z)$ is bounded for large $\abs{z}$. These two facts show that $f(z)$ is
+bounded on the strip, which is the better result to be shown.
+
+The derivative of the function is
+\begin{align*}
+      & - \frac{2v + 2b + 1}{(v + b)^2(v + b + 1)^2}
+    - \frac{1}{(v + b)^2 (v + b + 1)} + \frac{2\log(1 + v + b)}{(v + b)^3} \\
+    = & - \frac{3v + 3b + 2}{(v + b)^2(v + b + 1)^2}
+    + \frac{2\log(1 + v + b)}{(v + b)^3},
+\end{align*}
+the modulo of which is $\leq O(\abs{v}^{-3} + \log\prn{\abs{v}}\abs{v}^{-3})$
+as $v \to \pm i\infty$, which is absolutely integrable.
 
 \end{document}
