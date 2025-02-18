@@ -202,4 +202,36 @@ The derivative of the function is
 the modulo of which is $\leq O(\abs{v}^{-3} + \log\prn{\abs{v}}\abs{v}^{-3})$
 as $v \to \pm i\infty$, which is absolutely integrable.
 
+\setcounter{chapter}{2}
+\chapter{Riemann's Main Formula}
+
+\setcounter{section}{1}
+\section{Derivation of von Mangoldt's Formula for \texorpdfstring{$\psi(x)$}{ψ(x)}}
+
+\Page{53}
+
+\begin{quotebar}
+    \dots, note first that both of the infinite series in (6) converge uniformly in
+    any disk \( |s| \leq K \).\\ \dots\\ \dots\\ \dots\\ This proves that the
+    termwise differentiation by which (6) was obtained is valid.
+\end{quotebar}
+
+This follows from the following theorem.
+\begin{theorem*}
+    If a sequence of analytic functions \( f_n
+    \) converges pointwise to a function \( f \) in a region \( \Omega \), and if
+    \( f_n' \) converges to \( g \) uniformly on compact subsets of \( \Omega \),
+    then \( f \) is analytic, \( g = f' \), and \( f_n \) converges to \( f \)
+    uniformly on compact subsets of \( \Omega \).
+\end{theorem*}
+
+Specifically, the series $\sum_\rho\log\prn{1 - \frac{s}{\rho}}$ converges
+pointwise which is proved in section 2.5, and the series of its derivatives
+$\sum_\rho\prn{s - \rho}^{-1}$ converges uniformly on any disk $|s| \leq K$ as
+shown above, so the conditions of the theorem are met and
+\begin{equation*}
+    \frac{d}{ds} \sum_\rho\log\prn{1 - \frac{s}{\rho}} = \sum_\rho\frac{1}{s -
+        \rho}.
+\end{equation*}
+
 \end{document}
