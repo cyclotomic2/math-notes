@@ -1,6 +1,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{note}
 
+\DeclareOption{10pt}{\PassOptionsToClass{10pt}{amsbook}}
+\DeclareOption{11pt}{\PassOptionsToClass{11pt}{amsbook}}
+\DeclareOption{12pt}{\PassOptionsToClass{12pt}{amsbook}}
+\ExecuteOptions{10pt}
+\ProcessOptions\relax
+
 \LoadClass[oneside]{amsbook}
 
 \RequirePackage{amsmath,amssymb,amsthm}
