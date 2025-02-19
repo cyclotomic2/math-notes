@@ -11,6 +11,7 @@
     {\chaptertitlename\space\thechapter}
     {1em}
     {\fontspec{Arial}\selectfont\bfseries\itshape}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
 \titleformat{\section}[block]
     {\Large\bfseries\filcenter}
     {\thesection}
@@ -55,7 +56,7 @@ Rewrite the right-hand side of (4) as
 \end{equation}
 Note the definition of $\log\prn{1+\frac{1}{n}}$ and $\log\prn{1+\frac{s}{n}}$
 is unambiguous when $n$ is sufficiently large and $s$ is fixed. According to
-Ahlfors [Theorem 8, p125], we can rewrite $\log(1+z)$ as
+\cite[p. 125, Theorem 8]{ahlfors1979complex}, we can rewrite $\log(1+z)$ as
 \begin{equation*}
     \log(1+z) = \log(1+0) + \frac{1}{1+0}z + f(z)z^2 = z + f(z)z^2
 \end{equation*}
@@ -113,12 +114,12 @@ which implies
 
 We showed above that $\Pi(s)$ is well-defined excluding $s = -1, -2, -3,
     \dots$. Now we show $\Pi(s)$ is analytic using equation
-\eqref{eq:Pi-prod-summand-taylor}. According to Ahlfors [Theorem 1, p176], it
-suffices to show that \eqref{eq:Pi-prod-summand-taylor} converges uniformly on
-compact subsets of the domain of $\Pi(s)$, which is obvious by setting $n$
-large enough and observing that $s$ is bounded on any compact subset (so that
-$s/n$ is close to $0$ and the function $s f\prn{1/n} - s^2 f\prn{s/n}$ is
-bounded).
+\eqref{eq:Pi-prod-summand-taylor}. According to \cite[p.~176, Theorem
+    1]{ahlfors1979complex}, it suffices to show that
+\eqref{eq:Pi-prod-summand-taylor} converges uniformly on compact subsets of the
+domain of $\Pi(s)$, which is obvious by setting $n$ large enough and observing
+that $s$ is bounded on any compact subset (so that $s/n$ is close to $0$ and
+the function $s f\prn{1/n} - s^2 f\prn{s/n}$ is bounded).
 
 To show that $\Pi(s)$ has simple poles at $s = -1, -2, -3, \dots$, it suffices
 to multiply the product form of $\Pi(s)$ in \eqref{eq:rewrite-Pi-prod-form} by
@@ -148,7 +149,7 @@ but to the second equation at the top of the page
         \frac{s}{2n}\right) + \frac{s}{2} \log\left(1 + \frac{1}{n}\right)
         \right],
 \]
-and Ahlfors [Theorem 1, p176] is used.
+and \cite[p.~176, Theorem 1]{ahlfors1979complex} is used.
 
 \Page{33}
 
@@ -174,7 +175,7 @@ and Ahlfors [Theorem 1, p176] is used.
 
 Actually, it doesn't suffice that the function is bounded on the imaginary
 axis, because $b = a/2n$ is not a constant and changes for each term in the
-sum. But luckily we can show a better result. Let $z = v + b$. We note $z$ is
+sum. But luckily we can show a better result. Let $z = v + b$. We note $z$ lies
 in the strip $0 \leq \re z \le a$. The function above is then
 \begin{equation*}
     f(z) = \frac{1}{z(z + 1)} - \frac{\log(1 + z)}{z^2}.
@@ -187,10 +188,11 @@ at $z = 0$. However, this singularity is removable because
     \right\} = 1 - \lim_{z \to 0} \frac{\log(1 + z)}{z}                 \\
      & = 1 - \left\{\log(1+z)\right\}'|_{z = 0} = 1 - 1 = 0,
 \end{align*}
-where we have used Ahlfors (p.~124, Theorem 7). Thus we have shown that $f(z)$
-is analytic on the entire strip. On the other hand, it is not hard to see that
-$f(z)$ is bounded for large $\abs{z}$. These two facts show that $f(z)$ is
-bounded on the strip, which is the better result to be shown.
+where we have used \cite[p.~124, Theorem 7]{ahlfors1979complex}. Thus we have
+shown that $f(z)$ is analytic on the entire strip. On the other hand, it is not
+hard to see that $f(z)$ is bounded for large $\abs{z}$. These two facts imply
+that $f(z)$ is bounded on the strip, which is the better result we were to
+show.
 
 The derivative of the function is
 \begin{align*}
@@ -233,5 +235,10 @@ shown above, so the conditions of the theorem are met and
     \frac{d}{ds} \sum_\rho\log\prn{1 - \frac{s}{\rho}} = \sum_\rho\frac{1}{s -
         \rho}.
 \end{equation*}
+
+
+\bibliographystyle{apalike}
+
+\bibliography{Complex_Analysis}
 
 \end{document}
