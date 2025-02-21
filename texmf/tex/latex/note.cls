@@ -1,17 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{note}
 
-\DeclareOption{10pt}{\PassOptionsToClass{10pt}{amsbook}}
-\DeclareOption{11pt}{\PassOptionsToClass{11pt}{amsbook}}
-\DeclareOption{12pt}{\PassOptionsToClass{12pt}{amsbook}}
+\DeclareOption{10pt}{\PassOptionsToClass{10pt}{book}}
+\DeclareOption{11pt}{\PassOptionsToClass{11pt}{book}}
+\DeclareOption{12pt}{\PassOptionsToClass{12pt}{book}}
 \ExecuteOptions{10pt}
 \ProcessOptions\relax
 
-\LoadClass[oneside]{amsbook}
+\LoadClass[oneside]{book}
 
+\RequirePackage{titlesec}
 \RequirePackage{amsmath,amssymb,amsthm}
 \RequirePackage{mathtools}
-\RequirePackage{mdframed}
+\RequirePackage[breakable,skins]{tcolorbox}
 \RequirePackage{extarrows}
 \RequirePackage{IEEEtrantools}
 \RequirePackage[hidelinks]{hyperref}
@@ -32,24 +33,20 @@
 
 \newcommand{\page}[1]{page #1}
 
-\newcommand{\Page}[1]{\par\noindent{\bfseries Page #1}\par}
+\newcommand{\Page}[1]{\subsection*{Page #1}}
 \newcommand{\Topic}[1]{\subsubsection*{#1}}
 
-\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
-\mdfdefinestyle{leftbar}{
-    innerleftmargin=2em,
-    innerrightmargin=2em,
-    innertopmargin=1em,
-    innerbottommargin=1em,
-    linewidth=3pt,
-    leftline=true,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    linecolor=gray,
-    backgroundcolor=gray!6,
+\newtcolorbox{quotebox}[1][] {
+    enhanced jigsaw,
+    colback=gray!10,      % Background color
+    colframe=gray!100,    % Border color
+    sharp corners,        % Sharp corners for modern look
+    leftrule=2mm,
+    rightrule=0mm,
+    toprule=0mm,
+    bottomrule=0mm,
+    breakable,            % Allow box to break across pages
 }
-\newenvironment*{quotebar}{\begin{mdframed}[style=leftbar]}{\end{mdframed}}
 
 % adjust for the spacing influence of \left and \right on normal-size pairs
 \let\originalleft\left

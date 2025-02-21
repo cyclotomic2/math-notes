@@ -1,15 +1,14 @@
 \documentclass{note}
 
+\usepackage{geometry}
 \usepackage{stmaryrd}
 \usepackage{xifthen}
 \usepackage{tikz-cd}
 
 \newcounter{exercise}[section]
-\newcommand\Ex{
-    \if@noskipsec \leavevmode \fi
-    \par
-    \refstepcounter{exercise}
-    \textbf{\thesection.\arabic{exercise}.}
+\newcommand{\Ex}{%
+    \stepcounter{exercise}% Increment the counter
+    \subsubsection*{\thesection.\arabic{exercise}.}% Print the section title
 }
 
 \newcommand{\Affine}[2][]{\mathbf{A}^{#2}\ifthenelse{\isempty{#1}}{}{_{#1}}}

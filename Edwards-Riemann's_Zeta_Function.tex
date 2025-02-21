@@ -1,22 +1,25 @@
 \documentclass[12pt]{note}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{fontspec}
-\usepackage{titlesec}
 
 \titleformat{\chapter}[display]
-    {\LARGE\sffamily}
+    {\Large\sffamily}
     {\chaptertitlename\space\thechapter}
     {1em}
     {\fontspec{Arial}\selectfont\bfseries\itshape}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \titleformat{\section}[block]
-    {\Large\bfseries\filcenter}
+    {\large\bfseries\filcenter}
     {\thesection}
     {1em}
     {\fontspec{Times New Roman}\selectfont\MakeUppercase}
+\titleformat{name=\subsection,numberless}
+    {\bfseries}  % Formatting (large and bold)
+    {}  % No numbering
+    {0pt}  % No extra space
+    {}  % No extra commands
 
 \numberwithin{equation}{chapter}
 \makeatletter
@@ -44,12 +47,12 @@
 
 \Page{8}
 
-\begin{quotebar}
+\begin{quotebox}
     On the other hand, it is not difficult to show [use formula (4) below] that the
     limit (3) exists for all values of $s$, real or complex, provided only that the
     denominator is not zero, that is, provided only that $s$ is not a negative
     integer.
-\end{quotebar}
+\end{quotebox}
 
 Rewrite the right-hand side of (4) as
 \begin{equation}
@@ -76,11 +79,11 @@ plain excluding real values $s \leq -1$). Thus
 which concludes that the sum on the right-hand side of
 \eqref{eq:rewrite-Pi-prod-form} is absolute convergent.
 
-\begin{quotebar}
+\begin{quotebox}
     \begin{equation*}
         \Pi(s) = 2^s \Pi \prn{\frac{s}{2}} \Pi \prn{\frac{s - 1}{2}} \pi^{-1/2}
     \end{equation*}
-\end{quotebar}
+\end{quotebox}
 
 By equation (3) in the book,
 \begin{align*}
@@ -110,10 +113,10 @@ which implies
     \Pi\prn{s} = 2^{s} \Pi\prn{\frac{s}{2}} \Pi\prn{\frac{s-1}{2}} \pi^{-\frac12}.
 \end{equation*}
 
-\begin{quotebar}
+\begin{quotebox}
     Using it one can prove that $\Pi(s)$ is an analytic function of the complex
     variable s which has simple poles at $s = -1, -2, -3, \dots$.
-\end{quotebar}
+\end{quotebox}
 
 We showed above that $\Pi(s)$ is well-defined excluding $s = -1, -2, -3,
     \dots$. Now we show $\Pi(s)$ is analytic using equation
@@ -133,7 +136,7 @@ $(s+n)$ and repeat the same argument.
 
 \Page{32}
 
-\begin{quotebar}
+\begin{quotebox}
     Note first that the series
     \[
         \frac{d}{ds} \left[ \frac{\log \Pi(s/2)}{s} \right] = -\sum_{n=1}^\infty
@@ -143,7 +146,7 @@ $(s+n)$ and repeat the same argument.
             expansion $\log(1 + x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \cdots$ can be
             used, and the summand on the right contains only terms in $n^{-2}, n^{-3},
                 \ldots.$]
-\end{quotebar}
+\end{quotebox}
 
 By ``the summand on the right'', we do not refer to the equation quoted above,
 but to the second equation at the top of the page
@@ -156,7 +159,7 @@ and \cite[p.~176, Theorem 1]{ahlfors1979complex} is used.
 
 \Page{33}
 
-\begin{quotebar}
+\begin{quotebox}
     Integration by parts puts this in the form
     \begin{align*}
         = & \frac{1}{2\pi i} \frac{x^a}{2n \log x} \cdot \frac{1}{2n \log x}
@@ -174,7 +177,7 @@ and \cite[p.~176, Theorem 1]{ahlfors1979complex} is used.
     over $(-i\infty,$ $i\infty)$, from which it follows that the modulus of the
     $n$th term of the series on the right side of $(2)$ is at most a constant times
     $n^{-2}$ for all $T$.
-\end{quotebar}
+\end{quotebox}
 
 Actually, it doesn't suffice that the function is bounded on the imaginary
 axis, because $b = a/2n$ is not a constant and changes for each term in the
@@ -215,7 +218,7 @@ as $v \to \pm i\infty$, which is absolutely integrable.
 
 \Page{53}
 
-\begin{quotebar}
+\begin{quotebox}
     The second method of evaluating the integral (1) is as follows. Differentiate
     logarithmically the formula
     \[
@@ -265,7 +268,7 @@ as $v \to \pm i\infty$, which is absolutely integrable.
     for all sufficiently large \( \rho \) once \( K \) is fixed and because \( \sum
     |\rho - \frac{1}{2}|^{-2} \) converges by the theorem of Section 2.5.) This
     proves that the termwise differentiation by which (6) was obtained is valid.
-\end{quotebar}
+\end{quotebox}
 
 This uses the following theorem.
 \begin{theorem*}
@@ -285,7 +288,6 @@ shown above, so the conditions of the theorem are met and
         \rho}.
 \end{equation*}
 A similar argument holds for the series for $\Pi(s/2)$.
-
 
 \bibliographystyle{apalike}
 
