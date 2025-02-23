@@ -43,17 +43,16 @@ The converse statement is also true, so we have
 \end{proposition*}
 \begin{proof}
   Assume $Y$ is irreducible, we show $\closure{Y}$ is also irreducible. Assume
-  $\closure{Y} \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$
-  and $\closure{Y} \nsubseteq Y_1$. Then $Y \subseteq Y_1 \cup Y_2$ and $Y
-    \nsubseteq Y_1$ (otherwise $\closure{Y} \subseteq Y_1$), which together with
-  $Y$ being irreducible implies $Y \subseteq Y_2$, thus $\closure{Y} \subseteq
-    Y_2$.
+  $\closure{Y} \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$ and
+  $\closure{Y} \nsubseteq Y_1$. Then $Y \subseteq Y_1 \cup Y_2$ and $Y \nsubseteq
+  Y_1$ (otherwise $\closure{Y} \subseteq Y_1$), which together with $Y$ being
+  irreducible implies $Y \subseteq Y_2$, thus $\closure{Y} \subseteq Y_2$.
 
   Conversely, let $\closure{Y}$ be irreducible, we show $Y$ is also irreducible.
-  Assume $Y \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$ and
-  $Y \nsubseteq Y_1$. Then $\closure{Y} \subseteq Y_1 \cup Y_2$ (because $Y_1
-    \cup Y_2$ is closed) and obviously $\closure{Y} \nsubseteq Y_1$, so
-  $\closure{Y} \subseteq Y_2$, implying $Y \subseteq Y_2$.
+  Assume $Y \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$ and $Y
+  \nsubseteq Y_1$. Then $\closure{Y} \subseteq Y_1 \cup Y_2$ (because $Y_1 \cup Y_2$
+  is closed) and obviously $\closure{Y} \nsubseteq Y_1$, so $\closure{Y} \subseteq
+  Y_2$, implying $Y \subseteq Y_2$.
 \end{proof}
 
 \Page{4}
@@ -69,15 +68,15 @@ irreducible.
 \begin{proof}
   Assume $Y$ is irreducible. $\closure{Y}$ is also irreducible according to the
   proposition above. By Proposition 1.2.(e) in the book, one has $Z(I(Y)) =
-    \closure{Y}$ is irreducible. Now if we show $I(Y)$ is radical, it then follows
+  \closure{Y}$ is irreducible. Now if we show $I(Y)$ is radical, it then follows
   from Corollary 1.4 that under the inclusion-reversing correspondence, $I(Y)$ is
   prime. Recall that $I(Y) = \setbuilder{f \in
-      \polynomials{k}{x_1}{\dots}{x_n}}{f(P) = 0\text{ for all }P \in Y}$. Now if
-  $f^r \in I(Y)$, then for all $P \in Y$, $f^r(P) = 0$, thus $f(P) = 0$.
+  \polynomials{k}{x_1}{\dots}{x_n}}{f(P) = 0\text{ for all }P \in Y}$. Now if $f^r
+  \in I(Y)$, then for all $P \in Y$, $f^r(P) = 0$, thus $f(P) = 0$.
 
   Conversely, suppose $I(Y)$ is prime. Using Proposition 1.2.(e) again, we have
-  $\closure{Y} = Z(I(Y))$. It then follows from Corollary 1.4 that $\closure{Y}$
-  is irreducible, and so is $Y$ by the proposition above.
+  $\closure{Y} = Z(I(Y))$. It then follows from Corollary 1.4 that $\closure{Y}$ is
+  irreducible, and so is $Y$ by the proposition above.
 \end{proof}
 
 \Page{7}
@@ -95,18 +94,16 @@ rest follows.
 \setcounter{exercise}{11}
 
 \Ex
-
-For one example, $f = x^2 + y^2 + 1$ is irreducible in
-$\polynomials{\reals}{x}{y}$ (can be proved by assuming factors of $f$, viewing
-them as polynomials in $\polynomials{\polynomials{\reals}{x}}{y}$), but $Z(f)$
-in $\Affine[\reals]{2}$ is $\emptyset$ and not considered to be irreducible by
-definition of irreducible sets.
+For one example, $f = x^2 + y^2 + 1$ is irreducible in $\polynomials{\reals}{x}{y}$
+(can be proved by assuming factors of $f$, viewing them as polynomials in
+$\polynomials{\polynomials{\reals}{x}}{y}$), but $Z(f)$ in $\Affine[\reals]{2}$ is
+$\emptyset$ and not considered to be irreducible by definition of irreducible sets.
 
 For another example, $f = x^2(x-1)^2 + y^2$ is irreducible in
 $\polynomials{\reals}{x}{y}$ (the unique factorization of $f$ in
-$\polynomials{\complexes}{x}{y}$ is $(x(x-1) + iy)(x(x-1) - iy)$, but none of
-the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
-    0)}{(1, 0)}$ is not irreducible.
+$\polynomials{\complexes}{x}{y}$ is $(x(x-1) + iy)(x(x-1) - iy)$, but none of the
+two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0, 0)}{(1, 0)}$
+is not irreducible.
 
 \section{Projective Varieties}
 \Page{13}
@@ -118,16 +115,16 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
 \Ex
 \begin{enumerate}
   \item Since polynomial rings are integral, so is
-        $\polynomials{k}{y_0}{\dots}{y_N}/\ideal{a}$, so $\ideal{a}$ is prime. (Need to
-        show it is homogeneous?)
+        $\polynomials{k}{y_0}{\dots}{y_N}/\ideal{a}$, so $\ideal{a}$ is prime. (Need
+        to show it is homogeneous?)
   \item $\rho_d(\Proj{n})\subset Z(\ideal{a})$ is
         obvious. In fact for any $\rho_d(P)=(M_0(a),\dots,M_N(a))$, and any
         $f\in\ideal{a}$, we have $f(\rho_d(P)) = f(M_0(a),\dots,M_N(a))
           \xlongequal{\text{by definition of }\theta} \theta(f)(a) = 0.$\\
         $Z(\ideal{a})\subset\rho_d(\Proj{n})$ is trivial. Just need to construct
         $\rho_d^{-1}(P)$ from $P\in Z(\alpha)$.
-  \item One direction is easy. To show $\rho_d^{-1}$ is continuous, one needs to look
-        at the open sets $U_i$.
+  \item One direction is easy. To show $\rho_d^{-1}$ is continuous, one needs to
+        look at the open sets $U_i$.
 \end{enumerate}
 
 \section{Morphisms}
@@ -141,12 +138,12 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
   \item
   \item
   \item Any non-degenerate linear transformation $\mathbf{x} \mapsfrom M\mathbf{x}$
-        induces an isomorphism between a variety and its image. For any conic $Ax^2 +
-          By^2 + Cz^2 + Dyz + Ezx + Fxy = 0$ in $\Proj{2}$, we show under a suitable
+        induces an isomorphism between a variety and its image. For any conic $Ax^2
+        + By^2 + Cz^2 + Dyz + Ezx + Fxy = 0$ in $\Proj{2}$, we show under a suitable
         transformation it becomes $xy = z^2$.
         \begin{itemize}
-          \item If at most one in $A$, $B$, $C$ is nonzero, say $C$, dehomogenize with respect
-                to $z$ we get
+          \item If at most one in $A$, $B$, $C$ is nonzero, say $C$, dehomogenize
+                with respect to $z$ we get
                 \begin{equation*}
                   Fxy + Ex + Dy + C = 0.
                 \end{equation*}
@@ -154,11 +151,11 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
                 \begin{equation*}
                   xy = 1.
                 \end{equation*}
-                That the constant term is not zero is a consequence of the fact that the
-                quadratic equation is irreducible. Now homogenize to $z$ and we get the desired
-                form.
-          \item If two or more in $A$, $B$, $C$ are nonzero, say $A$ and $B$. Dehomogenize
-                w.r.t.~$z$ to get
+                That the constant term is not zero is a consequence of the fact that
+                the quadratic equation is irreducible. Now homogenize to $z$ and we
+                get the desired form.
+          \item If two or more in $A$, $B$, $C$ are nonzero, say $A$ and $B$.
+                Dehomogenize w.r.t.~$z$ to get
                 \begin{equation*}
                   Ax^2 + Fxy + By^2 + Ex + Dy + C = 0.
                 \end{equation*}
@@ -171,22 +168,22 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
                   \begin{bmatrix}
                     \sqrt{B} & \sqrt{B}  \\
                     \sqrt{A} & -\sqrt{A}
-
                   \end{bmatrix}
                   \begin{bmatrix}
                     x \\ y
                   \end{bmatrix}
                 \end{equation*}
-                the curve is brought to $(2AB + F\sqrt{AB})x^2 + (2AB - F\sqrt{AB})y^2 + E'x +
-                  D'y + C = 0$. Since $A,B\ne0$, divide by $\sqrt{AB}$ to get $(2\sqrt{AB} +
-                  F)x^2 + (2\sqrt{AB} - F)y^2 + E'x + D'y + C' = 0$. The two quadratic
-                coefficients cannot be both 0, so the equation can be converted into either
+                the curve is brought to $(2AB + F\sqrt{AB})x^2 + (2AB -
+                F\sqrt{AB})y^2 + E'x + D'y + C = 0$. Since $A,B\ne0$, divide by
+                $\sqrt{AB}$ to get $(2\sqrt{AB} + F)x^2 + (2\sqrt{AB} - F)y^2 + E'x
+                + D'y + C' = 0$. The two quadratic coefficients cannot be both 0, so
+                the equation can be converted into either
                 \begin{equation*}
                   x^2 + y^2 = 1, \quad \text{or} \quad x^2 = y.
                 \end{equation*}
                 In the second case it is already the desired form. In the first case
-                homogenization gives $x^2 + y^2 = z^2$. Write $(x + iy)(x - iy) = z^2$ and we
-                are done.
+                homogenization gives $x^2 + y^2 = z^2$. Write $(x + iy)(x - iy) =
+                z^2$ and we are done.
         \end{itemize}
         Now we need to show the curve $Y$ given by $xy = z^2$ is isomorphic to
         $\Proj{1}$. Consider the map $\varphi\colon\Proj{1} \to Y$ given by
@@ -211,13 +208,14 @@ the two factors is in $\polynomials{\reals}{x}{y}$), but $Z(f) = \set{(0,
         $f\circ\varphi^{-1} = g$ on $\varphi(V)$, proving $f\circ\varphi^{-1}$ is
         regular at $\varphi(P)$.
   \item Suppose $\chevrons{V,g}\in\lring[Y]{\varphi(P)}$ and $0 = \varphi_P^*(g) =
-          g\circ\varphi$. Then $g\circ\varphi$ vanishes in an open neighborhood of $P$
+        g\circ\varphi$. Then $g\circ\varphi$ vanishes in an open neighborhood of $P$
         contained in $\varphi^{-1}(V)$, which means it vanishes in
         $\varphi^{-1}(V)\eqqcolon U$. Thus $g$ vanishes in $\varphi(U)$. Now the
-        closure of $\varphi(X)$ is contained in $\closure{\varphi(U)}\union\cmpl{V}$.
-        Since $\varphi(X)$ is dense in $Y$, we have $\closure{\varphi(U)}\union\cmpl{V}
-          = Y$. This is the case only if $V\subset\closure{\varphi(U)}$, in which $g$
-        vanishes. Thus we conclude $g = 0$ in $\lring[Y]{\varphi(P)}$.
+        closure of $\varphi(X)$ is contained in
+        $\closure{\varphi(U)}\union\cmpl{V}$. Since $\varphi(X)$ is dense in $Y$, we
+        have $\closure{\varphi(U)}\union\cmpl{V} = Y$. This is the case only if
+        $V\subset\closure{\varphi(U)}$, in which $g$ vanishes. Thus we conclude $g =
+        0$ in $\lring[Y]{\varphi(P)}$.
 \end{enumerate}
 
 \setcounter{exercise}{4}
@@ -238,13 +236,13 @@ Just prove (b).
 \Topic{The composition of dominant rational maps is dominant}
 
 Let $\rational{U}{\varphi_U}$ be dominant rational map from $X$ to $Y$ and
-$\rational{V}{\psi_V}$ be dominant from $Y$ to $Z$. The composition is defined
-where $\psi_V\circ\varphi_U$ is defined. Let $V'\coloneqq\varphi_U(U)\cap V$.
-If $W\coloneqq\closure{\psi_V(V')}$ is not $Z$, then obviously $\psi_V^{-1}(W)
-  \subsetneq V$, thus $\psi_V^{-1}(Z\setminus W)$ is a nonempty open subset of
-$V$, thus open in $Y$. Now $\varphi_U(U) \cap \psi_V^{-1}(Z\setminus W) =
-  \varnothing$ (since $\varphi_U(U) \cap V \subset V' \subset \psi_V^{-1}(W)$),
-contradicting that $\varphi_U(U)$ is dense.
+$\rational{V}{\psi_V}$ be dominant from $Y$ to $Z$. The composition is defined where
+$\psi_V\circ\varphi_U$ is defined. Let $V'\coloneqq\varphi_U(U)\cap V$. If
+$W\coloneqq\closure{\psi_V(V')}$ is not $Z$, then obviously $\psi_V^{-1}(W)
+\subsetneq V$, thus $\psi_V^{-1}(Z\setminus W)$ is a nonempty open subset of $V$,
+thus open in $Y$. Now $\varphi_U(U) \cap \psi_V^{-1}(Z\setminus W) = \varnothing$
+(since $\varphi_U(U) \cap V \subset V' \subset \psi_V^{-1}(W)$), contradicting that
+$\varphi_U(U)$ is dense.
 
 \Page{30}
 
@@ -254,7 +252,8 @@ contradicting that $\varphi_U(U)$ is dense.
 
 \Ex
 \begin{enumerate}
-  \item By exercise 3.1(c). \item \item
+  \item By exercise 3.1(c).
+  \item \item
 \end{enumerate}
 
 \section{Nonsingular Varieties}
@@ -275,35 +274,33 @@ contradicting that $\varphi_U(U)$ is dense.
 \end{proposition*}
 
 \begin{proof}
-  We first show the isomorphism between $\mathcal{O}/\ideal{m}$ and
-  $A/\ideal{a}$. Consider the ring morphism $\alpha\colon A \to
-    \mathcal{O}/\ideal{m}$ defined via the natural morphism $x \mapsto
-    \frac{\bar{x}}{1}+\ideal{m}$, where $\bar{x}$ denotes the equivalent class of
-  $x$ in $A/\ideal{b}$. Then $\alpha$ is onto. In fact any element in
-  $\mathcal{O}/\ideal{m}$ has a representative $\frac{\bar{x}}{\bar{y}}$, where
-  $x\in A$, $y \in A\setminus\ideal{a}$. Since $\ideal{a}$ is maximal, $y$ has an
-  inverse $\!\ilmod\ideal{a}$ and we are done. One can also show that the kernel
-  of $\alpha$ is $\ideal{a}$. Therefore we obtain the isomorphism $A/\ideal{a}
-    \xrightarrow{\sim} \mathcal{O}/\ideal{m}$.
+  We first show the isomorphism between $\mathcal{O}/\ideal{m}$ and $A/\ideal{a}$.
+  Consider the ring morphism $\alpha\colon A \to \mathcal{O}/\ideal{m}$ defined via
+  the natural morphism $x \mapsto \frac{\bar{x}}{1}+\ideal{m}$, where $\bar{x}$
+  denotes the equivalent class of $x$ in $A/\ideal{b}$. Then $\alpha$ is onto. In
+  fact any element in $\mathcal{O}/\ideal{m}$ has a representative
+  $\frac{\bar{x}}{\bar{y}}$, where $x\in A$, $y \in A\setminus\ideal{a}$. Since
+  $\ideal{a}$ is maximal, $y$ has an inverse $\!\ilmod\ideal{a}$ and we are done.
+  One can also show that the kernel of $\alpha$ is $\ideal{a}$. Therefore we obtain
+  the isomorphism $A/\ideal{a} \xrightarrow{\sim} \mathcal{O}/\ideal{m}$.
 
   To show the two vector spaces are isomorphic we consider the linear map
   $\varphi\colon \ideal{a} \to \ideal{m}/\ideal{m}^2$ defined also by the natural
-  morphism $x\mapsto\frac{\bar{x}}{1}+\ideal{m}^2$. We first show $\varphi$ is
-  onto. Any element in $\ideal{m}/\ideal{m}^2$ has a representative
-  $\frac{\bar{x}}{\bar{y}}$, where $x \in \ideal{a}$, $y \in
-    A\setminus\ideal{a}$. Suppose $yz \equiv 1 \ilmod \ideal{a}$, then
-  $\bar{y}\bar{z} \equiv 1 \ilmod \ideal{m}$, or $\frac{1}{\bar{y}}-\bar{z} \in
-    \ideal{m}$. Therefore $\bar{x}\left(\frac{1}{\bar{y}}-\bar{z}\right) \in
-    \ideal{m}^2$ which means $\frac{\bar{x}}{\bar{y}} \equiv \bar{x}\bar{z} \ilmod
-    \ideal{m}^2$, and we get $\varphi(xz) = \bar{x}\bar{z}+\ideal{m}^2 =
-    \frac{\bar{x}}{\bar{y}}+\ideal{m}^2$. We then show that the kernel of $\varphi$
-  is $\ideal{a}^2+\ideal{b}$. For $x \in \ideal{a}$, $\varphi(x) = 0$ if and only
-  if $\bar{x} = x+\ideal{b} \in \ideal{m}^2 = (\ideal{a}^2)$, or $x+\ideal{b} =
-    \frac{h+\ideal{b}}{g+\ideal{b}}$ for some $h\in\ideal{a}^2$ and $g\in
-    A\setminus\ideal{a}$. We then get $xg - h \in \ideal{b}$. There exists some $f$
-  such that $fg-1\in \ideal{a}$, therefore $x = x(1-fg+fg) = x(1-fg) + xfg =
-    x(1-fg) + x(fg - h) + xh \in \ideal{a}^2 + \ideal{b} + \ideal{a}^3 =
-    \ideal{a}^2+\ideal{b}$.
+  morphism $x\mapsto\frac{\bar{x}}{1}+\ideal{m}^2$. We first show $\varphi$ is onto.
+  Any element in $\ideal{m}/\ideal{m}^2$ has a representative
+  $\frac{\bar{x}}{\bar{y}}$, where $x \in \ideal{a}$, $y \in A\setminus\ideal{a}$.
+  Suppose $yz \equiv 1 \ilmod \ideal{a}$, then $\bar{y}\bar{z} \equiv 1 \ilmod
+  \ideal{m}$, or $\frac{1}{\bar{y}}-\bar{z} \in \ideal{m}$. Therefore
+  $\bar{x}\left(\frac{1}{\bar{y}}-\bar{z}\right) \in \ideal{m}^2$ which means
+  $\frac{\bar{x}}{\bar{y}} \equiv \bar{x}\bar{z} \ilmod \ideal{m}^2$, and we get
+  $\varphi(xz) = \bar{x}\bar{z}+\ideal{m}^2 = \frac{\bar{x}}{\bar{y}}+\ideal{m}^2$.
+  We then show that the kernel of $\varphi$ is $\ideal{a}^2+\ideal{b}$. For $x \in
+  \ideal{a}$, $\varphi(x) = 0$ if and only if $\bar{x} = x+\ideal{b} \in \ideal{m}^2
+  = (\ideal{a}^2)$, or $x+\ideal{b} = \frac{h+\ideal{b}}{g+\ideal{b}}$ for some
+  $h\in\ideal{a}^2$ and $g\in A\setminus\ideal{a}$. We then get $xg - h \in
+  \ideal{b}$. There exists some $f$ such that $fg-1\in \ideal{a}$, therefore $x =
+  x(1-fg+fg) = x(1-fg) + xfg = x(1-fg) + x(fg - h) + xh \in \ideal{a}^2 + \ideal{b}
+  + \ideal{a}^3 = \ideal{a}^2+\ideal{b}$.
 \end{proof}
 
 \Page{37}
@@ -315,17 +312,17 @@ contradicting that $\varphi_U(U)$ is dense.
 \Ex
 \begin{itemize}
   \item If $p\ndivide d$ consider $x^d + y^d + z^d = 0$.
-  \item If $p\divides d$ consider $x^{d-1}y + y^{d-1}z + z^{d-1}x = 0$. The polynomial
-        is irreducible since $x^{d-1}y + y^{d-1} + x$ is (Eisenstein's criterion on
-        integral domains). Further more it is nonsingular.
+  \item If $p\divides d$ consider $x^{d-1}y + y^{d-1}z + z^{d-1}x = 0$. The
+        polynomial is irreducible since $x^{d-1}y + y^{d-1} + x$ is (Eisenstein's
+        criterion on integral domains). Further more it is nonsingular.
 \end{itemize}
 
 \setcounter{exercise}{7}
 
 \Ex
 
-Use the fact that if $g_i$ is a polynomial of degree $d$, and $f_i$ is
-homogeneous polynomial
+Use the fact that if $g_i$ is a polynomial of degree $d$, and $f_i$ is homogeneous
+polynomial
 \begin{equation*}
   f_i = x_0^d g_i\left(\frac{x_1}{x_0}, \dots, \frac{x_n}{x_0}\right),
 \end{equation*}
@@ -354,11 +351,11 @@ variety of dimension 1 must be a single point.
 \Topic{The uniqueness of $\bar\varphi$ is clear by construction}
 
 Suppose $\bar\varphi'$ is another morphism extending $\varphi$. Then
-$x_i/x_k\circ\bar\varphi'$ and $x_i/x_k\circ\bar\varphi$ agree on an open
-subset of $X$ (for all $i$), thus must be the same regular function on $X$. In
-particular, $x_i/x_k\circ\bar\varphi'(P) = x_i/x_k\circ\bar\varphi(P) =
-  f_{ik}(P)$, i.e., $\dfrac{\bar\varphi'(P)_i}{\bar\varphi'(P)_k} = f_{ik}(P)$,
-showing $\bar\varphi(P) = \varphi(P)$.
+$x_i/x_k\circ\bar\varphi'$ and $x_i/x_k\circ\bar\varphi$ agree on an open subset of
+$X$ (for all $i$), thus must be the same regular function on $X$. In particular,
+$x_i/x_k\circ\bar\varphi'(P) = x_i/x_k\circ\bar\varphi(P) = f_{ik}(P)$, i.e.,
+$\dfrac{\bar\varphi'(P)_i}{\bar\varphi'(P)_k} = f_{ik}(P)$, showing $\bar\varphi(P)
+= \varphi(P)$.
 
 \Topic{Theorem 6.9 paragraph 2: why not use lemma 6.5 to prove local
   isomorphisms.} Actually lemma 6.5 only constructs an affine nonsingular curve
@@ -368,26 +365,25 @@ with the appropriate affine coordinate ring, without proving any isomorphisms.
 
 \Topic{Theorem 6.9 last paragraph.}
 
-A bijective map between two curves (abstract or not) is necessarily a
-homeomorphism, because the closed sets of a curve are just finite sets.
+A bijective map between two curves (abstract or not) is necessarily a homeomorphism,
+because the closed sets of a curve are just finite sets.
 
 \Page{46}
 
 \Topic{Corollary 6.12}
 
-Denote the functor (i) $\to$ (ii) $\to$ (iii) by $F$ and (iii) $\to$ (i) by
-$G$. We need to show $GF=\id_{\text{(i)}}$ and $FG=\id_{\text{(iii)}}$.
+Denote the functor (i) $\to$ (ii) $\to$ (iii) by $F$ and (iii) $\to$ (i) by $G$. We
+need to show $GF=\id_{\text{(i)}}$ and $FG=\id_{\text{(iii)}}$.
 
-For a nonsingular projective curve $X$, let $K$ be its function field. Then
-$GF(X) = C_K$. One needs to construct an isomorphism $\mu_X\colon X\to C_K$.
-$X$ and $C_K$ are birational since they have the same function field $K$. Thus
-there exist open sets $U$ and $V$ in $X$ and $C_K$ respectively, which are
-isomorphic. Let $\mu\colon U\to V$ be the isomorphism and $\nu$ be its inverse.
-Since $X$ and $C_K$ are both nonsingular projective curves, by (6.8) one can
-uniquely extend $\mu$ and $\nu$ to $\bar\mu\colon X\to C_K$ and $\bar\nu\colon
-  C_K\to X$. Now $\bar\nu\circ\bar\mu$ is an extension of $\nu\circ\mu = \id_U$,
-which on the other hand extends (uniquely) to $\id_X$. Therefore we get an
-isomorphism $\bar\mu\colon X\to C_K$.
+For a nonsingular projective curve $X$, let $K$ be its function field. Then $GF(X) =
+C_K$. One needs to construct an isomorphism $\mu_X\colon X\to C_K$. $X$ and $C_K$
+are birational since they have the same function field $K$. Thus there exist open
+sets $U$ and $V$ in $X$ and $C_K$ respectively, which are isomorphic. Let $\mu\colon
+U\to V$ be the isomorphism and $\nu$ be its inverse. Since $X$ and $C_K$ are both
+nonsingular projective curves, by (6.8) one can uniquely extend $\mu$ and $\nu$ to
+$\bar\mu\colon X\to C_K$ and $\bar\nu\colon C_K\to X$. Now $\bar\nu\circ\bar\mu$ is
+an extension of $\nu\circ\mu = \id_U$, which on the other hand extends (uniquely) to
+$\id_X$. Therefore we get an isomorphism $\bar\mu\colon X\to C_K$.
 
 For any nonsingular projective curves $X_1$ and $X_2$ and dominant morphism
 $\varphi\colon X_1\to X_2$. One needs to show the following diagram commutes.
@@ -397,9 +393,9 @@ $\varphi\colon X_1\to X_2$. One needs to show the following diagram commutes.
     \arrow{d}{GF(\varphi)} \\ X_2 \arrow{r}{\mu_{X_2}} & C_{K_2}
   \end{tikzcd}
 \end{equation*}
-However the same commutative diagram with rational maps in place of the
-morphisms exists due to the equivalence of categories in (4.4). Then by going
-to extensions we get the desired result.
+However the same commutative diagram with rational maps in place of the morphisms
+exists due to the equivalence of categories in (4.4). Then by going to extensions we
+get the desired result.
 
 \Topic{Exercises}
 
@@ -412,8 +408,8 @@ to extensions we get the desired result.
   \item An open set in $\Affine1$ is $\Affine1\setminus\set{x_1}{\dots}{x_n}$. It is
         isomorphic to the affine curve given by $(x-x_1)\cdots(x-x_n)y=1$ in
         $\Affine2$.
-  \item Show that $A(Y)$ is isomorphic to the localization of $\polynomials{k}{x}$ at
-        the polynomials $x-x_i\colon$
+  \item Show that $A(Y)$ is isomorphic to the localization of $\polynomials{k}{x}$
+        at the polynomials $x-x_i\colon$
         \begin{equation*}
           \set{\frac{f(x)}{\prod_{i=1}^n(x-x_i)^{k_i}} \biggm\vert f(x) \in
             \polynomials{k}{x}}.
@@ -423,12 +419,13 @@ to extensions we get the desired result.
 \Ex
 \begin{enumerate}
   \item If $Y$ were to be singular at some point, then it must be that $y = 0$ and
-        $3x^2-1 = 0$, which contradicts $y^2 = x^3 - x$. Since $Y$ is nonsingular every
-        localization of $A$ is integrally closed, so $A$ is integrally closed.
-  \item Only need to show that if $f(x) \in \polynomials{k}{x}$ vanishes on $Y$, then
-        $f(x)$ is the zero polynomial. For every $x\in k$ there is some $P$ whose first
-        coordinate is $x$, thus $f(x) = 0$ for every $x$ and we are done. $A$ is in the
-        integral closure of $\polynomials{k}{x}$ since $y^2 + x^3 - x = 0$ in $K$. Then
-        using the fact that $A$ is integrally closed we get the result. \item
+        $3x^2-1 = 0$, which contradicts $y^2 = x^3 - x$. Since $Y$ is nonsingular
+        every localization of $A$ is integrally closed, so $A$ is integrally closed.
+  \item Only need to show that if $f(x) \in \polynomials{k}{x}$ vanishes on $Y$,
+        then $f(x)$ is the zero polynomial. For every $x\in k$ there is some $P$
+        whose first coordinate is $x$, thus $f(x) = 0$ for every $x$ and we are
+        done. $A$ is in the integral closure of $\polynomials{k}{x}$ since $y^2 +
+        x^3 - x = 0$ in $K$. Then using the fact that $A$ is integrally closed we
+        get the result. \item
 \end{enumerate}
 \end{document}

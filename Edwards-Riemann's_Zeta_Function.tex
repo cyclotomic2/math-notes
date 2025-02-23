@@ -5,21 +5,21 @@
 \usepackage{fontspec}
 
 \titleformat{\chapter}[display]
-    {\Large\sffamily}
-    {\chaptertitlename\space\thechapter}
-    {1em}
-    {\fontspec{Arial}\selectfont\bfseries\itshape}
+  {\Large\sffamily}
+  {\chaptertitlename\space\thechapter}
+  {1em}
+  {\fontspec{Arial}\selectfont\bfseries\itshape}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \titleformat{\section}[block]
-    {\large\bfseries\filcenter}
-    {\thesection}
-    {1em}
-    {\fontspec{Times New Roman}\selectfont\MakeUppercase}
+  {\large\bfseries\filcenter}
+  {\thesection}
+  {1em}
+  {\fontspec{Times New Roman}\selectfont\MakeUppercase}
 \titleformat{name=\subsection,numberless}
-    {\bfseries}  % Formatting (large and bold)
-    {}  % No numbering
-    {0pt}  % No extra space
-    {}  % No extra commands
+  {\bfseries}  % Formatting (large and bold)
+  {}  % No numbering
+  {0pt}  % No extra space
+  {}  % No extra commands
 
 \numberwithin{equation}{chapter}
 \makeatletter
@@ -32,8 +32,8 @@
 \renewcommand{\theenumi}{\alph{enumi}}
 
 \newcommand{\piprod}[2]{
-    \frac{1\cdot2\cdot\cdots\cdot #2}{\prn{#1+1}\prn{#1+2}\cdots\prn{#1+#2}}
-    \prn{#2+1}^{#1}
+  \frac{1\cdot2\cdot\cdots\cdot #2}{\prn{#1+1}\prn{#1+2}\cdots\prn{#1+#2}}
+  \prn{#2+1}^{#1}
 }
 \newcommand{\re}{\operatorname{Re}}
 
@@ -43,249 +43,251 @@
 \chapter{Riemann's Paper}
 
 \setcounter{section}{2}
+
 \section{The Factorial Function}
 
 \Page{8}
 
 \begin{quotebox}
-    On the other hand, it is not difficult to show [use formula (4) below] that the
-    limit (3) exists for all values of $s$, real or complex, provided only that the
-    denominator is not zero, that is, provided only that $s$ is not a negative
-    integer.
+  On the other hand, it is not difficult to show [use formula (4) below] that the
+  limit (3) exists for all values of $s$, real or complex, provided only that the
+  denominator is not zero, that is, provided only that $s$ is not a negative
+  integer.
 \end{quotebox}
 
 Rewrite the right-hand side of (4) as
 \begin{equation}
-    \prod_{n=1}^N \prn{1+\frac{s}{n}}^{-1} \prn{1+\frac{1}{n}}^{s} = \exp{
-        \sum_{n=1}^N \left[s\log\prn{1+\frac{1}{n}} - \log\prn{1+\frac{s}{n}} \right]}.
-    \label{eq:rewrite-Pi-prod-form}
+  \prod_{n=1}^N \prn{1+\frac{s}{n}}^{-1} \prn{1+\frac{1}{n}}^{s} = \exp{
+    \sum_{n=1}^N \left[s\log\prn{1+\frac{1}{n}} - \log\prn{1+\frac{s}{n}} \right]}.
+  \label{eq:rewrite-Pi-prod-form}
 \end{equation}
-Note the definition of $\log\prn{1+\frac{1}{n}}$ and $\log\prn{1+\frac{s}{n}}$
-is unambiguous when $n$ is sufficiently large and $s$ is fixed. According to
-\cite[p. 125, Theorem 8]{ahlfors1979complex}, we can rewrite $\log(1+z)$ as
+Note the definition of $\log\prn{1+\frac{1}{n}}$ and $\log\prn{1+\frac{s}{n}}$ is
+unambiguous when $n$ is sufficiently large and $s$ is fixed. According to \cite[p.
+125, Theorem 8]{ahlfors1979complex}, we can rewrite $\log(1+z)$ as
 \begin{equation*}
-    \log(1+z) = \log(1+0) + \frac{1}{1+0}z + f(z)z^2 = z + f(z)z^2
+  \log(1+z) = \log(1+0) + \frac{1}{1+0}z + f(z)z^2 = z + f(z)z^2
 \end{equation*}
-where $f$ is analytic in the domain of $\log(1+z)$ (chosen to be the complex
-plain excluding real values $s \leq -1$). Thus
+where $f$ is analytic in the domain of $\log(1+z)$ (chosen to be the complex plain
+excluding real values $s \leq -1$). Thus
 \begin{align}
-    \abs{s\log\prn{1+\frac{1}{n}} - \log\prn{1+\frac{s}{n}}}
-     & = \abs{ s\left[ \frac{1}{n} + f\prn{\frac{1}{n}}\prn{\frac{1}{n}}^2 \right] -
-    \left[ \frac{s}{n} + f\prn{\frac{s}{n}}\prn{\frac{s}{n}}^2 \right] } \nonumber   \\
-     & = \abs{ s f\prn{\frac{1}{n}} - s^2 f\prn{\frac{s}{n}} } \frac{1}{n^2}
-    \label{eq:Pi-prod-summand-taylor}                                                \\
-     & = O\prn{\frac{1}{n^2}} \quad \text{as } n \rightarrow \infty, \nonumber
+  \abs{s\log\prn{1+\frac{1}{n}} - \log\prn{1+\frac{s}{n}}}
+   & = \abs{ s\left[ \frac{1}{n} + f\prn{\frac{1}{n}}\prn{\frac{1}{n}}^2 \right]
+    - \left[ \frac{s}{n} + f\prn{\frac{s}{n}}\prn{\frac{s}{n}}^2 \right] }
+  \nonumber                                                                      \\
+   & = \abs{ s f\prn{\frac{1}{n}} - s^2 f\prn{\frac{s}{n}} } \frac{1}{n^2}
+  \label{eq:Pi-prod-summand-taylor}                                              \\
+   & = O\prn{\frac{1}{n^2}} \quad \text{as } n \rightarrow \infty, \nonumber
 \end{align}
 which concludes that the sum on the right-hand side of
 \eqref{eq:rewrite-Pi-prod-form} is absolute convergent.
 
 \begin{quotebox}
-    \begin{equation*}
-        \Pi(s) = 2^s \Pi \prn{\frac{s}{2}} \Pi \prn{\frac{s - 1}{2}} \pi^{-1/2}
-    \end{equation*}
+  \begin{equation*}
+    \Pi(s) = 2^s \Pi \prn{\frac{s}{2}} \Pi \prn{\frac{s - 1}{2}} \pi^{-1/2}
+  \end{equation*}
 \end{quotebox}
 
 By equation (3) in the book,
 \begin{align*}
-    \Pi\prn{\frac{s}{2}}\Pi\prn{\frac{s-1}{2}}
-     & = \lim_{N\rightarrow\infty} \left[ \piprod{\frac{s}{2}}{N} \right.             \\
-     & \hspace{5em} \cdot \left. \piprod{\frac{s-1}{2}}{N} \right]                    \\
-     & = \lim_{N\rightarrow\infty} \frac{\prn{1\cdot2\cdot\cdots\cdot N}^2}
-    {\frac{1}{2^{2N}}\prn{s+1}\prn{s+2}\cdots\prn{s+2N}}\prn{N+1}^{s-\frac12}         \\
-     & = \lim_{N\rightarrow\infty} \frac{2\cdot4\cdot\cdots\cdot 2N}{\prn{s+1}
-        \prn{s+2}\cdots\prn{s+2N}} \cdot \frac{1\cdot2\cdot\cdots\cdot N}
-    {\frac{1}{2^{N}}}\prn{N+1}^{s-\frac12}                                            \\
-     & = \lim_{N\rightarrow\infty} \left[ \piprod{s}{2N} \right.                      \\
-     & \hspace{5em} \left. \cdot \frac{1\cdot2\cdot\cdots\cdot N}{\frac{1}{2^{N}}
-            1\cdot3\cdot\cdots\cdot (2N-1)} \cdot \frac{\prn{N+1}^{s-\frac12}}
-    {\prn{2N+1}^s} \right]                                                            \\
-     & = \lim_{N\rightarrow\infty} \left[ \piprod{s}{2N} \right.                      \\
-     & \hspace{5em} \left. \cdot \piprod{-\frac12}{N} \cdot \frac{\prn{N+1}^{s}}
-    {\prn{2N+1}^s} \right]                                                            \\
-     & = \lim_{N\rightarrow\infty} \piprod{s}{2N}                                     \\
-     & \hspace{5em} \cdot \lim_{N\rightarrow\infty} \piprod{-\frac12}{N}              \\
-     & \hspace{5em} \cdot \lim_{N\rightarrow\infty}\frac{\prn{N+1}^{s}}{\prn{2N+1}^s} \\
-     & = \Pi\prn{s} \Pi\prn{-\frac12} \prn{\frac12}^s = \Pi\prn{s} \pi^{\frac12}
-    2^{-s},
+  \Pi\prn{\frac{s}{2}}\Pi\prn{\frac{s-1}{2}}
+   & = \lim_{N\rightarrow\infty} \left[ \piprod{\frac{s}{2}}{N} \right.         \\
+   & \hspace{5em} \cdot \left. \piprod{\frac{s-1}{2}}{N} \right]                \\
+   & = \lim_{N\rightarrow\infty} \frac{\prn{1\cdot2\cdot\cdots\cdot N}^2}
+  {\frac{1}{2^{2N}}\prn{s+1}\prn{s+2}\cdots\prn{s+2N}}\prn{N+1}^{s-\frac12}     \\
+   & = \lim_{N\rightarrow\infty} \frac{2\cdot4\cdot\cdots\cdot 2N}{\prn{s+1}
+    \prn{s+2}\cdots\prn{s+2N}} \cdot \frac{1\cdot2\cdot\cdots\cdot N}
+  {\frac{1}{2^{N}}}\prn{N+1}^{s-\frac12}                                        \\
+   & = \lim_{N\rightarrow\infty} \left[ \piprod{s}{2N} \right.                  \\
+   & \hspace{5em} \left. \cdot \frac{1\cdot2\cdot\cdots\cdot N}{\frac{1}{2^{N}}
+      1\cdot3\cdot\cdots\cdot (2N-1)} \cdot \frac{\prn{N+1}^{s-\frac12}}
+  {\prn{2N+1}^s} \right]                                                        \\
+   & = \lim_{N\rightarrow\infty} \left[ \piprod{s}{2N} \right.                  \\
+   & \hspace{5em} \left. \cdot \piprod{-\frac12}{N} \cdot \frac{\prn{N+1}^{s}}
+  {\prn{2N+1}^s} \right]                                                        \\
+   & = \lim_{N\rightarrow\infty} \piprod{s}{2N}                                 \\
+   & \hspace{5em} \cdot \lim_{N\rightarrow\infty} \piprod{-\frac12}{N}          \\
+   & \hspace{5em} \cdot \lim_{N\rightarrow\infty}\frac{\prn{N+1}^{s}}{\prn{2N
+  + 1}^s}                                                                       \\
+   & = \Pi\prn{s} \Pi\prn{-\frac12} \prn{\frac12}^s = \Pi\prn{s} \pi^{\frac12}
+  2^{-s},
 \end{align*}
 which implies
 \begin{equation*}
-    \Pi\prn{s} = 2^{s} \Pi\prn{\frac{s}{2}} \Pi\prn{\frac{s-1}{2}} \pi^{-\frac12}.
+  \Pi\prn{s} = 2^{s} \Pi\prn{\frac{s}{2}} \Pi\prn{\frac{s-1}{2}} \pi^{-\frac12}.
 \end{equation*}
 
 \begin{quotebox}
-    Using it one can prove that $\Pi(s)$ is an analytic function of the complex
-    variable s which has simple poles at $s = -1, -2, -3, \dots$.
+  Using it one can prove that $\Pi(s)$ is an analytic function of the complex
+  variable s which has simple poles at $s = -1, -2, -3, \dots$.
 \end{quotebox}
 
-We showed above that $\Pi(s)$ is well-defined excluding $s = -1, -2, -3,
-    \dots$. Now we show $\Pi(s)$ is analytic using equation
-\eqref{eq:Pi-prod-summand-taylor}. According to \cite[p.~176, Theorem
-    1]{ahlfors1979complex}, it suffices to show that
+We showed above that $\Pi(s)$ is well-defined excluding $s = -1, -2, -3, \dots$. Now
+we show $\Pi(s)$ is analytic using equation \eqref{eq:Pi-prod-summand-taylor}.
+According to \cite[p.~176, Theorem 1]{ahlfors1979complex}, it suffices to show that
 \eqref{eq:Pi-prod-summand-taylor} converges uniformly on compact subsets of the
-domain of $\Pi(s)$, which is obvious by setting $n$ large enough and observing
-that $s$ is bounded on any compact subset (so that $s/n$ is close to $0$ and
-the function $s f\prn{1/n} - s^2 f\prn{s/n}$ is bounded).
+domain of $\Pi(s)$, which is obvious by setting $n$ large enough and observing that
+$s$ is bounded on any compact subset (so that $s/n$ is close to $0$ and the function
+$s f\prn{1/n} - s^2 f\prn{s/n}$ is bounded).
 
-To show that $\Pi(s)$ has simple poles at $s = -1, -2, -3, \dots$, it suffices
-to multiply the product form of $\Pi(s)$ in \eqref{eq:rewrite-Pi-prod-form} by
-$(s+n)$ and repeat the same argument.
+To show that $\Pi(s)$ has simple poles at $s = -1, -2, -3, \dots$, it suffices to
+multiply the product form of $\Pi(s)$ in \eqref{eq:rewrite-Pi-prod-form} by $(s+n)$
+and repeat the same argument.
 
 \setcounter{section}{15}
+
 \section{The Remaining Terms}
 
 \Page{32}
 
 \begin{quotebox}
-    Note first that the series
-    \[
-        \frac{d}{ds} \left[ \frac{\log \Pi(s/2)}{s} \right] = -\sum_{n=1}^\infty
-        \frac{d}{ds} \left\{ \frac{\log[1 + (s/2n)]}{s} \right\}
-    \]
-    converges uniformly in any disk $|s| \leq K$. [For large $n$ the series
-            expansion $\log(1 + x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \cdots$ can be
-            used, and the summand on the right contains only terms in $n^{-2}, n^{-3},
-                \ldots.$]
+  Note first that the series
+  \begin{equation*}
+    \frac{d}{ds} \left[ \frac{\log \Pi(s/2)}{s} \right] = -\sum_{n=1}^\infty
+    \frac{d}{ds} \left\{ \frac{\log[1 + (s/2n)]}{s} \right\}
+  \end{equation*}
+  converges uniformly in any disk $|s| \leq K$. [For large $n$ the series expansion
+  $\log(1 + x) = x - \frac{1}{2}x^2 + \frac{1}{3}x^3 - \cdots$ can be used, and the
+  summand on the right contains only terms in $n^{-2}, n^{-3}, \ldots.$]
 \end{quotebox}
 
-By ``the summand on the right'', we do not refer to the equation quoted above,
-but to the second equation at the top of the page
-\[
-    \log \Pi\left(\frac{s}{2}\right) = \sum_{n=1}^\infty \left[ -\log\left(1 +
-        \frac{s}{2n}\right) + \frac{s}{2} \log\left(1 + \frac{1}{n}\right)
-        \right],
-\]
+By ``the summand on the right'', we do not refer to the equation quoted above, but
+to the second equation at the top of the page
+\begin{equation*}
+  \log \Pi\left(\frac{s}{2}\right) = \sum_{n=1}^\infty \left[ -\log\left(1 +
+    \frac{s}{2n}\right) + \frac{s}{2} \log\left(1 + \frac{1}{n}\right) \right],
+\end{equation*}
 and \cite[p.~176, Theorem 1]{ahlfors1979complex} is used.
 
 \Page{33}
 
 \begin{quotebox}
-    Integration by parts puts this in the form
-    \begin{align*}
-        = & \frac{1}{2\pi i} \frac{x^a}{2n \log x} \cdot \frac{1}{2n \log x}
-        \left( \left.\left\{ \frac{d}{dv} \left[ \frac{\log(1 + v + b)}{v + b}
-        \right] x^{2nv} \right\}\right|_{v = -ic}^{v = ic} \right.           \\
-          & \left. - \int_{-ic}^{ic} \frac{d^2}{dv^2} \left[
-            \frac{\log(1 + v + b)}{v + b} \right] x^{2nv} dv \right).
-    \end{align*}
-    Now $b$ is a real number $0 \leq b \leq a$, the function
-    \begin{equation*}
-        \frac{d}{dv} \left[ \frac{\log(1 + v + b)}{v + b} \right] = \frac{1}{(v + b)(v
-            + b + 1)} - \frac{\log(1 + v + b)}{(v + b)^2}
-    \end{equation*}
-    is bounded on the imaginary axis, and its derivative is absolutely integrable
-    over $(-i\infty,$ $i\infty)$, from which it follows that the modulus of the
-    $n$th term of the series on the right side of $(2)$ is at most a constant times
-    $n^{-2}$ for all $T$.
+  Integration by parts puts this in the form
+  \begin{align*}
+    = & \frac{1}{2\pi i} \frac{x^a}{2n \log x} \cdot \frac{1}{2n \log x}
+    \left( \left.\left\{ \frac{d}{dv} \left[ \frac{\log(1 + v + b)}{v + b}
+    \right] x^{2nv} \right\}\right|_{v = -ic}^{v = ic} \right.           \\
+      & \left. - \int_{-ic}^{ic} \frac{d^2}{dv^2} \left[
+      \frac{\log(1 + v + b)}{v + b} \right] x^{2nv} dv \right).
+  \end{align*}
+  Now $b$ is a real number $0 \leq b \leq a$, the function
+  \begin{equation*}
+    \frac{d}{dv} \left[ \frac{\log(1 + v + b)}{v + b} \right] = \frac{1}{(v + b)(v +
+      b + 1)} - \frac{\log(1 + v + b)}{(v + b)^2}
+  \end{equation*}
+  is bounded on the imaginary axis, and its derivative is absolutely integrable over
+  $(-i\infty,$ $i\infty)$, from which it follows that the modulus of the $n$th term
+  of the series on the right side of $(2)$ is at most a constant times $n^{-2}$ for
+  all $T$.
 \end{quotebox}
 
-Actually, it doesn't suffice that the function is bounded on the imaginary
-axis, because $b = a/2n$ is not a constant and changes for each term in the
-sum. But luckily we can show a better result. Let $z = v + b$. We note $z$ lies
-in the strip $0 \leq \re z \le a$. The function above is then
+Actually, it doesn't suffice that the function is bounded on the imaginary axis,
+because $b = a/2n$ is not a constant and changes for each term in the sum. But
+luckily we can show a better result. Let $z = v + b$. We note $z$ lies in the strip
+$0 \leq \re z \le a$. The function above is then
 \begin{equation*}
-    f(z) = \frac{1}{z(z + 1)} - \frac{\log(1 + z)}{z^2}.
+  f(z) = \frac{1}{z(z + 1)} - \frac{\log(1 + z)}{z^2}.
 \end{equation*}
 $f(z)$ is analytic on the strip $0 \leq \re z \le a$ except for a singularity
 at $z = 0$. However, this singularity is removable because
 \begin{align*}
-    \lim_{z \to 0} zf(z)
-     & = \lim_{z \to 0} \left\{ \frac{1}{z + 1} - \frac{\log(1 + z)}{z}
-    \right\} = 1 - \lim_{z \to 0} \frac{\log(1 + z)}{z}                 \\
-     & = 1 - \left\{\log(1+z)\right\}'|_{z = 0} = 1 - 1 = 0,
+  \lim_{z \to 0} zf(z)
+   & = \lim_{z \to 0} \left\{ \frac{1}{z + 1} - \frac{\log(1 + z)}{z}
+  \right\} = 1 - \lim_{z \to 0} \frac{\log(1 + z)}{z}                 \\
+   & = 1 - \left\{\log(1+z)\right\}'|_{z = 0} = 1 - 1 = 0,
 \end{align*}
-where we have used \cite[p.~124, Theorem 7]{ahlfors1979complex}. Thus we have
-shown that $f(z)$ is analytic on the entire strip. On the other hand, it is not
-hard to see that $f(z)$ is bounded for large $\abs{z}$. These two facts imply
-that $f(z)$ is bounded on the strip, which is the better result we were to
-show.
+where we have used \cite[p.~124, Theorem 7]{ahlfors1979complex}. Thus we have shown
+that $f(z)$ is analytic on the entire strip. On the other hand, it is not hard to
+see that $f(z)$ is bounded for large $\abs{z}$. These two facts imply that $f(z)$ is
+bounded on the strip, which is the better result we were to show.
 
 The derivative of the function is
 \begin{align*}
-      & - \frac{2v + 2b + 1}{(v + b)^2(v + b + 1)^2}
-    - \frac{1}{(v + b)^2 (v + b + 1)} + \frac{2\log(1 + v + b)}{(v + b)^3} \\
-    = & - \frac{3v + 3b + 2}{(v + b)^2(v + b + 1)^2}
-    + \frac{2\log(1 + v + b)}{(v + b)^3},
+    & - \frac{2v + 2b + 1}{(v + b)^2(v + b + 1)^2}
+  - \frac{1}{(v + b)^2 (v + b + 1)} + \frac{2\log(1 + v + b)}{(v + b)^3} \\
+  = & - \frac{3v + 3b + 2}{(v + b)^2(v + b + 1)^2}
+  + \frac{2\log(1 + v + b)}{(v + b)^3},
 \end{align*}
-the modulo of which is $\leq O(\abs{v}^{-3} + \log\prn{\abs{v}}\abs{v}^{-3})$
-as $v \to \pm i\infty$, which is absolutely integrable.
+the modulo of which is $\leq O(\abs{v}^{-3} + \log\prn{\abs{v}}\abs{v}^{-3})$ as $v
+\to \pm i\infty$, which is absolutely integrable.
 
 \setcounter{chapter}{2}
+
 \chapter{Riemann's Main Formula}
 
 \setcounter{section}{1}
-\section{Derivation of von Mangoldt's Formula for \texorpdfstring{$\psi(x)$}{ψ(x)}}
+
+\section{Derivation of von Mangoldt's Formula for
+  \texorpdfstring{$\psi(x)$}{ψ(x)}}
 
 \Page{53}
 
 \begin{quotebox}
-    The second method of evaluating the integral (1) is as follows. Differentiate
-    logarithmically the formula
-    \[
-        \Pi \left( \frac{s}{2} \right) \pi^{-s/2} (s - 1) \zeta(s) = \xi(0)
-        \prod_{\rho} \left( 1 - \frac{s}{\rho} \right)
-    \]
-    to find
-    \begin{align*}
-         & \frac{d}{ds} \log \Pi \left( \frac{s}{2} \right) - \frac{1}{2} \log
-        \pi + \frac{1}{s - 1} + \frac{\zeta'(s)}{\zeta(s)}                     \\
-         & \qquad = \sum_{\rho} \frac{1}{1 - (s/\rho)} \cdot \left(
-        -\frac{1}{\rho} \right).
-    \end{align*}
-    Using the expression of \( \Pi(x) \) as an infinite product [(4) of Section
-            1.3], and differentiating termwise then gives
-    \begin{align*}
-        \tag{6} -\frac{\zeta'(s)}{\zeta(s)} =
-         & \frac{1}{s - 1} - \sum_{\rho} \frac{1}{s - \rho}                  \\
-         & + \sum_{n=1}^{\infty} \left[ -\frac{1}{s + 2n} + \frac{1}{2} \log
-            \left( 1 + \frac{1}{n} \right) \right] - \frac{1}{2} \log \pi.
-    \end{align*}
+  The second method of evaluating the integral (1) is as follows. Differentiate
+  logarithmically the formula
+  \begin{equation*}
+    \Pi \left( \frac{s}{2} \right) \pi^{-s/2} (s - 1) \zeta(s) = \xi(0) \prod_{\rho}
+    \left( 1 - \frac{s}{\rho} \right)
+  \end{equation*}
+  to find
+  \begin{align*}
+     & \frac{d}{ds} \log \Pi \left( \frac{s}{2} \right) - \frac{1}{2} \log
+    \pi + \frac{1}{s - 1} + \frac{\zeta'(s)}{\zeta(s)}                     \\
+     & \qquad = \sum_{\rho} \frac{1}{1 - (s/\rho)} \cdot \left(
+    -\frac{1}{\rho} \right).
+  \end{align*}
+  Using the expression of \( \Pi(x) \) as an infinite product [(4) of Section 1.3],
+  and differentiating termwise then gives
+  \begin{align*}
+    \tag{6} -\frac{\zeta'(s)}{\zeta(s)} =
+     & \frac{1}{s - 1} - \sum_{\rho} \frac{1}{s - \rho}                  \\
+     & + \sum_{n=1}^{\infty} \left[ -\frac{1}{s + 2n} + \frac{1}{2} \log
+      \left( 1 + \frac{1}{n} \right) \right] - \frac{1}{2} \log \pi.
+  \end{align*}
 
-    \vspace{1ex} \centerline{\vdots} \vspace{1em}
+  \vspace{1ex} \centerline{\vdots} \vspace{1em}
 
-    \dots, note first that both of the infinite series in (6) converge uniformly in
-    any disk \( |s| \leq K \). (The series in \( n \) converges uniformly because
-    \begin{align*}
-         & \abs{(s + 2n)^{-1} - \textstyle\frac{1}{2} \log(1 + n^{-1})}      \\
-         & \qquad = |(s + 2n)^{-1} - (2n)^{-1} + (2n)^{-1}                   \\
-         & \qquad \quad - \textstyle\frac{1}{2}(n^{-1} - \frac{1}{2}n^{-2} +
-        \frac{1}{3}n^{-3} - \cdots )|                                        \\
-         & \qquad \leq |s(s + 2n)^{-1}(2n)^{-1}| + \textstyle \abs{
-        \frac{1}{4}n^{-2} - \frac{1}{6}n^{-3} + \cdots}                      \\
-         & \qquad \leq K(2n)^{-2} + n^{-2} \leq \text{const}/n^2
-    \end{align*}
-    for all sufficiently large \( n \), and the series in \( \rho \) converges
-    uniformly because when the terms \( \rho \) and \( 1 - \rho \) are paired
-    \begin{align*}
-         & |(s - \rho)^{-1} + [s - (1 - \rho)]^{-1}|                          \\
-         & \qquad = \left| \left[\prn{s - \frac{1}{2}} - \prn{\rho -
-                \frac{1}{2}}\right]^{-1} + \left[\prn{s - \frac{1}{2}} +
-        \prn{\rho - \frac{1}{2}}\right]^{-1} \right|                          \\
-         & \qquad = \left\lvert \frac{2(s - \frac{1}{2})}{(s - \frac{1}{2})^2
-            - (\rho - \frac{1}{2})^2} \right\rvert
-        \leq \text{const} \left\lvert \rho - \frac{1}{2} \right\rvert^{-2}
-    \end{align*}
-    for all sufficiently large \( \rho \) once \( K \) is fixed and because \( \sum
-    |\rho - \frac{1}{2}|^{-2} \) converges by the theorem of Section 2.5.) This
-    proves that the termwise differentiation by which (6) was obtained is valid.
+  \dots, note first that both of the infinite series in (6) converge uniformly in
+  any disk \( |s| \leq K \). (The series in \( n \) converges uniformly because
+  \begin{align*}
+     & \abs{(s + 2n)^{-1} - \textstyle\frac{1}{2} \log(1 + n^{-1})}      \\
+     & \qquad = |(s + 2n)^{-1} - (2n)^{-1} + (2n)^{-1}                   \\
+     & \qquad \quad - \textstyle\frac{1}{2}(n^{-1} - \frac{1}{2}n^{-2} +
+    \frac{1}{3}n^{-3} - \cdots )|                                        \\
+     & \qquad \leq |s(s + 2n)^{-1}(2n)^{-1}| + \textstyle \abs{
+    \frac{1}{4}n^{-2} - \frac{1}{6}n^{-3} + \cdots}                      \\
+     & \qquad \leq K(2n)^{-2} + n^{-2} \leq \text{const}/n^2
+  \end{align*}
+  for all sufficiently large \( n \), and the series in \( \rho \) converges
+  uniformly because when the terms \( \rho \) and \( 1 - \rho \) are paired
+  \begin{align*}
+     & |(s - \rho)^{-1} + [s - (1 - \rho)]^{-1}|                          \\
+     & \qquad = \left| \left[\prn{s - \frac{1}{2}} - \prn{\rho -
+        \frac{1}{2}}\right]^{-1} + \left[\prn{s - \frac{1}{2}} +
+    \prn{\rho - \frac{1}{2}}\right]^{-1} \right|                          \\
+     & \qquad = \left\lvert \frac{2(s - \frac{1}{2})}{(s - \frac{1}{2})^2
+      - (\rho - \frac{1}{2})^2} \right\rvert
+    \leq \text{const} \left\lvert \rho - \frac{1}{2} \right\rvert^{-2}
+  \end{align*}
+  for all sufficiently large \( \rho \) once \( K \) is fixed and because \( \sum
+  |\rho - \frac{1}{2}|^{-2} \) converges by the theorem of Section 2.5.) This proves
+  that the termwise differentiation by which (6) was obtained is valid.
 \end{quotebox}
 
 This uses the following theorem.
 \begin{theorem*}
-    If a sequence of analytic functions \( f_n
-    \) converges pointwise to a function \( f \) in a region \( \Omega \), and if
-    \( f_n' \) converges to \( g \) uniformly on compact subsets of \( \Omega \),
-    then \( f \) is analytic, \( g = f' \), and \( f_n \) converges to \( f \)
-    uniformly on compact subsets of \( \Omega \).
+  If a sequence of analytic functions \( f_n
+  \) converges pointwise to a function \( f \) in a region \( \Omega \), and if
+  \( f_n' \) converges to \( g \) uniformly on compact subsets of \( \Omega \),
+  then \( f \) is analytic, \( g = f' \), and \( f_n \) converges to \( f \)
+  uniformly on compact subsets of \( \Omega \).
 \end{theorem*}
 
-Specifically, the series $\sum_\rho\log\prn{1 - \frac{s}{\rho}}$ converges
-pointwise which is proved in section 2.5, and the series of its derivatives
-$\sum_\rho\prn{s - \rho}^{-1}$ converges uniformly on any disk $|s| \leq K$ as
-shown above, so the conditions of the theorem are met and
+Specifically, the series $\sum_\rho\log\prn{1 - \frac{s}{\rho}}$ converges pointwise
+which is proved in section 2.5, and the series of its derivatives $\sum_\rho\prn{s -
+\rho}^{-1}$ converges uniformly on any disk $|s| \leq K$ as shown above, so the
+conditions of the theorem are met and
 \begin{equation*}
-    \frac{d}{ds} \sum_\rho\log\prn{1 - \frac{s}{\rho}} = \sum_\rho\frac{1}{s -
-        \rho}.
+  \frac{d}{ds} \sum_\rho\log\prn{1 - \frac{s}{\rho}} = \sum_\rho\frac{1}{s - \rho}.
 \end{equation*}
 A similar argument holds for the series for $\Pi(s/2)$.
 

@@ -1,5 +1,5 @@
 #
-# latexindent.pl, version 3.24.1, 2024-05-12
+# latexindent.pl, version 3.24.4, 2024-07-18
 #
 # defaultSettings.yaml, the default settings for latexindent.pl
 #
@@ -530,10 +530,10 @@ modifyLineBreaks:
     sentencesDoNOTcontain:
       other: \\begin                    # regex
   textWrapOptions:
-    columns: 80
+    columns: 85
     multipleSpacesToSingle: 1
     removeBlockLineBreaks: 1
-    when: before                        # before/after
+    when: after                         # before/after
     comments:
       wrap: 0                           # 0/1
       inheritLeadingSpace: 0            # 0/1
@@ -571,7 +571,7 @@ modifyLineBreaks:
       A-Z: 1                            # 0/1
       a-z: 1                            # 0/1
       0-9: 0                            # 0/1
-      other: \\                         # regex
+      other: \-                         # regex
     blocksEndBefore:
       commentOnOwnLine: 1               # 0/1
       verbatim: 1                       # 0/1
@@ -671,7 +671,7 @@ fineTuning:
     before: (?:#\d\h*;?,?\/?)+|\<.*?\>
     between: _|\^|\*
   trailingComments:
-    notPreceededBy: (?<!\\)
+    notPrecededBy: (?<!\\)
     afterComment: .*?
   modifyLineBreaks:
     doubleBackSlash: \\\\(?:\h*\[\h*\d+\h*[a-zA-Z]+\h*\])?

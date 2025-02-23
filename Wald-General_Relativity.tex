@@ -8,16 +8,16 @@
 
 
 \titleformat{\chapter}[display]
-    {\fontspec{Times New Roman}}
-    {\NUMBERstring{chapter}}
-    {1pt}
-    {\hrule\vspace{6pt}\Large\fontspec{Times New Roman}\MakeUppercase}
+  {\fontspec{Times New Roman}}
+  {\NUMBERstring{chapter}}
+  {1pt}
+  {\hrule\vspace{6pt}\Large\fontspec{Times New Roman}\MakeUppercase}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \titleformat{\section}[block]
-    {\Large\bfseries}
-    {\thesection}
-    {1em}
-    {\fontspec{Times New Roman}\selectfont}
+  {\Large\bfseries}
+  {\thesection}
+  {1em}
+  {\fontspec{Times New Roman}\selectfont}
 
 
 \numberwithin{equation}{chapter}
@@ -27,10 +27,10 @@
 
 \newcounter{exercise}[chapter]
 \newcommand\Ex{
-    \if@noskipsec \leavevmode \fi
-    \par
-    \refstepcounter{exercise}
-    \noindent{\bfseries\arabic{exercise}.}
+  \if@noskipsec \leavevmode \fi
+  \par
+  \refstepcounter{exercise}
+  \noindent{\bfseries\arabic{exercise}.}
 }
 
 \renewcommand{\theenumi}{\alph{enumi}}
@@ -50,41 +50,42 @@
 
 \Page{9}
 
-\Ex \textit{Car and garage paradox.} We set up global inertial coordinates $t,
-    x, y, z$ for the doorman and $t', x', y', z'$ for the driver. Assume that the
-car travels in the $x$ and $x'$ directions in the two systems, that the garage
-door is located at $x = y = z = 0$ in the doorman's coordinates and the back
-end of the car is located at $x' = y' = z' = 0$ in the driver's coordinates,
-and that the back end of the car enters the garage at time $t = t' = 0$. Also
-assume that the car and the garage have the same length L.
+\Ex
+\textit{Car and garage paradox.} We set up global inertial coordinates $t, x, y, z$
+for the doorman and $t', x', y', z'$ for the driver. Assume that the car travels
+in the $x$ and $x'$ directions in the two systems, that the garage door is located
+at $x = y = z = 0$ in the doorman's coordinates and the back end of the car is
+located at $x' = y' = z' = 0$ in the driver's coordinates, and that the back end of
+the car enters the garage at time $t = t' = 0$. Also assume that the car and the
+garage have the same length L.
 
 We note down the Lorentz transform:
 \begin{align}
-    t' & = (t - vx/c^2)/(1-v^2/c^2)^{1/2}, \label{Lorentz-1} \\
-    x' & = (x - vt)/(1 - v^2/c^2)^{1/2}. \label{Lorentz-2}
+  t' & = (t - vx/c^2)/(1-v^2/c^2)^{1/2}, \label{Lorentz-1} \\
+  x' & = (x - vt)/(1 - v^2/c^2)^{1/2}. \label{Lorentz-2}
 \end{align}
 
 At $t = 0$, we assume the doorman sees the front end of the car at $x = x_1$.
 Because $x'_1 = L$, from \eqref{Lorentz-2} we get $$L = (x_1 - v\cdot 0)/(1 -
-    v^2/c^2)^{1/2}$$ or $$x_1 = (1 - v^2/c^2)^{1/2}L < L.$$ So the doorman was
-correct that the car fitted into the garage when they slammed the door.
+v^2/c^2)^{1/2}$$ or $$x_1 = (1 - v^2/c^2)^{1/2}L < L.$$ So the doorman was correct
+that the car fitted into the garage when they slammed the door.
 
-Now assume the driver sees the back wall of the garage at $x' = x'_2$ when the
-door is slammed at $t' = 0$. We plug the values $t'_2 = 0, x_2 = L$ into
+Now assume the driver sees the back wall of the garage at $x' = x'_2$ when the door
+is slammed at $t' = 0$. We plug the values $t'_2 = 0, x_2 = L$ into
 \eqref{Lorentz-1} and \eqref{Lorentz-2} to get
 \begin{align*}
-    0    & = (t_2 - vL/c^2)/(1-v^2/c^2)^{1/2}, \\
-    x'_2 & = (L - vt_2)/(1 - v^2/c^2)^{1/2},
+  0    & = (t_2 - vL/c^2)/(1-v^2/c^2)^{1/2}, \\
+  x'_2 & = (L - vt_2)/(1 - v^2/c^2)^{1/2},
 \end{align*}
 from which we solve
 \begin{align*}
-    t_2  & = vL/c^2,                   \\
-    x'_2 & = (1 - v^2/c^2)^{1/2}L < L.
+  t_2  & = vL/c^2,                   \\
+  x'_2 & = (1 - v^2/c^2)^{1/2}L < L.
 \end{align*}
 So the driver is also correct.
 
-If we want to analyze the case that the car decelerates and does not crash into
-the back wall, we would have to introduce non-inertial coordinates.
+If we want to analyze the case that the car decelerates and does not crash into the
+back wall, we would have to introduce non-inertial coordinates.
 
 \chapter{Manifolds and Tensor Fields}
 
@@ -95,27 +96,27 @@ the back wall, we would have to introduce non-inertial coordinates.
 \Page{17}
 
 \begin{quotebox}
-    Had we chosen a different chart, $\mathtt{\psi}'$, we would have obtained a
-    different coordinate basis $\{X'_\nu\}$. We can, of course, express $X_\mu$ in
-    terms of the new basis $\{X'_\nu\}$. Using the chain rule of advanced calculus,
-    we have
-    \begin{equation*}
-        X_\mu = \sum_{\nu=1}^n \vat{\pdv{x'^\nu}{x^\mu}}{\psi(p)} X'_\nu,
-    \end{equation*}
-    where $x'^\nu$ denotes the $\nu$th component of the map $\psi'\circ\psi^{-1}$.
+  Had we chosen a different chart, $\mathtt{\psi}'$, we would have obtained a
+  different coordinate basis $\{X'_\nu\}$. We can, of course, express $X_\mu$ in
+  terms of the new basis $\{X'_\nu\}$. Using the chain rule of advanced calculus, we
+  have
+  \begin{equation*}
+    X_\mu = \sum_{\nu=1}^n \vat{\pdv{x'^\nu}{x^\mu}}{\psi(p)} X'_\nu,
+  \end{equation*}
+  where $x'^\nu$ denotes the $\nu$th component of the map $\psi'\circ\psi^{-1}$.
 \end{quotebox}
 
 \begin{proof}
-    Let $f \in \mathscr{F}$, $X_\mu$ acting on $f$ gives rise to
-    \begin{align*}
-        X_\mu(f)
-         & = \vat{\pdvf{x^\mu}{f\circ\psi^{-1}}}{\psi(p)}                          \\
-         & = \vat{\pdvf{x^\mu}{f\circ\psi'^{-1}\circ\psi'\circ\psi^{-1}}}{\psi(p)} \\
-         & = \sum_{\nu=1}^n \vat{\pdvf{x'^\nu}{f\circ\psi'^{-1}}}{\psi'(p)}
-        \vat{\pdv{\prn{\psi'\circ\psi^{-1}}^\nu}{x^\mu}}{\psi(p)}                  \\
-         & = \sum_{\nu=1}^n \vat{\pdv{x'^\nu}{x^\mu}}{\psi(p)} \qedhere
-        X'_\nu(f).
-    \end{align*}
+  Let $f \in \mathscr{F}$, $X_\mu$ acting on $f$ gives rise to
+  \begin{align*}
+    X_\mu(f)
+     & = \vat{\pdvf{x^\mu}{f\circ\psi^{-1}}}{\psi(p)}                          \\
+     & = \vat{\pdvf{x^\mu}{f\circ\psi'^{-1}\circ\psi'\circ\psi^{-1}}}{\psi(p)} \\
+     & = \sum_{\nu=1}^n \vat{\pdvf{x'^\nu}{f\circ\psi'^{-1}}}{\psi'(p)}
+    \vat{\pdv{\prn{\psi'\circ\psi^{-1}}^\nu}{x^\mu}}{\psi(p)}                  \\
+     & = \sum_{\nu=1}^n \vat{\pdv{x'^\nu}{x^\mu}}{\psi(p)} \qedhere
+    X'_\nu(f).
+  \end{align*}
 \end{proof}
 
 \section{Tensors; the Metric Tensor}
@@ -123,145 +124,139 @@ the back wall, we would have to introduce non-inertial coordinates.
 \Page{20}
 
 \begin{quotebox}
-    For example, a tensor $T$ of type $(1,1)$ is a multilinear map from $V^* \times
-        V \to R$. Hence, if we fix $v \in V$, $T(\cdot,v)$ is an element of $V^{**}$,
-    which we identify with an element of $V$. Thus, given a vector in $V$, $T$
-    produces another vector in $V$ in a linear fashion. In other words, we can view
-    a tensor of type $(1,1)$ as a linear map from $V$ into $V$, and vice versa.
+  For example, a tensor $T$ of type $(1,1)$ is a multilinear map from $V^* \times V
+  \to R$. Hence, if we fix $v \in V$, $T(\cdot,v)$ is an element of $V^{**}$, which
+  we identify with an element of $V$. Thus, given a vector in $V$, $T$ produces
+  another vector in $V$ in a linear fashion. In other words, we can view a tensor of
+  type $(1,1)$ as a linear map from $V$ into $V$, and vice versa.
 \end{quotebox}
 
-The above quote associates a tensor to a linear map. We want to define the
-reverse association and show it is the inverse of the forward association.
-Actually, given any linear map $L\colon V \to V$, the map $(w^*, v) \mapsto
-    w^*(L(v))$ defines a tensor of type $(1,1)$. Now assume $L$ is the linear map
-associated with tensor $T$. For fixed $v \in V$, by the quote $T(\cdot,v)$ as
-an element of $V^{**}$ is identified with $L(v)$, meaning for any $w^* \in
-    V^*$, $T(w^*,v) = w^*(L(v))$. This shows the reverse association is indeed the
-inverse of the forward one.
+The above quote associates a tensor to a linear map. We want to define the reverse
+association and show it is the inverse of the forward association. Actually, given
+any linear map $L\colon V \to V$, the map $(w^*, v) \mapsto w^*(L(v))$ defines a
+tensor of type $(1,1)$. Now assume $L$ is the linear map associated with tensor $T$.
+For fixed $v \in V$, by the quote $T(\cdot,v)$ as an element of $V^{**}$ is
+identified with $L(v)$, meaning for any $w^* \in V^*$, $T(w^*,v) = w^*(L(v))$. This
+shows the reverse association is indeed the inverse of the forward one.
 
-\setcounter{section}{3}
-\section{The Abstract Index Notation}
+\setcounter{section}{3}\section{The Abstract Index Notation}
 
 \Page{25}
 
 \begin{quotebox}
-    Since a metric $g$ is a tensor of type $(0,2)$, it is denoted $g_{ab}$. If we
-    apply the metric to a vector, $v^a$, we get the dual vector $g_{ab}v^b$.
+  Since a metric $g$ is a tensor of type $(0,2)$, it is denoted $g_{ab}$. If we
+  apply the metric to a vector, $v^a$, we get the dual vector $g_{ab}v^b$.
 \end{quotebox}
 
 To make sense of $g_{ab}v^b$, we view $v^a$ as an element of $V_p^{**}$, thus a
-tensor of type $(1,0)$ and $g_{ab}v^b$ as a contraction of the outer product
-between $g_{ab}$ and $v^b$. We want to show that $g_{ab}v^b$ is just the dual
-vector obtained by applying $g_{ab}$ to $v^a$, i.e., $g_{ab}(\cdot,v^a)$.
+tensor of type $(1,0)$ and $g_{ab}v^b$ as a contraction of the outer product between
+$g_{ab}$ and $v^b$. We want to show that $g_{ab}v^b$ is just the dual vector
+obtained by applying $g_{ab}$ to $v^a$, i.e., $g_{ab}(\cdot,v^a)$.
 \begin{proof}
-    Let $\set{w_\sigma}$ be a basis of $V_p$ and $\set{{w^\sigma}^*}$ its dual
-    basis. For any $u^a\in V_p$, $g_{ab}v^b$ evaluated at $u^a$ by the definition
-    of contraction is
-    \begin{align}
-        g_{ab}v^b(u^a)
-         & = \sum_{\sigma=1}^n g_{ab}(u^a, w_\sigma)v^a\prn{{w^\sigma}^*} =
-        \sum_{\sigma=1}^n g_{ab}(u^a, w_\sigma){w^\sigma}^*(v^a)
-        = g_{ab}\prn{u^a, \sum_{\sigma=1}^n {w^\sigma}^*(v^a) w_\sigma}
-        \label{eq:contraction-technique}                                    \\
-         & = g_{ab}(u^a,v^a). \notag \qedhere
-    \end{align}
+  Let $\set{w_\sigma}$ be a basis of $V_p$ and $\set{{w^\sigma}^*}$ its dual basis.
+  For any $u^a\in V_p$, $g_{ab}v^b$ evaluated at $u^a$ by the definition of
+  contraction is
+  \begin{align}
+    g_{ab}v^b(u^a)
+     & = \sum_{\sigma=1}^n g_{ab}(u^a, w_\sigma)v^a\prn{{w^\sigma}^*} =
+    \sum_{\sigma=1}^n g_{ab}(u^a, w_\sigma){w^\sigma}^*(v^a)
+    = g_{ab}\prn{u^a, \sum_{\sigma=1}^n {w^\sigma}^*(v^a) w_\sigma}
+    \label{eq:contraction-technique}                                    \\
+     & = g_{ab}(u^a,v^a). \notag \qedhere
+  \end{align}
 \end{proof}
 
 \begin{quotebox}
-    The inverse of $g_{ab}$ is a tensor of type $(2,0)$ and could be denoted as
-    $\prn{g^{-1}}^{ab}$. It is convenient, however, to drop the inverse sign and
-    denote it simply as $g^{ab}$... by definition, $g^{ab}g_{bc} = {\delta^a}_c$,
-    where ${\delta^a}_c$ (viewed as a map from $V_p$ into $V_p$) is the identity
-    map.
+  The inverse of $g_{ab}$ is a tensor of type $(2,0)$ and could be denoted as
+  $\prn{g^{-1}}^{ab}$. It is convenient, however, to drop the inverse sign and
+  denote it simply as $g^{ab}$... by definition, $g^{ab}g_{bc} = {\delta^a}_c$,
+  where ${\delta^a}_c$ (viewed as a map from $V_p$ into $V_p$) is the identity map.
 \end{quotebox}
 
 Let $L\colon V\to V^*$ denote the linear map induced by $g$, i.e., $g(u, v) =
-    L(v)(u)$ for any $u, v \in V_p$. By definition, for any $u^*, v^* \in V_p^*$,
-$g^{-1}(u^*, v^*) = L^{-1}(v^*)(u^*) = u^*\prn{L^{-1}(v^*)}$. Let
-$\set{w_\sigma}$ be a basis of $V_p$ and $\set{{w^\sigma}^*}$ its dual basis.
-Then for any $u^* \in V_p^*$, $v \in V_p$, we have
+L(v)(u)$ for any $u, v \in V_p$. By definition, for any $u^*, v^* \in V_p^*$,
+$g^{-1}(u^*, v^*) = L^{-1}(v^*)(u^*) = u^*\prn{L^{-1}(v^*)}$. Let $\set{w_\sigma}$
+be a basis of $V_p$ and $\set{{w^\sigma}^*}$ its dual basis. Then for any $u^* \in
+V_p^*$, $v \in V_p$, we have
 \begin{align}
-    g^{ab}g_{bc}(u^*, v)
-     & = \sum_{\sigma=1}^n g^{-1}\prn{u^*, {w^\sigma}^*} g(w_\sigma, v) \notag     \\
-     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{{w^\sigma}^*}} L(v)(w_\sigma) \notag \\
-     & = \sum_{\sigma=1}^n u^*\prn{L(v)\prn{w_\sigma}L^{-1}({w^\sigma}^*)} \notag  \\
-     & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{L(v)(w_\sigma){w^\sigma}^*}} \notag  \\
-     & = u^*\prn{L^{-1}\prn{\sum_{\sigma=1}^n L(v)\prn{w_\sigma}{w^\sigma}^*}}.
-    \label{eq:prove-metric-inverse}
+  g^{ab}g_{bc}(u^*, v)
+   & = \sum_{\sigma=1}^n g^{-1}\prn{u^*, {w^\sigma}^*} g(w_\sigma, v) \notag     \\
+   & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{{w^\sigma}^*}} L(v)(w_\sigma) \notag \\
+   & = \sum_{\sigma=1}^n u^*\prn{L(v)\prn{w_\sigma}L^{-1}({w^\sigma}^*)} \notag  \\
+   & = \sum_{\sigma=1}^n u^*\prn{L^{-1}\prn{L(v)(w_\sigma){w^\sigma}^*}} \notag  \\
+   & = u^*\prn{L^{-1}\prn{\sum_{\sigma=1}^n L(v)\prn{w_\sigma}{w^\sigma}^*}}.
+  \label{eq:prove-metric-inverse}
 \end{align}
-Using the same technique used in \eqref{eq:contraction-technique}, one has for
-all $x \in V_p$,
+Using the same technique used in \eqref{eq:contraction-technique}, one has for all
+$x \in V_p$,
 \begin{equation*}
-    \sum_{\sigma=1}^n L(v)\prn{w_\sigma}{w^\sigma}^*(x) = \sum_{\sigma=1}^n
-    L(v)\prn{{w^\sigma}^*(x) w_\sigma} = L(v)\prn{\sum_{\sigma=1}^n {w^\sigma}^*(x)
-    w_\sigma} = L(v)(x),
+  \sum_{\sigma=1}^n L(v)\prn{w_\sigma}{w^\sigma}^*(x) = \sum_{\sigma=1}^n
+  L(v)\prn{{w^\sigma}^*(x) w_\sigma} = L(v)\prn{\sum_{\sigma=1}^n {w^\sigma}^*(x)
+  w_\sigma} = L(v)(x),
 \end{equation*}
 thus the equality between the following two dual vectors,
 \begin{equation*}
-    \sum_{\sigma=1}^n L(v)\prn{w_\sigma}{w^\sigma}^* = L(v).
+  \sum_{\sigma=1}^n L(v)\prn{w_\sigma}{w^\sigma}^* = L(v).
 \end{equation*}
 Plugging this into \eqref{eq:prove-metric-inverse}, we get
 \begin{equation*}
-    g^{ab}g_{bc}(u^*, v) = u^*\prn{L^{-1}(L(v))} = u^*(v) =
-    {\delta^a}_c\prn{u^*,v}.
+  g^{ab}g_{bc}(u^*, v) = u^*\prn{L^{-1}(L(v))} = u^*(v) = {\delta^a}_c\prn{u^*,v}.
 \end{equation*}
 
 {\bfseries In fact, we might be able to prove the following general result.}
 \begin{lemma*}
-    Let ${T^{a_1\cdots a_k}}_{b_1\cdots b_l}$ be a tensor of type $(k,l)$ and $v^a$
-    be a vector. Then ${T^{a_1\cdots a_k}}_{b_1\cdots b_l}v^{b_i}$ behaves like
-    plugging $v^a$ into the $b_i$-th slot of ${T^{a_1\cdots a_k}}_{b_1\cdots b_l}$.
-    The same holds true for a dual vector $\omega_a$ and ${T^{a_1\cdots
-                        a_k}}_{b_1\cdots b_l}\omega_{a_j}$.
+  Let ${T^{a_1\cdots a_k}}_{b_1\cdots b_l}$ be a tensor of type $(k,l)$ and $v^a$ be
+  a vector. Then ${T^{a_1\cdots a_k}}_{b_1\cdots b_l}v^{b_i}$ behaves like plugging
+  $v^a$ into the $b_i$-th slot of ${T^{a_1\cdots a_k}}_{b_1\cdots b_l}$. The same
+  holds true for a dual vector $\omega_a$ and ${T^{a_1\cdots a_k}}_{b_1\cdots
+  b_l}\omega_{a_j}$.
 \end{lemma*}
 
 \begin{proof}
-    [TODO]
+  [TODO]
 \end{proof}
 
 \begin{quotebox}
-    In general, raised or lowered indices on any tensor denote application of the
-    metric or inverse metric to that slot. Thus, for example, if $T^{abc}{}_{de}$
-    is a tensor of type $(3,2)$, then $T^a{}_b{}^{cde}$ denotes the tensor
-    $g_{bf}g^{dh}g^{ej}T^{afc}{}_{hj}$. This notation is self-consistent since the
-    tensor resulting from the successive raising and lowering of a given index is
-    identical to the original tensor.
+  In general, raised or lowered indices on any tensor denote application of the
+  metric or inverse metric to that slot. Thus, for example, if $T^{abc}{}_{de}$ is a
+  tensor of type $(3,2)$, then $T^a{}_b{}^{cde}$ denotes the tensor
+  $g_{bf}g^{dh}g^{ej}T^{afc}{}_{hj}$. This notation is self-consistent since the
+  tensor resulting from the successive raising and lowering of a given index is
+  identical to the original tensor.
 \end{quotebox}
 
 [TODO]
 
 \begin{quotebox}
-    Furthurmore, the notation is also self-consistent when applied to the metric
-    itself, since $g^{ab} = g^{ac}g^{bd}g_{cd}$, i.e., $g^{ab}$ is the tensor
-    $g_{ab}$ when it indices raised.
+  Furthurmore, the notation is also self-consistent when applied to the metric
+  itself, since $g^{ab} = g^{ac}g^{bd}g_{cd}$, i.e., $g^{ab}$ is the tensor $g_{ab}$
+  when it indices raised.
 \end{quotebox}
 
 [TODO]
 
 \begin{quotebox}
-    Similar notational rules apply to any pair of covariant or contravariant
-    indices of tensors of higher type.
+  Similar notational rules apply to any pair of covariant or contravariant indices
+  of tensors of higher type.
 \end{quotebox}
 
-Actually it can be induced that for a tensor $T_{a_1\cdots a_l}$ of type $(0,
-    l)$, the new tensor in index notation $T_{a_{\pi_1}\cdots a_{\pi_l}}$ acts on
-the vectors $\prn{{v^1}^a, \dots, {v^l}^a}$ as
+Actually it can be induced that for a tensor $T_{a_1\cdots a_l}$ of type $(0, l)$,
+the new tensor in index notation $T_{a_{\pi_1}\cdots a_{\pi_l}}$ acts on the vectors
+$\prn{{v^1}^a, \dots, {v^l}^a}$ as
 \begin{equation*}
-    T_{a_{\pi_1}\cdots a_{\pi_l}} \prn{{v^1}^a, \dots, {v^l}^a} = T_{a_1\cdots a_l}
-    \prn{{v^{\pi^{-1}(1)}}^a, \dots, {v^{\pi^{-1}(l)}}^a}.
+  T_{a_{\pi_1}\cdots a_{\pi_l}} \prn{{v^1}^a, \dots, {v^l}^a} = T_{a_1\cdots a_l}
+  \prn{{v^{\pi^{-1}(1)}}^a, \dots, {v^{\pi^{-1}(l)}}^a}.
 \end{equation*}
-We show an example of why this is true. Take, the tensor $T_{abc}$ for example,
-and consider the index notation $T_{bca}$. $T_{bca}$ can be obtained from
-$T_{abc}$ by first interchanging indices $a$ and $b$ to get $T_{bac}$, then
-indices $a$ and $c$ to get $T_{bca}$. Thus $T_{bca}$ acting on vectors
-$\prn{u^a, v^a, w^a}$ is
+We show an example of why this is true. Take, the tensor $T_{abc}$ for example, and
+consider the index notation $T_{bca}$. $T_{bca}$ can be obtained from $T_{abc}$ by
+first interchanging indices $a$ and $b$ to get $T_{bac}$, then indices $a$ and $c$
+to get $T_{bca}$. Thus $T_{bca}$ acting on vectors $\prn{u^a, v^a, w^a}$ is
 \begin{equation*}
-    T_{bca} \prn{u^a, v^a, w^a} = T_{bac} \prn{u^a, w^a, v^a} = T_{abc} \prn{w^a,
-        u^a, v^a}.
+  T_{bca} \prn{u^a, v^a, w^a} = T_{bac} \prn{u^a, w^a, v^a} = T_{abc} \prn{w^a, u^a,
+  v^a}.
 \end{equation*}
-We see we have applied on $\prn{u^a, v^a, w^a}$ the permutation that takes
-$bca$ into $abc$, which is the inverse of the permutation that takes $abc$ into
-$bca$.
+We see we have applied on $\prn{u^a, v^a, w^a}$ the permutation that takes $bca$
+into $abc$, which is the inverse of the permutation that takes $abc$ into $bca$.
 
 \section*{Problems}
 
@@ -269,333 +264,331 @@ $bca$.
 
 \setcounter{exercise}{2}
 
-\Ex a) Linearity should be straightforward. To prove the Leibnitz property, let
-$f, g\in \mathscr{F}$. We have
+\Ex a) Linearity should be straightforward. To prove the Leibnitz property, let $f,
+  g\in \mathscr{F}$. We have
 \begin{align*}
-    [v,w](fg)
-     & = v(w(fg)) - w(v(fg))                             \\
-     & = v(fw(g) + gw(f)) - w(fv(g) + gv(f))             \\
-     & = v(fw(g)) + v(gw(f)) - w(fv(g)) - w(gv(f))       \\
-     & = fv(w(g)) + v(f)w(g) + gv(w(f)) + w(f)v(g)       \\
-     & \quad - fw(v(g)) - w(f)v(g) - gw(v(f)) - v(f)w(g) \\
-     & = fv(w(g)) + gv(w(f)) - fw(v(g)) - gw(v(f))       \\
-     & = f(v(w(g)) - w(v(g))) + g(v(w(f)) - w(v(f)))     \\
-     & = f[v,w](g) + g[v,w](f).
+  [v,w](fg)
+   & = v(w(fg)) - w(v(fg))                             \\
+   & = v(fw(g) + gw(f)) - w(fv(g) + gv(f))             \\
+   & = v(fw(g)) + v(gw(f)) - w(fv(g)) - w(gv(f))       \\
+   & = fv(w(g)) + v(f)w(g) + gv(w(f)) + w(f)v(g)       \\
+   & \quad - fw(v(g)) - w(f)v(g) - gw(v(f)) - v(f)w(g) \\
+   & = fv(w(g)) + gv(w(f)) - fw(v(g)) - gw(v(f))       \\
+   & = f(v(w(g)) - w(v(g))) + g(v(w(f)) - w(v(f)))     \\
+   & = f[v,w](g) + g[v,w](f).
 \end{align*}
 
 b) Let $f \in \mathscr{F}$, then
 \begin{align*}
-    [[X,Y],Z](f)
-     & = [X,Y](Z(f)) - Z([X,Y](f))                          \\
-     & = X(Y(Z(f))) - Y(X(Z(f))) - Z(X(Y(f)) - Y(X(f)))     \\
-     & = X(Y(Z(f))) - Z(X(Y(f))) + Z(Y(X(f))) - Y(X(Z(f))).
+  [[X,Y],Z](f)
+   & = [X,Y](Z(f)) - Z([X,Y](f))                          \\
+   & = X(Y(Z(f))) - Y(X(Z(f))) - Z(X(Y(f)) - Y(X(f)))     \\
+   & = X(Y(Z(f))) - Z(X(Y(f))) + Z(Y(X(f))) - Y(X(Z(f))).
 \end{align*}
 Similarly,
 \begin{align*}
-    [[Y,Z],X](f) & = Y(Z(X(f))) - X(Y(Z(f))) + X(Z(Y(f))) - Z(Y(X(f))), \\
-    [[Z,X],Y](f) & = Z(X(Y(f))) - Y(Z(X(f))) + Y(X(Z(f))) - X(Z(Y(f))).
+  [[Y,Z],X](f) & = Y(Z(X(f))) - X(Y(Z(f))) + X(Z(Y(f))) - Z(Y(X(f))), \\
+  [[Z,X],Y](f) & = Z(X(Y(f))) - Y(Z(X(f))) + Y(X(Z(f))) - X(Z(Y(f))).
 \end{align*}
 And it is easily seen that $[[X,Y],Z](f) + [[Y,Z],X](f) + [[Z,X],Y](f) = 0$.
 
 c)
 \begin{align*}
-    [[Y_\alpha,Y_\beta], Y_\gamma]
-     & = \left[ \sum_\mu {C^\mu}_{\alpha\beta} Y_\mu, Y_\gamma \right]
-    = \sum_\mu {C^\mu}_{\alpha\beta} [Y_\mu, Y_\gamma]
-    = \sum_\mu {C^\mu}_{\alpha\beta} \sum_\nu {C^\nu}_{\mu\gamma} Y_\nu          \\
-     & = \sum_\nu \prn{\sum_\mu {C^\nu}_{\mu\gamma} {C^\mu}_{\alpha\beta}} Y_\nu
+  [[Y_\alpha,Y_\beta], Y_\gamma]
+   & = \left[ \sum_\mu {C^\mu}_{\alpha\beta} Y_\mu, Y_\gamma \right]
+  = \sum_\mu {C^\mu}_{\alpha\beta} [Y_\mu, Y_\gamma]
+  = \sum_\mu {C^\mu}_{\alpha\beta} \sum_\nu {C^\nu}_{\mu\gamma} Y_\nu          \\
+   & = \sum_\nu \prn{\sum_\mu {C^\nu}_{\mu\gamma} {C^\mu}_{\alpha\beta}} Y_\nu
 \end{align*}
 Thus by applying Jacobi identity to $Y_\alpha, Y_\beta, Y_\gamma$ we get
 \begin{equation*}
-    \sum_\mu \prn{ {C^\nu}_{\mu\gamma} {C^\mu}_{\alpha\beta} + {C^\nu}_{\mu\alpha}
-    {C^\mu}_{\beta\gamma} + {C^\nu}_{\mu\beta} {C^\mu}_{\gamma\alpha} } = 0, \
-    \forall \nu.
+  \sum_\mu \prn{ {C^\nu}_{\mu\gamma} {C^\mu}_{\alpha\beta} + {C^\nu}_{\mu\alpha}
+  {C^\mu}_{\beta\gamma} + {C^\nu}_{\mu\beta} {C^\mu}_{\gamma\alpha} } = 0, \
+  \forall \nu.
 \end{equation*}
 See \cite{lee2009manifolds}, page 206, equation (5.1) ii) that this is correct.
 
-\Ex a) By equation (2.2.7) on page 16, the coefficients $[v,w]^\mu$ are the
-values of $[v,w]$ applied to the function $x^\mu\circ\psi$,
+\Ex a) By equation (2.2.7) on page 16, the coefficients $[v,w]^\mu$ are the values
+of $[v,w]$ applied to the function $x^\mu\circ\psi$,
 \begin{align*}
-    [v,w]^\mu
-     & = [v,w]\prn{x^\mu\circ\psi}
-    = v\prn{w(x^\mu\circ\psi)} - w\prn{v(x^\mu\circ\psi)} \\
-     & = v\prn{w^\mu} - w\prn{v^\mu}
-    = \sum_{\nu=1}^n \prn{ v^\nu \pdv{w^\mu}{x^\nu} -
-        w^\nu\pdv{v^\mu}{x^v} }.
+  [v,w]^\mu
+   & = [v,w]\prn{x^\mu\circ\psi}
+  = v\prn{w(x^\mu\circ\psi)} - w\prn{v(x^\mu\circ\psi)} \\
+   & = v\prn{w^\mu} - w\prn{v^\mu}
+  = \sum_{\nu=1}^n \prn{ v^\nu \pdv{w^\mu}{x^\nu} -
+    w^\nu\pdv{v^\mu}{x^v} }.
 \end{align*}
 
 b) Applying ${Y^\gamma}^*$ to both sides of
 \begin{equation*}
-    [Y_\alpha, Y_\beta] = \sum_\mu {C^\mu}_{\alpha\beta} Y_\mu,
+  [Y_\alpha, Y_\beta] = \sum_\mu {C^\mu}_{\alpha\beta} Y_\mu,
 \end{equation*}
 we get
 \begin{equation*}
-    {Y^\gamma}^*([Y_\alpha, Y_\beta]) =
-    {Y^\gamma}^*\prn{\sum_\mu {C^\mu}_{\alpha\beta} Y_\mu} = {C^\gamma}_{\alpha\beta}.
+  {Y^\gamma}^*([Y_\alpha, Y_\beta]) =
+  {Y^\gamma}^*\prn{\sum_\mu {C^\mu}_{\alpha\beta} Y_\mu} = {C^\gamma}_{\alpha\beta}.
 \end{equation*}
 Multiplying both sides by $({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu$ we get
 \begin{equation}
-    {Y^\gamma}^*([Y_\alpha, Y_\beta]) ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu =
-    {C^\gamma}_{\alpha\beta} ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu.
-    \label{chap2problem4b}
+  {Y^\gamma}^*([Y_\alpha, Y_\beta]) ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu =
+  {C^\gamma}_{\alpha\beta} ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu.
+  \label{chap2problem4b}
 \end{equation}
-One would be tempted to sum both sides over $\alpha,\beta$ and compute the
-left-hand side as
+One would be tempted to sum both sides over $\alpha,\beta$ and compute the left-hand
+side as
 \begin{align*}
-    \sum_{\alpha,\beta} {Y^\gamma}^*([Y_\alpha, Y_\beta])
-    ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
-     & = \sum_{\alpha,\beta} {Y^\gamma}^*\prn{\left[({Y^\alpha}^*)_\mu
-    Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]}                             \\
-     & = {Y^\gamma}^*\prn{\sum_{\alpha,\beta} \left[({Y^\alpha}^*)_\mu
-    Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]}                             \\
-     & = {Y^\gamma}^*\prn{\sum_\alpha\sum_\beta \left[({Y^\alpha}^*)_\mu
-    Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]}                             \\
-     & = {Y^\gamma}^*\prn{\sum_\alpha \left[({Y^\alpha}^*)_\mu
-    Y_\alpha, \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\right]}                  \\
-     & = {Y^\gamma}^*\prn{\left[\sum_\alpha ({Y^\alpha}^*)_\mu
-    Y_\alpha, \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\right]}                  \\
-     & = {Y^\gamma}^*\prn{\left[\sum_\alpha {Y^\alpha}^*\prn{\pdv{}{x^\mu}}
-    Y_\alpha, \sum_\beta {Y^\beta}^*\prn{\pdv{}{x^\nu}} Y_\beta\right]}     \\
-     & = {Y^\gamma}^*\prn{\left[\pdv{}{x^\mu}, \pdv{}{x^\nu}\right]}
-    = {Y^\gamma}^*(0) = 0.                                                  \\
+  \sum_{\alpha,\beta} {Y^\gamma}^*([Y_\alpha, Y_\beta])
+  ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
+   & = \sum_{\alpha,\beta} {Y^\gamma}^*\prn{\left[({Y^\alpha}^*)_\mu
+  Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]}                             \\
+   & = {Y^\gamma}^*\prn{\sum_{\alpha,\beta} \left[({Y^\alpha}^*)_\mu
+  Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]}                             \\
+   & = {Y^\gamma}^*\prn{\sum_\alpha\sum_\beta \left[({Y^\alpha}^*)_\mu
+  Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]}                             \\
+   & = {Y^\gamma}^*\prn{\sum_\alpha \left[({Y^\alpha}^*)_\mu
+  Y_\alpha, \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\right]}                  \\
+   & = {Y^\gamma}^*\prn{\left[\sum_\alpha ({Y^\alpha}^*)_\mu
+  Y_\alpha, \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\right]}                  \\
+   & = {Y^\gamma}^*\prn{\left[\sum_\alpha {Y^\alpha}^*\prn{\pdv{}{x^\mu}}
+  Y_\alpha, \sum_\beta {Y^\beta}^*\prn{\pdv{}{x^\nu}} Y_\beta\right]}     \\
+   & = {Y^\gamma}^*\prn{\left[\pdv{}{x^\mu}, \pdv{}{x^\nu}\right]}
+  = {Y^\gamma}^*(0) = 0.                                                  \\
 \end{align*}
 However the first equality is incorrect as $({Y^\alpha}^*)_\mu$ and
 $({Y^\beta}^*)_\nu$ are not constants and do not commute with the commutator of
 vector fields. But we can fix this by observing that
 \begin{align*}
-    \left[({Y^\alpha}^*)_\mu Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right](f)
-     & = ({Y^\alpha}^*)_\mu Y_\alpha\prn{({Y^\beta}^*)_\nu Y_\beta(f)} -
-    ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\alpha}^*)_\mu Y_\alpha(f)\Big)    \\
-    \text{(by Leibnitz rule) }
-     & =
-    ({Y^\alpha}^*)_\mu ({Y^\beta}^*)_\nu Y_\alpha\Big(Y_\beta(f)\Big)
-    + ({Y^\alpha}^*)_\mu Y_\beta(f) Y_\alpha\prn{({Y^\beta}^*)_\nu}      \\
-     & \quad
-    - ({Y^\beta}^*)_\nu ({Y^\alpha}^*)_\mu Y_\beta\Big(Y_\alpha(f)\Big)
-    - ({Y^\beta}^*)_\nu Y_\alpha(f) Y_\beta\Big(({Y^\alpha}^*)_\mu\Big)  \\
-     & =
-    ({Y^\alpha}^*)_\mu ({Y^\beta}^*)_\nu [Y_\alpha, Y_\beta](f)
-    + ({Y^\alpha}^*)_\mu Y_\alpha\prn{({Y^\beta}^*)_\nu} Y_\beta(f)      \\
-     & \quad
-    - ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\alpha}^*)_\mu\Big) Y_\alpha(f). \\
+  \left[({Y^\alpha}^*)_\mu Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right](f)
+   & = ({Y^\alpha}^*)_\mu Y_\alpha\prn{({Y^\beta}^*)_\nu Y_\beta(f)} -
+  ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\alpha}^*)_\mu Y_\alpha(f)\Big)    \\
+  \text{(by Leibnitz rule) }
+   & =
+  ({Y^\alpha}^*)_\mu ({Y^\beta}^*)_\nu Y_\alpha\Big(Y_\beta(f)\Big)
+  + ({Y^\alpha}^*)_\mu Y_\beta(f) Y_\alpha\prn{({Y^\beta}^*)_\nu}      \\
+   & \quad
+  - ({Y^\beta}^*)_\nu ({Y^\alpha}^*)_\mu Y_\beta\Big(Y_\alpha(f)\Big)
+  - ({Y^\beta}^*)_\nu Y_\alpha(f) Y_\beta\Big(({Y^\alpha}^*)_\mu\Big)  \\
+   & =
+  ({Y^\alpha}^*)_\mu ({Y^\beta}^*)_\nu [Y_\alpha, Y_\beta](f)
+  + ({Y^\alpha}^*)_\mu Y_\alpha\prn{({Y^\beta}^*)_\nu} Y_\beta(f)      \\
+   & \quad
+  - ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\alpha}^*)_\mu\Big) Y_\alpha(f). \\
 \end{align*}
 Thus
 \begin{align*}
-    \left[({Y^\alpha}^*)_\mu Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]
-     & = ({Y^\alpha}^*)_\mu ({Y^\beta}^*)_\nu [Y_\alpha, Y_\beta]
-    + ({Y^\alpha}^*)_\mu Y_\alpha\prn{({Y^\beta}^*)_\nu} Y_\beta      \\
-     & \quad
-    - ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\alpha}^*)_\mu\Big) Y_\alpha. \\
+  \left[({Y^\alpha}^*)_\mu Y_\alpha, ({Y^\beta}^*)_\nu Y_\beta\right]
+   & = ({Y^\alpha}^*)_\mu ({Y^\beta}^*)_\nu [Y_\alpha, Y_\beta]
+  + ({Y^\alpha}^*)_\mu Y_\alpha\prn{({Y^\beta}^*)_\nu} Y_\beta      \\
+   & \quad
+  - ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\alpha}^*)_\mu\Big) Y_\alpha. \\
 \end{align*}
 Now applying ${Y^\gamma}^*$ to both sides and summing over $\alpha, \beta$, and
 utilizing the linearity of vectors, we get
 \begin{equation*}
-    0 = \sum_{\alpha,\beta}
-    {Y^\gamma}^*([Y_\alpha, Y_\beta]) ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
-    + \sum_\alpha ({Y^\alpha}^*)_\mu Y_\alpha\Big(({Y^\gamma}^*)_\nu\Big)
-    - \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\gamma}^*)_\mu\Big),
+  0 = \sum_{\alpha,\beta}
+  {Y^\gamma}^*([Y_\alpha, Y_\beta]) ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
+  + \sum_\alpha ({Y^\alpha}^*)_\mu Y_\alpha\Big(({Y^\gamma}^*)_\nu\Big)
+  - \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\gamma}^*)_\mu\Big),
 \end{equation*}
 i.e.,
 \begin{align*}
-    \sum_{\alpha,\beta}
-    {Y^\gamma}^*([Y_\alpha, Y_\beta]) ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
-     & = \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\gamma}^*)_\mu\Big)
-    - \sum_\alpha ({Y^\alpha}^*)_\mu Y_\alpha\Big(({Y^\gamma}^*)_\nu\Big)   \\
-     & = \sum_\beta {Y^\beta}^*\prn{\pdv{}{x^\nu}}Y_\beta
-    \Big(({Y^\gamma}^*)_\mu\Big)
-    - \sum_\alpha {Y^\alpha}^*\prn{\pdv{}{x^\mu}}Y_\alpha
-    \Big(({Y^\gamma}^*)_\nu\Big)                                            \\
-     & = \prn{\sum_\beta {Y^\beta}^*\prn{\pdv{}{x^\nu}}Y_\beta}
-    \Big(({Y^\gamma}^*)_\mu\Big)                                            \\
-     & \quad - \prn{\sum_\alpha {Y^\alpha}^*\prn{\pdv{}{x^\mu}}Y_\alpha}
-    \Big(({Y^\gamma}^*)_\nu\Big)                                            \\
-     & = \pdv{}{x^\nu}\Big(({Y^\gamma}^*)_\mu\Big)
-    - \pdv{}{x^\mu}\Big(({Y^\gamma}^*)_\nu\Big)                             \\
-     & = \pdv{({Y^\gamma}^*)_\mu}{x^\nu} - \pdv{({Y^\gamma}^*)_\nu}{x^\mu}.
+  \sum_{\alpha,\beta}
+  {Y^\gamma}^*([Y_\alpha, Y_\beta]) ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu
+   & = \sum_\beta ({Y^\beta}^*)_\nu Y_\beta\Big(({Y^\gamma}^*)_\mu\Big)
+  - \sum_\alpha ({Y^\alpha}^*)_\mu Y_\alpha\Big(({Y^\gamma}^*)_\nu\Big)   \\
+   & = \sum_\beta {Y^\beta}^*\prn{\pdv{}{x^\nu}}Y_\beta
+  \Big(({Y^\gamma}^*)_\mu\Big)
+  - \sum_\alpha {Y^\alpha}^*\prn{\pdv{}{x^\mu}}Y_\alpha
+  \Big(({Y^\gamma}^*)_\nu\Big)                                            \\
+   & = \prn{\sum_\beta {Y^\beta}^*\prn{\pdv{}{x^\nu}}Y_\beta}
+  \Big(({Y^\gamma}^*)_\mu\Big)                                            \\
+   & \quad - \prn{\sum_\alpha {Y^\alpha}^*\prn{\pdv{}{x^\mu}}Y_\alpha}
+  \Big(({Y^\gamma}^*)_\nu\Big)                                            \\
+   & = \pdv{}{x^\nu}\Big(({Y^\gamma}^*)_\mu\Big)
+  - \pdv{}{x^\mu}\Big(({Y^\gamma}^*)_\nu\Big)                             \\
+   & = \pdv{({Y^\gamma}^*)_\mu}{x^\nu} - \pdv{({Y^\gamma}^*)_\nu}{x^\mu}.
 \end{align*}
 This together with \eqref{chap2problem4b} proves that
 \begin{equation*}
-    \pdv{({Y^\gamma}^*)_\mu}{x^\nu} - \pdv{({Y^\gamma}^*)_\nu}{x^\mu} =
-    \sum_{\alpha,\beta} {C^\gamma}_{\alpha\beta}
-    ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu.
+  \pdv{({Y^\gamma}^*)_\mu}{x^\nu} - \pdv{({Y^\gamma}^*)_\nu}{x^\mu} =
+  \sum_{\alpha,\beta} {C^\gamma}_{\alpha\beta}
+  ({Y^\alpha}^*)_\mu({Y^\beta}^*)_\nu.
 \end{equation*}
 
 \Ex Observe that the equations
 \begin{equation*}
-    \pdv{f^\nu}{x^\mu} = ({Y^\nu}^*)_\mu, \quad \mu = 1, \cdots, n,
+  \pdv{f^\nu}{x^\mu} = ({Y^\nu}^*)_\mu, \quad \mu = 1, \cdots, n,
 \end{equation*}
 for functions $f^\nu, \nu = 1, \cdots, n$ have solutions in an open ball $B$ in
-$\reals^n$ that contains $\psi(p)$ (assuming $\psi$ is the chart in discussion)
-due to 4(b). By the inverse function theorem, there exists an open neighborhood
-$U$ of $\psi(p)$ in $B$ in which the map $M\colon x \mapsto
-    \prn{f^1(x),\dots,f^n(x)}$ is invertible. We prove that the coordinate system
-in $\psi^{-1}(U)$ defined by $p \mapsto M\circ\psi(p)$ satisfies the
-requirements of the problem. In fact, by the inverse function theorem, the
-Jacobian matrix of $M^{-1}$ at $y=M(x)$ is invertible to the Jacobian matrix of
-$M$ at $x$, i.e.,
+$\reals^n$ that contains $\psi(p)$ (assuming $\psi$ is the chart in discussion) due
+to 4(b). By the inverse function theorem, there exists an open neighborhood $U$ of
+$\psi(p)$ in $B$ in which the map $M\colon x \mapsto \prn{f^1(x),\dots,f^n(x)}$ is
+invertible. We prove that the coordinate system in $\psi^{-1}(U)$ defined by $p
+\mapsto M\circ\psi(p)$ satisfies the requirements of the problem. In fact, by the
+inverse function theorem, the Jacobian matrix of $M^{-1}$ at $y=M(x)$ is invertible
+to the Jacobian matrix of $M$ at $x$, i.e.,
 \begin{equation}
-    \label{chap2problem5} \prn{\pdv{x^\nu}{y^\mu}}_{\nu,\mu} =
-    {\prn{({Y^\nu}^*)_\mu}_{\nu,\mu}}^{-1}.
+  \label{chap2problem5} \prn{\pdv{x^\nu}{y^\mu}}_{\nu,\mu} =
+  {\prn{({Y^\nu}^*)_\mu}_{\nu,\mu}}^{-1}.
 \end{equation}
 By the definition of a dual basis, ${Y^\nu}^*(Y_\mu) = \delta_{\mu\nu}$ where
 $\delta_{\mu\nu}$ is the identity. On the other hand, ${Y^\nu}^*(Y_\mu) =
-    \sum_{\lambda=1}^n({Y^\nu}^*)_\lambda(Y_\mu)^\lambda$. So we get
-$\sum_{\lambda=1}^n({Y^\nu}^*)_\lambda(Y_\mu)^\lambda = \delta_{\mu\nu}$, i.e.,
-the inverse of the matrix $\prn{({Y^\nu}^*)_\mu}_{\nu,\mu}$ is just
-$\prn{\prn{Y_\mu}^\nu}_{\nu,\mu}$. Combining this with \eqref{chap2problem5} we
+\sum_{\lambda=1}^n({Y^\nu}^*)_\lambda(Y_\mu)^\lambda$. So we get
+$\sum_{\lambda=1}^n({Y^\nu}^*)_\lambda(Y_\mu)^\lambda = \delta_{\mu\nu}$, i.e., the
+inverse of the matrix $\prn{({Y^\nu}^*)_\mu}_{\nu,\mu}$ is just
+$\prn{\prn{Y_\mu}^\nu}_{\nu,\mu}$. Combining this with \eqref{chap2problem5} we get
+\begin{equation*}
+  \pdv{x^\nu}{y^\mu} = \prn{Y_\mu}^\nu, \quad \text{for all } \mu,\nu.
+\end{equation*}
+Plugging this into the vector transformation law (equation (2.2.9) on page 17) we
 get
 \begin{equation*}
-    \pdv{x^\nu}{y^\mu} = \prn{Y_\mu}^\nu, \quad \text{for all } \mu,\nu.
-\end{equation*}
-Plugging this into the vector transformation law (equation (2.2.9) on page 17)
-we get
-\begin{equation*}
-    \pdv{}{y^\mu} = \sum_{\nu=1}^n \pdv{x^\nu}{y^\mu} X_\nu = \sum_{\nu=1}^n
-    \prn{Y_\mu}^\nu X_\nu = Y_\mu,
+  \pdv{}{y^\mu} = \sum_{\nu=1}^n \pdv{x^\nu}{y^\mu} X_\nu = \sum_{\nu=1}^n
+  \prn{Y_\mu}^\nu X_\nu = Y_\mu,
 \end{equation*}
 as desired.
 
-\Ex c) Let $\set{w_\sigma}$ be another basis of $V$ and $\set{{w^\sigma}^*}$
-its dual basis. Then $T$ contracted by $\set{w_\sigma}$ is
+\Ex c) Let $\set{w_\sigma}$ be another basis of $V$ and $\set{{w^\sigma}^*}$ its
+dual basis. Then $T$ contracted by $\set{w_\sigma}$ is
 \begin{align*}
-    CT
-     & = \sum_\sigma T\prn{\dots, {w^\sigma}^*, \dots\colon \dots,
-    w_\sigma, \dots}                                                       \\
-     & = \sum_\sigma T\prn{\dots, \sum_{\alpha} {w^\sigma}^*(v_\alpha)
-        {v^\alpha}^*, \dots\colon \dots, \sum_{\beta} {v^\beta}^*(w_\sigma)
-    v_\beta, \dots}                                                        \\
-     & = \sum_{\alpha} \sum_{\beta} \sum_\sigma {w^\sigma}^*(v_\alpha)
-    {v^\beta}^*(w_\sigma) T\prn{\dots, {v^\alpha}^*, \dots\colon \dots,
-    v_\beta, \dots}                                                        \\
-     & = \sum_{\alpha} \sum_{\beta} \sum_\sigma {v^\beta}^*
-    \prn{{w^\sigma}^*(v_\alpha)w_\sigma} T\prn{\dots, {v^\alpha}^*,
-    \dots\colon \dots, v_\beta, \dots}                                     \\
-     & = \sum_{\alpha} \sum_{\beta} {v^\beta}^*
-    \prn{\sum_\sigma {w^\sigma}^*(v_\alpha)w_\sigma} T\prn{\dots, {v^\alpha}^*,
-    \dots\colon \dots, v_\beta, \dots}                                     \\
-     & = \sum_{\alpha} \sum_{\beta} {v^\beta}^*\prn{v_\alpha} T\prn{\dots,
-    {v^\alpha}^*, \dots\colon \dots, v_\beta, \dots}                       \\
-     & = \sum_{\alpha} \sum_{\beta} \delta_{\alpha\beta} T\prn{\dots,
-    {v^\alpha}^*, \dots\colon \dots, v_\beta, \dots}                       \\
-     & = \sum_{\alpha} T\prn{\dots, {v^\alpha}^*, \dots\colon \dots,
-        v_\alpha, \dots}.
+  CT
+   & = \sum_\sigma T\prn{\dots, {w^\sigma}^*, \dots\colon \dots,
+  w_\sigma, \dots}                                                       \\
+   & = \sum_\sigma T\prn{\dots, \sum_{\alpha} {w^\sigma}^*(v_\alpha)
+    {v^\alpha}^*, \dots\colon \dots, \sum_{\beta} {v^\beta}^*(w_\sigma)
+  v_\beta, \dots}                                                        \\
+   & = \sum_{\alpha} \sum_{\beta} \sum_\sigma {w^\sigma}^*(v_\alpha)
+  {v^\beta}^*(w_\sigma) T\prn{\dots, {v^\alpha}^*, \dots\colon \dots,
+  v_\beta, \dots}                                                        \\
+   & = \sum_{\alpha} \sum_{\beta} \sum_\sigma {v^\beta}^*
+  \prn{{w^\sigma}^*(v_\alpha)w_\sigma} T\prn{\dots, {v^\alpha}^*,
+  \dots\colon \dots, v_\beta, \dots}                                     \\
+   & = \sum_{\alpha} \sum_{\beta} {v^\beta}^*
+  \prn{\sum_\sigma {w^\sigma}^*(v_\alpha)w_\sigma} T\prn{\dots, {v^\alpha}^*,
+  \dots\colon \dots, v_\beta, \dots}                                     \\
+   & = \sum_{\alpha} \sum_{\beta} {v^\beta}^*\prn{v_\alpha} T\prn{\dots,
+  {v^\alpha}^*, \dots\colon \dots, v_\beta, \dots}                       \\
+   & = \sum_{\alpha} \sum_{\beta} \delta_{\alpha\beta} T\prn{\dots,
+  {v^\alpha}^*, \dots\colon \dots, v_\beta, \dots}                       \\
+   & = \sum_{\alpha} T\prn{\dots, {v^\alpha}^*, \dots\colon \dots,
+    v_\alpha, \dots}.
 \end{align*}
 
 \setcounter{exercise}{7}
 
 \Ex a) It is evident that
 \begin{align*}
-    x & = r\sin\theta\cos\phi, \\
-    y & = r\sin\theta\sin\phi, \\
-    z & = r\cos\theta.
+  x & = r\sin\theta\cos\phi, \\
+  y & = r\sin\theta\sin\phi, \\
+  z & = r\cos\theta.
 \end{align*}
-According to page 22 equation (2.3.7), the dual basis $\diff x$, $\diff y$,
-$\diff z$ can be expressed as
+According to page 22 equation (2.3.7), the dual basis $\diff x$, $\diff y$, $\diff
+z$ can be expressed as
 \begin{align*}
-    \diff x & = \sin\theta\cos\phi\diff r + r\cos\theta\cos\phi\diff\theta
-    - r\sin\theta\sin\phi\diff\phi                                         \\
-    \diff y & = \sin\theta\sin\phi\diff r + r\cos\theta\sin\phi\diff\theta
-    + r\sin\theta\cos\phi\diff\phi                                         \\
-    \diff z & = \cos\theta\diff r - r\sin\theta\diff\theta.
+  \diff x & = \sin\theta\cos\phi\diff r + r\cos\theta\cos\phi\diff\theta
+  - r\sin\theta\sin\phi\diff\phi                                         \\
+  \diff y & = \sin\theta\sin\phi\diff r + r\cos\theta\sin\phi\diff\theta
+  + r\sin\theta\cos\phi\diff\phi                                         \\
+  \diff z & = \cos\theta\diff r - r\sin\theta\diff\theta.
 \end{align*}
 Thus
 \begin{align*}
-    \diff s^2
-     & = \diff x^2 + \diff y^2 + \diff z^2                                 \\
-     & = (\sin\theta\cos\phi\diff r + r\cos\theta\cos\phi\diff\theta
-    - r\sin\theta\sin\phi\diff\phi)^2                                      \\
-     & \quad + (\sin\theta\sin\phi\diff r + r\cos\theta\sin\phi\diff\theta
-    + r\sin\theta\cos\phi\diff\phi)^2                                      \\
-     & \quad + (\cos\theta\diff r - r\sin\theta\diff\theta)^2              \\
-     & = \big[\sin^2\theta\cos^2\phi\diff r^2
-        + r^2\cos^2\theta\cos^2\phi\diff\theta^2
-    + r^2\sin^2\theta\sin^2\phi\diff\phi^2                                 \\
-     & \qquad + r\sin\theta\cos\theta\cos^2\phi(\diff r\otimes\diff\theta
-        + \diff\theta\otimes\diff r) - r\sin^2\theta\sin\phi\cos\phi
-    (\diff r\otimes\diff\phi + \diff\phi\otimes\diff r)                    \\
-     & \qquad - r^2\sin\theta\cos\theta\sin\phi\cos\phi(\diff\theta
-    \otimes \diff\phi + \diff\phi\otimes\diff\theta) \big]                 \\
-     & + \big[\sin^2\theta\sin^2\phi\diff r^2
-        + r^2\cos^2\theta\sin^2\phi\diff\theta^2
-    + r^2\sin^2\theta\cos^2\phi\diff\phi^2                                 \\
-     & \qquad + r\sin\theta\cos\theta\sin^2\phi(\diff r\otimes\diff\theta
-        + \diff\theta\otimes\diff r) + r\sin^2\theta\sin\phi\cos\phi
-    (\diff r\otimes\diff\phi + \diff\phi\otimes\diff r)                    \\
-     & \qquad - r^2\sin\theta\cos\theta\sin\phi\cos\phi(\diff\theta
-    \otimes \diff\phi + \diff\phi\otimes\diff\theta) \big]                 \\
-     & + \big[ \cos^2\theta\diff r^2 + r^2\sin^2\theta\diff\theta^2
-        - r\cos\theta\sin\theta(\diff r\otimes\diff\theta +
-    \diff\theta\otimes\diff r) \big]                                       \\
-     & = \diff r^2 + r^2\diff\theta^2 + r^2\sin^2\theta\diff\phi^2.
+  \diff s^2
+   & = \diff x^2 + \diff y^2 + \diff z^2                                 \\
+   & = (\sin\theta\cos\phi\diff r + r\cos\theta\cos\phi\diff\theta
+  - r\sin\theta\sin\phi\diff\phi)^2                                      \\
+   & \quad + (\sin\theta\sin\phi\diff r + r\cos\theta\sin\phi\diff\theta
+  + r\sin\theta\cos\phi\diff\phi)^2                                      \\
+   & \quad + (\cos\theta\diff r - r\sin\theta\diff\theta)^2              \\
+   & = \big[\sin^2\theta\cos^2\phi\diff r^2
+    + r^2\cos^2\theta\cos^2\phi\diff\theta^2
+  + r^2\sin^2\theta\sin^2\phi\diff\phi^2                                 \\
+   & \qquad + r\sin\theta\cos\theta\cos^2\phi(\diff r\otimes\diff\theta
+    + \diff\theta\otimes\diff r) - r\sin^2\theta\sin\phi\cos\phi
+  (\diff r\otimes\diff\phi + \diff\phi\otimes\diff r)                    \\
+   & \qquad - r^2\sin\theta\cos\theta\sin\phi\cos\phi(\diff\theta
+  \otimes \diff\phi + \diff\phi\otimes\diff\theta) \big]                 \\
+   & + \big[\sin^2\theta\sin^2\phi\diff r^2
+    + r^2\cos^2\theta\sin^2\phi\diff\theta^2
+  + r^2\sin^2\theta\cos^2\phi\diff\phi^2                                 \\
+   & \qquad + r\sin\theta\cos\theta\sin^2\phi(\diff r\otimes\diff\theta
+    + \diff\theta\otimes\diff r) + r\sin^2\theta\sin\phi\cos\phi
+  (\diff r\otimes\diff\phi + \diff\phi\otimes\diff r)                    \\
+   & \qquad - r^2\sin\theta\cos\theta\sin\phi\cos\phi(\diff\theta
+  \otimes \diff\phi + \diff\phi\otimes\diff\theta) \big]                 \\
+   & + \big[ \cos^2\theta\diff r^2 + r^2\sin^2\theta\diff\theta^2
+    - r\cos\theta\sin\theta(\diff r\otimes\diff\theta +
+  \diff\theta\otimes\diff r) \big]                                       \\
+   & = \diff r^2 + r^2\diff\theta^2 + r^2\sin^2\theta\diff\phi^2.
 \end{align*}
 
 b) We compute them in a different way from a). We first compute the components,
-$g^{\mu\nu}$, of the inverse metric in the Euclidean coordinates $t, x, y, z$.
-It is not hard to see that the inverse of the diagonal matrix
-$\operatorname{diag}(-1, 1, 1, 1)$ is, coincidentally, itself. Thus we get
+$g^{\mu\nu}$, of the inverse metric in the Euclidean coordinates $t, x, y, z$. It is
+not hard to see that the inverse of the diagonal matrix $\operatorname{diag}(-1, 1,
+1, 1)$ is, coincidentally, itself. Thus we get
 \begin{equation}
-    g^{ab} = - \pdv{}{t}\otimes\pdv{}{t} + \pdv{}{x}\otimes\pdv{}{x} +
-    \pdv{}{y}\otimes\pdv{}{y} + \pdv{}{z}\otimes\pdv{}{z}. \label{chap2problem8b}
+  g^{ab} = - \pdv{}{t}\otimes\pdv{}{t} + \pdv{}{x}\otimes\pdv{}{x} +
+  \pdv{}{y}\otimes\pdv{}{y} + \pdv{}{z}\otimes\pdv{}{z}. \label{chap2problem8b}
 \end{equation}
-Now by definition of the rotating coordinates and vector transformation law
-(2.2.9), we get
+Now by definition of the rotating coordinates and vector transformation law (2.2.9),
+we get
 \begin{align*}
-    \pdv{}{t}
-     & = \pdv{t'}{t}\pdv{}{t'} + \pdv{x'}{t}\pdv{}{x'} + \pdv{y'}{t}\pdv{}{y'} \\
-     & = \pdv{}{t'} + \omega r\sin(\phi-\omega t)\pdv{}{x'}
-    - \omega r\cos(\phi-\omega t)\pdv{}{y'},                                   \\
-     & = \pdv{}{t'} + \omega y'\pdv{}{x'} - \omega x'\pdv{}{y'},               \\
-    \pdv{}{x}
-     & = \pdv{x'}{x}\pdv{}{x'} + \pdv{y'}{x}\pdv{}{y'}                         \\
-     & = \left[\frac{x}{r}\cos(\phi-\omega t) + \frac{y}{r}\sin(\phi-\omega t)
-        \right]\pdv{}{x'} + \left[\frac{x}{r}\sin(\phi-\omega t) -
-    \frac{y}{r}\cos(\phi-\omega t)\right]\pdv{}{y'}                            \\
-     & = \cos\omega t\pdv{}{x'} - \sin\omega t\pdv{}{y'},                      \\
-    \pdv{}{y}
-     & = \pdv{x'}{y}\pdv{}{x'} + \pdv{y'}{y}\pdv{}{y'}                         \\
-     & = \left[\frac{y}{r}\cos(\phi-\omega t) - \frac{x}{r}\sin(\phi-\omega t)
-        \right]\pdv{}{x'} + \left[\frac{y}{r}\sin(\phi-\omega t) +
-    \frac{x}{r}\cos(\phi-\omega t)\right]\pdv{}{y'}                            \\
-     & = \sin\omega t\pdv{}{x'} + \cos\omega t\pdv{}{y'},                      \\
-    \pdv{}{z}
-     & = \pdv{z'}{z}\pdv{}{z'}                                                 \\
-     & = \pdv{}{z'},
+  \pdv{}{t}
+   & = \pdv{t'}{t}\pdv{}{t'} + \pdv{x'}{t}\pdv{}{x'} + \pdv{y'}{t}\pdv{}{y'} \\
+   & = \pdv{}{t'} + \omega r\sin(\phi-\omega t)\pdv{}{x'}
+  - \omega r\cos(\phi-\omega t)\pdv{}{y'},                                   \\
+   & = \pdv{}{t'} + \omega y'\pdv{}{x'} - \omega x'\pdv{}{y'},               \\
+  \pdv{}{x}
+   & = \pdv{x'}{x}\pdv{}{x'} + \pdv{y'}{x}\pdv{}{y'}                         \\
+   & = \left[\frac{x}{r}\cos(\phi-\omega t) + \frac{y}{r}\sin(\phi-\omega t)
+    \right]\pdv{}{x'} + \left[\frac{x}{r}\sin(\phi-\omega t) -
+  \frac{y}{r}\cos(\phi-\omega t)\right]\pdv{}{y'}                            \\
+   & = \cos\omega t\pdv{}{x'} - \sin\omega t\pdv{}{y'},                      \\
+  \pdv{}{y}
+   & = \pdv{x'}{y}\pdv{}{x'} + \pdv{y'}{y}\pdv{}{y'}                         \\
+   & = \left[\frac{y}{r}\cos(\phi-\omega t) - \frac{x}{r}\sin(\phi-\omega t)
+    \right]\pdv{}{x'} + \left[\frac{y}{r}\sin(\phi-\omega t) +
+  \frac{x}{r}\cos(\phi-\omega t)\right]\pdv{}{y'}                            \\
+   & = \sin\omega t\pdv{}{x'} + \cos\omega t\pdv{}{y'},                      \\
+  \pdv{}{z}
+   & = \pdv{z'}{z}\pdv{}{z'}                                                 \\
+   & = \pdv{}{z'},
 \end{align*}
 where we set $r = \prn{x^2+y^2}^{\frac12}$. Plugging the above coordinate
 transformation into \eqref{chap2problem8b} we obtain
 \begin{align*}
-    g^{ab} =
-     & - \pdv{}{t'}\otimes\pdv{}{t'} + \prn{1-\omega^2y'^2}\pdv{}{x'}
-    \otimes\pdv{}{x'} + \prn{1-\omega^2x'^2}\pdv{}{y'}\otimes\pdv{}{y'} +
-    \pdv{}{z'}\otimes\pdv{}{z'}                                        \\
-     & - \omega y'\prn{\pdv{}{t'}\otimes\pdv{}{x'} + \pdv{}{x'}\otimes
-        \pdv{}{t'}} + \omega x'\prn{\pdv{}{t'}\otimes\pdv{}{y'} +
-    \pdv{}{y'}\otimes\pdv{}{t'}}                                       \\
-     & + \omega^2x'y'\prn{\pdv{}{x'}\otimes\pdv{}{y'} +
-        \pdv{}{y'}\otimes\pdv{}{x'}},
+  g^{ab} =
+   & - \pdv{}{t'}\otimes\pdv{}{t'} + \prn{1-\omega^2y'^2}\pdv{}{x'}
+  \otimes\pdv{}{x'} + \prn{1-\omega^2x'^2}\pdv{}{y'}\otimes\pdv{}{y'} +
+  \pdv{}{z'}\otimes\pdv{}{z'}                                        \\
+   & - \omega y'\prn{\pdv{}{t'}\otimes\pdv{}{x'} + \pdv{}{x'}\otimes
+    \pdv{}{t'}} + \omega x'\prn{\pdv{}{t'}\otimes\pdv{}{y'} +
+  \pdv{}{y'}\otimes\pdv{}{t'}}                                       \\
+   & + \omega^2x'y'\prn{\pdv{}{x'}\otimes\pdv{}{y'} +
+    \pdv{}{y'}\otimes\pdv{}{x'}},
 \end{align*}
 whose components written into a matrix are the following
 \begin{equation*}
-    \begin{bmatrix}
-        -1         & -\omega y'     & \omega x'          \\
-        -\omega y' & 1-\omega^2y'^2 & \omega^2x'y'       \\
-        \omega x'  & \omega^2x'y'   & 1-\omega^2x'^2     \\
-                   &                &                & 1
-    \end{bmatrix}.
+  \begin{bmatrix}
+    -1         & -\omega y'     & \omega x'          \\
+    -\omega y' & 1-\omega^2y'^2 & \omega^2x'y'       \\
+    \omega x'  & \omega^2x'y'   & 1-\omega^2x'^2     \\
+               &                &                & 1
+  \end{bmatrix}.
 \end{equation*}
 The inverse of the above matrix can be computed as
 \begin{equation*}
-    \begin{bmatrix}
-        \omega^2\prn{x'^2+y'^2}-1 & -\omega y' & \omega x'     \\
-        -\omega y'                & 1          & 0             \\
-        \omega x'                 & 0          & 1             \\
-                                  &            &           & 1
-    \end{bmatrix}.
+  \begin{bmatrix}
+    \omega^2\prn{x'^2+y'^2}-1 & -\omega y' & \omega x'     \\
+    -\omega y'                & 1          & 0             \\
+    \omega x'                 & 0          & 1             \\
+                              &            &           & 1
+  \end{bmatrix}.
 \end{equation*}
 Thus the metric written in rotating coordinates is $\diff s^2 =
-    \prn{\omega^2\prn{x'^2+y'^2}-1}\diff t'^2 + \diff x'^2 + \diff y'^2 + \diff
-    z'^2 - \omega y'(\diff t'\diff x' + \diff x'\diff t') + \omega x' (\diff
-    t'\diff y' + \diff y'\diff t')$.
+\prn{\omega^2\prn{x'^2+y'^2}-1}\diff t'^2 + \diff x'^2 + \diff y'^2 + \diff z'^2 -
+\omega y'(\diff t'\diff x' + \diff x'\diff t') + \omega x' (\diff t'\diff y' + \diff
+y'\diff t')$.
 
 \chapter{Curvature}
 
@@ -606,79 +599,77 @@ Thus the metric written in rotating coordinates is $\diff s^2 =
 \Page{39}
 
 \begin{quotebox}
-    3. For the derivative operator $\nabla_a$ naturally associated with the
-    metric, $\nabla_ag_{bc}=0$, we have
-    \begin{equation*}
-        R_{abcd} = - R_{abdc}.
-    \end{equation*}
+  3. For the derivative operator $\nabla_a$ naturally associated with the
+  metric, $\nabla_ag_{bc}=0$, we have
+  \begin{equation*}
+    R_{abcd} = - R_{abdc}.
+  \end{equation*}
 \end{quotebox}
 
 \begin{proof}
-    Here we give a different proof from the one given in the book. First we note
-    that by definition $R_{abcd} = g_{de}R_{abc}{}^e$. For an arbitrary vector
-    field $v^a$, we apply this tensor to $v^a$ and use the definition of the
-    Riemann curvature tensor (3.2.3) to get that
-    \begin{align}
-        g_{de}R_{abc}{}^ev^d
-         & = R_{abc}{}^eg_{de}v^d = \nabla_a\nabla_bg_{dc}v^d
-        - \nabla_b\nabla_ag_{dc}v^d \nonumber                                \\
-         & = g_{dc}\nabla_a\nabla_bv^d - g_{dc}\nabla_b\nabla_av^d
-        \label{(3.2.15)-proof-label-1}                                       \\
-         & = g_{dc}\prn{\nabla_a\nabla_bv^d - \nabla_b\nabla_av^d} \nonumber \\
-         & = -g_{dc}R_{abe}{}^dv^e \label{(3.2.15)-proof-label-2}            \\
-         & = -g_{ec}R_{abd}{}^ev^d \label{(3.2.15)-proof-label-3}            \\
-         & = -R_{abdc}v^d \nonumber
-    \end{align}
-    where in \eqref{(3.2.15)-proof-label-1} we used the Leibnitz rule of derivative
-    operators and the fact that $\nabla_ag_{bc}=0$, in
-    \eqref{(3.2.15)-proof-label-2} we used the property (3.2.11), and in
-    \eqref{(3.2.15)-proof-label-3} we applied an index rotation $d \leftrightarrow
-        e$. Thus $R_{abcd}v^d = - R_{abdc}v^d$ for all $v^d$, which proves the
-    property.
+  Here we give a different proof from the one given in the book. First we note that
+  by definition $R_{abcd} = g_{de}R_{abc}{}^e$. For an arbitrary vector field $v^a$,
+  we apply this tensor to $v^a$ and use the definition of the Riemann curvature
+  tensor (3.2.3) to get that
+  \begin{align}
+    g_{de}R_{abc}{}^ev^d
+     & = R_{abc}{}^eg_{de}v^d = \nabla_a\nabla_bg_{dc}v^d
+    - \nabla_b\nabla_ag_{dc}v^d \nonumber                                \\
+     & = g_{dc}\nabla_a\nabla_bv^d - g_{dc}\nabla_b\nabla_av^d
+    \label{(3.2.15)-proof-label-1}                                       \\
+     & = g_{dc}\prn{\nabla_a\nabla_bv^d - \nabla_b\nabla_av^d} \nonumber \\
+     & = -g_{dc}R_{abe}{}^dv^e \label{(3.2.15)-proof-label-2}            \\
+     & = -g_{ec}R_{abd}{}^ev^d \label{(3.2.15)-proof-label-3}            \\
+     & = -R_{abdc}v^d \nonumber
+  \end{align}
+  where in \eqref{(3.2.15)-proof-label-1} we used the Leibnitz rule of derivative
+  operators and the fact that $\nabla_ag_{bc}=0$, in \eqref{(3.2.15)-proof-label-2}
+  we used the property (3.2.11), and in \eqref{(3.2.15)-proof-label-3} we applied an
+  index rotation $d \leftrightarrow e$. Thus $R_{abcd}v^d = - R_{abdc}v^d$ for all
+  $v^d$, which proves the property.
 \end{proof}
 
 \Page{40}
 
 \begin{quotebox}
-    By equation (3.2.20), $R_{ab}$ satisfies the symmetry property
-    \begin{equation*}
-        R_{ac} = R_{ca}.
-    \end{equation*}
+  By equation (3.2.20), $R_{ab}$ satisfies the symmetry property
+  \begin{equation*}
+    R_{ac} = R_{ca}.
+  \end{equation*}
 \end{quotebox}
 
 \begin{proof}
-    As $R_{abc}{}^d = g^{de}R_{abce}$, we obtain $R_{ac} = R_{abc}{}^b =
-        g^{be}R_{abce} \xlongequal{\text{index substitution }e\text{ for }d}
-        g^{bd}R_{abcd} \xlongequal{\text{by (3.2.20)}} g^{bd}R_{cdab}
-        \xlongequal{\text{symmetry of }g^{ab}} g^{db}R_{cdab} = R_{ca}$.
+  As $R_{abc}{}^d = g^{de}R_{abce}$, we obtain $R_{ac} = R_{abc}{}^b =
+  g^{be}R_{abce} \xlongequal{\text{index substitution }e\text{ for }d}
+  g^{bd}R_{abcd} \xlongequal{\text{by (3.2.20)}} g^{bd}R_{cdab}
+  \xlongequal{\text{symmetry of }g^{ab}} g^{db}R_{cdab} = R_{ca}$.
 \end{proof}
 
 \begin{quotebox}
-    \begin{equation*}
-        \nabla_aR_{bcd}{}^a + \nabla_bR_{cd} - \nabla_cR_{bd} = 0.
-    \end{equation*}
-    Raising the index $d$ with the metric and contracting over $b$ and $d$, we
-    obtain
-    \begin{equation*}
-        \nabla_aR_c{}^a + \nabla_bR_c{}^b - \nabla_cR = 0
-    \end{equation*}
+  \begin{equation*}
+    \nabla_aR_{bcd}{}^a + \nabla_bR_{cd} - \nabla_cR_{bd} = 0.
+  \end{equation*}
+  Raising the index $d$ with the metric and contracting over $b$ and $d$, we obtain
+  \begin{equation*}
+    \nabla_aR_c{}^a + \nabla_bR_c{}^b - \nabla_cR = 0
+  \end{equation*}
 \end{quotebox}
 
 The second and third terms are easy to derive. We show how the first term comes
 about.
 \begin{proof}
-    For $R_{bcd}{}^a$, raising the index $d$ with the metric and contracting over
-    $b$ and $d$ gives the tensor
-    \begin{align*}
-        g^{be}R_{bce}{}^a
-         & = g^{be}g^{ad}R_{bced}                         \\
-         & \xlongequal{\text{by antisymmetry property 3}}
-        -g^{ad}g^{be}R_{bcde}                             \\
-         & = -g^{ad}R_{bcd}{}^b                           \\
-         & \xlongequal{\text{by antisymmetry property 1}}
-        g^{ad}R_{cbd}{}^b = g^{ad}R_{cd}                  \\
-         & = R_c{}^a.
-    \end{align*}
+  For $R_{bcd}{}^a$, raising the index $d$ with the metric and contracting over $b$
+  and $d$ gives the tensor
+  \begin{align*}
+    g^{be}R_{bce}{}^a
+     & = g^{be}g^{ad}R_{bced}                         \\
+     & \xlongequal{\text{by antisymmetry property 3}}
+    -g^{ad}g^{be}R_{bcde}                             \\
+     & = -g^{ad}R_{bcd}{}^b                           \\
+     & \xlongequal{\text{by antisymmetry property 1}}
+    g^{ad}R_{cbd}{}^b = g^{ad}R_{cd}                  \\
+     & = R_c{}^a.
+  \end{align*}
 \end{proof}
 
 \section{Geodesics}
@@ -686,131 +677,131 @@ about.
 \Page{42}
 
 \begin{quotebox}
-    These coordinates have the property that all geodesics through $p$ get mapped
-    into straight lines through the origin of $\reals^n$. From equation (3.3.5) it
-    follows that in this coordinate system the Christoffel symbol components
-    $\Gamma^\mu{}_{\sigma\nu}$ vanish at $p$.
+  These coordinates have the property that all geodesics through $p$ get mapped into
+  straight lines through the origin of $\reals^n$. From equation (3.3.5) it follows
+  that in this coordinate system the Christoffel symbol components
+  $\Gamma^\mu{}_{\sigma\nu}$ vanish at $p$.
 \end{quotebox}
 
-We don't provide a complete proof but lay out the key steps. The first step is
-to demonstrate that for all tangent vectors $T^a\in V_p$ and small scalar $t$,
-the point at unit affine parameter along the geodesic through $p$ with tangent
-$tT^a$, i.e., $\exp(tT^a)$ where $\exp$ is the exponential map, is just the
-point in $M$ at affine parameter $t$ along the geodesic through $p$ with
-tangent $T^a$. This shows that the curve $C\colon t\mapsto\exp(tT^a)$ is a
-geodesic. Since we identify $V_p$ with $\reals^n$, we can assume that the
-components of $T^a$ in the chosen coordinate system are
-$\set{T^\mu}_{\mu=1}^n$. Thus the curve $C$ gets mapped into the curve in
-$\reals^n$ with components $x^\mu(t) = tT^\mu$. Plugging this into equation
-(3.3.5) we get
+We don't provide a complete proof but lay out the key steps. The first step is to
+demonstrate that for all tangent vectors $T^a\in V_p$ and small scalar $t$, the
+point at unit affine parameter along the geodesic through $p$ with tangent $tT^a$,
+i.e., $\exp(tT^a)$ where $\exp$ is the exponential map, is just the point in $M$ at
+affine parameter $t$ along the geodesic through $p$ with tangent $T^a$. This shows
+that the curve $C\colon t\mapsto\exp(tT^a)$ is a geodesic. Since we identify $V_p$
+with $\reals^n$, we can assume that the components of $T^a$ in the chosen coordinate
+system are $\set{T^\mu}_{\mu=1}^n$. Thus the curve $C$ gets mapped into the curve in
+$\reals^n$ with components $x^\mu(t) = tT^\mu$. Plugging this into equation (3.3.5)
+we get
 \begin{equation*}
-    0 + \sum_{\sigma,\nu} \Gamma^\mu{}_{\sigma\nu}T^\sigma T^\nu = 0.
+  0 + \sum_{\sigma,\nu} \Gamma^\mu{}_{\sigma\nu}T^\sigma T^\nu = 0.
 \end{equation*}
 Because the above applies to all tangent vectors $T^a$, we get that
 $\Gamma^\mu{}_{\sigma\nu} = 0$ at $p$.
 
-This result doesn't apply to other points than $p$ in the range of the
-exponential map, because geodesics through other points do not necessarily get
-mapped into straight lines in $\reals^n$.
+This result doesn't apply to other points than $p$ in the range of the exponential
+map, because geodesics through other points do not necessarily get mapped into
+straight lines in $\reals^n$.
 
 \begin{quotebox}
-    ... in situations where one is given a hypersurface $S$, i.e., an $(n -
-        1)$-dimensional embedded submanifold of the $n$-dimensional manifold $M$ (see
-    appendix B). At each point $p \in S$, the tangent space $\tilde{V}_p$ of the
-    manifold $S$ can be naturally viewed as an $(n - 1)$-dimensional subspace of
-    the tangent space $V_p$ of $M$. Thus, there will be a vector $n^a \in V_p$,
-    unique up to scaling, which is orthogonal (with respect to the metric $g_{ab}$)
-    to all vectors in $\tilde{V}_p$. This vector, $n^a$, is said to be normal to
-    $S$. In the case of a Riemannian metric, $n^a$ cannot lie in $\tilde{V}_p$; in
-    the case of a metric of indefinite signature, $n^a$ could be a null vector,
-    $g_{ab}n^a n^b = 0$, in which case it does lie in $\tilde{V}_p$ and $S$ is said
-    to be a null hypersurface at point $p$.
+  ... in situations where one is given a hypersurface $S$, i.e., an $(n -
+    1)$-dimensional embedded submanifold of the $n$-dimensional manifold $M$ (see
+  appendix B). At each point $p \in S$, the tangent space $\tilde{V}_p$ of the
+  manifold $S$ can be naturally viewed as an $(n - 1)$-dimensional subspace of
+  the tangent space $V_p$ of $M$. Thus, there will be a vector $n^a \in V_p$,
+  unique up to scaling, which is orthogonal (with respect to the metric $g_{ab}$)
+  to all vectors in $\tilde{V}_p$. This vector, $n^a$, is said to be normal to
+  $S$. In the case of a Riemannian metric, $n^a$ cannot lie in $\tilde{V}_p$; in
+  the case of a metric of indefinite signature, $n^a$ could be a null vector,
+  $g_{ab}n^a n^b = 0$, in which case it does lie in $\tilde{V}_p$ and $S$ is said
+  to be a null hypersurface at point $p$.
 \end{quotebox}
 
-There are a few things we want to prove here. To proceed, we use matrix
-notation for the metric and the vectors. We assume that the vectors
-$\set{y_i}_{i=1}^{n-1}$ of size $n\times 1$ are a basis of $\tilde{V}_p$, the
-$n\times n$ matrix $G$ is the component matrix of the metric $g_{ab}$, and the
-vector $v$ of size $n\times 1$ is the component representation of $n^a$.
+There are a few things we want to prove here. To proceed, we use matrix notation for
+the metric and the vectors. We assume that the vectors $\set{y_i}_{i=1}^{n-1}$ of
+size $n\times 1$ are a basis of $\tilde{V}_p$, the $n\times n$ matrix $G$ is the
+component matrix of the metric $g_{ab}$, and the vector $v$ of size $n\times 1$ is
+the component representation of $n^a$.
 
-First of all, we want to show why the norm vector $n^a$ is unique up to
-scaling. We observe that requiring $n^a$ to be orthogonal to all vectors in
-$\tilde{V}_p$ is just requiring
+First of all, we want to show why the norm vector $n^a$ is unique up to scaling. We
+observe that requiring $n^a$ to be orthogonal to all vectors in $\tilde{V}_p$ is
+just requiring
 \begin{equation}
-    \begin{bmatrix}
-        y_1^\top \\
-        \vdots   \\
-        y_{n-1}^\top
-    \end{bmatrix}
-    Gv = 0. \label{norm-vector-being-in-hypersurface}
+  \begin{bmatrix}
+    y_1^\top \\
+    \vdots   \\
+    y_{n-1}^\top
+  \end{bmatrix}
+  Gv = 0. \label{norm-vector-being-in-hypersurface}
 \end{equation}
-However, because $y_1, \dots, y_{n-1}$ are linearly independent, the equation
-has a unique solution for $Gv$ up to scaling. Because $G$ is non-singular, $v$
-is unique up to scaling.
+However, because $y_1, \dots, y_{n-1}$ are linearly independent, the equation has a
+unique solution for $Gv$ up to scaling. Because $G$ is non-singular, $v$ is unique
+up to scaling.
 
-Secondly, why does $n^a$ being a null vector, $g_{ab}n^a n^b = 0$, imply that
-$n^a$ lies in $\tilde{V}_p$? This is because $v^\top Gv = 0$, which together
-with \eqref{norm-vector-being-in-hypersurface} implies that
+Secondly, why does $n^a$ being a null vector, $g_{ab}n^a n^b = 0$, imply that $n^a$
+lies in $\tilde{V}_p$? This is because $v^\top Gv = 0$, which together with
+\eqref{norm-vector-being-in-hypersurface} implies that
 \begin{equation*}
-    \begin{bmatrix}
-        y_1^\top     \\
-        \vdots       \\
-        y_{n-1}^\top \\
-        v^\top
-    \end{bmatrix}
-    Gv = 0.
+  \begin{bmatrix}
+    y_1^\top     \\
+    \vdots       \\
+    y_{n-1}^\top \\
+    v^\top
+  \end{bmatrix}
+  Gv = 0.
 \end{equation*}
-Because $Gv$ is a nonzero vector, the $n$ vectors $y_1, \dots, y_{n-1}, v$ must
-be linearly dependent. This with the fact that $y_1, \dots, y_{n-1}$ are
-linearly independent implies that $v$ is a linear combination of $y_1, \dots,
-    y_{n-1}$.
+Because $Gv$ is a nonzero vector, the $n$ vectors $y_1, \dots, y_{n-1}, v$ must be
+linearly dependent. This with the fact that $y_1, \dots, y_{n-1}$ are linearly
+independent implies that $v$ is a linear combination of $y_1, \dots, y_{n-1}$.
 
 Thirdly, we would like to find the condition for which $n^a$ lies in the
-hypersurface $\tilde{V}_p$. Obviously, this happens if and only if the equation
-for the vector $\alpha$ of size $(n-1)\times1$
+hypersurface $\tilde{V}_p$. Obviously, this happens if and only if the equation for
+the vector $\alpha$ of size $(n-1)\times1$
 \begin{equation*}
-    \begin{bmatrix}
-        y_1^\top \\
-        \vdots   \\
-        y_{n-1}^\top
-    \end{bmatrix}
-    G
-    \begin{bmatrix}
-        y_1 & \cdots & y_{n-1}
-    \end{bmatrix}\alpha = 0
+  \begin{bmatrix}
+    y_1^\top \\
+    \vdots   \\
+    y_{n-1}^\top
+  \end{bmatrix}
+  G
+  \begin{bmatrix}
+    y_1 & \cdots & y_{n-1}
+  \end{bmatrix}\alpha = 0
 \end{equation*}
 has a nonzero solution, i.e., the square matrix $\begin{bmatrix}
-        y_1^\top \\
-        \vdots   \\
-        y_{n-1}^\top
-    \end{bmatrix}
-    G
-    \begin{bmatrix}
-        y_1 & \cdots & y_{n-1}
-    \end{bmatrix}$ is singular.
+    y_1^\top \\
+    \vdots   \\
+    y_{n-1}^\top
+  \end{bmatrix}
+  G
+  \begin{bmatrix}
+    y_1 & \cdots & y_{n-1}
+  \end{bmatrix}$ is singular.
 
 \Page{45}
 
 \begin{quotebox}
-    Equation (3.3.12) will hold for arbitrary $ \delta x^\beta$ if and only if
-    \begin{equation*}
-        - \sum_{\alpha} g_{\alpha\beta} \frac{d^2 x^\alpha}{dt^2}
-        - \sum_{\alpha, \lambda} \frac{\partial g_{\alpha\beta}}{\partial x^\lambda} \frac{dx^\lambda}{dt} \frac{dx^\alpha}{dt}
-        + \frac{1}{2} \sum_{\alpha, \lambda} \frac{\partial g_{\alpha\lambda}}{\partial x^\beta} \frac{dx^\alpha}{dt} \frac{dx^\lambda}{dt} = 0.
-    \end{equation*}
-    Using our formula for $\Gamma^\sigma_{\alpha\lambda}$, equation (3.1.30), we
-    see that equation (3.3.13) is just the geodesic equation (3.3.5).
+  Equation (3.3.12) will hold for arbitrary $ \delta x^\beta$ if and only if
+  \begin{equation*}
+    - \sum_{\alpha} g_{\alpha\beta} \frac{d^2 x^\alpha}{dt^2} - \sum_{\alpha,
+    \lambda} \frac{\partial g_{\alpha\beta}}{\partial x^\lambda}
+    \frac{dx^\lambda}{dt} \frac{dx^\alpha}{dt} + \frac{1}{2} \sum_{\alpha, \lambda}
+    \frac{\partial g_{\alpha\lambda}}{\partial x^\beta} \frac{dx^\alpha}{dt}
+    \frac{dx^\lambda}{dt} = 0.
+  \end{equation*}
+  Using our formula for $\Gamma^\sigma_{\alpha\lambda}$, equation (3.1.30), we see
+  that equation (3.3.13) is just the geodesic equation (3.3.5).
 \end{quotebox}
 
 Here we need to contract the left-hand side by $g^{\sigma\beta}$, and because
-$g^{\sigma\beta}g_{\alpha\beta} = \delta^\sigma{}_\alpha$, we eliminate all but
-one term in the first sum, making it close to (3.3.5).
+$g^{\sigma\beta}g_{\alpha\beta} = \delta^\sigma{}_\alpha$, we eliminate all but one
+term in the first sum, making it close to (3.3.5).
 
 \appendix
 
 \titleformat{\chapter}[display] {\fontspec{Times New Roman}} {APPENDIX
-    \Alph{chapter}} {1pt} {\hrule\vspace{6pt}\Large\fontspec{Times New
-        Roman}\MakeUppercase}
+  \Alph{chapter}} {1pt} {\hrule\vspace{6pt}\Large\fontspec{Times New
+    Roman}\MakeUppercase}
 
 \setcounter{chapter}{1}
 
@@ -821,32 +812,31 @@ one term in the first sum, making it close to (3.3.5).
 \Page{428}
 
 \begin{quotebox}
-    We denote the vector space of $p$-forms at a point $x$ by $\Lambda_x^p$ and the
-    collection of $p$-form fields by $\Lambda^p$. Note that $\Lambda_x^p = \set{0}$
-    if $p > n$ and $\dim \Lambda_x^p = n!/p!(n-p)!$ for $0 \leq p \leq n$.
+  We denote the vector space of $p$-forms at a point $x$ by $\Lambda_x^p$ and the
+  collection of $p$-form fields by $\Lambda^p$. Note that $\Lambda_x^p = \set{0}$ if
+  $p > n$ and $\dim \Lambda_x^p = n!/p!(n-p)!$ for $0 \leq p \leq n$.
 \end{quotebox}
 
-By multilinearity of tensors and antisymmetry of differential forms, the value
-of a $p$-form $\omega$ acting on $p$ vectors can be written as a linear
-combination of $\omega\prn{v_{\mu_1},\dots,v_{\mu_p}}$, $0 \leq \mu_1 < \cdots
-    < \mu_p \leq n$, where $\set{v_1,\dots,v_p}$ is a basis of $V_x$. When $p > n$,
-such $\mu_1, \dots, \mu_p$ don't exist and $w = 0$. When $0 \leq p \leq n$,
-there are $n!/p!(n-p)!$ unique combinations of $\mu_1, \dots, \mu_p$, and it's
-not hard to go from here to show that $\setbuilder{{v^{\mu_1}}^* \wedge \cdots
-        \wedge {v^{\mu_p}}^*}{0 \leq \mu_1 < \cdots < \mu_p \leq n}$ form a basis of
-$\Lambda_x^p$.
+By multilinearity of tensors and antisymmetry of differential forms, the value of a
+$p$-form $\omega$ acting on $p$ vectors can be written as a linear combination of
+$\omega\prn{v_{\mu_1},\dots,v_{\mu_p}}$, $0 \leq \mu_1 < \cdots < \mu_p \leq n$,
+where $\set{v_1,\dots,v_p}$ is a basis of $V_x$. When $p > n$, such $\mu_1, \dots,
+\mu_p$ don't exist and $w = 0$. When $0 \leq p \leq n$, there are $n!/p!(n-p)!$
+unique combinations of $\mu_1, \dots, \mu_p$, and it's not hard to go from here to
+show that $\setbuilder{{v^{\mu_1}}^* \wedge \cdots \wedge {v^{\mu_p}}^*}{0 \leq
+\mu_1 < \cdots < \mu_p \leq n}$ form a basis of $\Lambda_x^p$.
 
 \begin{quotebox}
-    However, we can totally antisymmetrize this tensor, thus producing a map
-    $\wedge\colon \Lambda_x^p\times\Lambda_x^q \to \Lambda_x^{p+q}$ via
-    \begin{equation*}
-        \prn{\omega\wedge\mu}_{a_1\cdots a_pb_1\cdots b_q} = \frac{(p+q)!}{p!q!}
-        \omega_{\left[a_1\cdots a_p\right.}\mu_{\left.b_1\cdots b_q\right]}.
-    \end{equation*}
+  However, we can totally antisymmetrize this tensor, thus producing a map
+  $\wedge\colon \Lambda_x^p\times\Lambda_x^q \to \Lambda_x^{p+q}$ via
+  \begin{equation*}
+    \prn{\omega\wedge\mu}_{a_1\cdots a_pb_1\cdots b_q} = \frac{(p+q)!}{p!q!}
+    \omega_{\left[a_1\cdots a_p\right.}\mu_{\left.b_1\cdots b_q\right]}.
+  \end{equation*}
 \end{quotebox}
 
-Theory: the constant $(p+q)!/p!q!$ is to make sure the exterior product
-$\wedge$ is associative. [TODO]
+Theory: the constant $(p+q)!/p!q!$ is to make sure the exterior product $\wedge$ is
+associative. [TODO]
 
 \bibliographystyle{plain}
 
